@@ -1,0 +1,28 @@
+html,body {
+	background-position: cover;
+    background: url(cover.jpg) ;
+    height: 100%;
+
+}
+
+.jumbotron {
+	text-align: center;
+	width: 30rem;	
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: relative;
+	margin: 5rem auto;
+	background-color: #fff;
+	padding: 2rem;
+}
+
+.jumbotron h2{
+	color: #bfbdbd;
+	padding-bottom: 3rem;
+}
+.container {
+	margin-top: 1px;
+	
+}
