@@ -1,5 +1,6 @@
 @extends('layout.master')
- @section('head') 
+ @section('head')
+  
  {{ HTML::style('assets/js/metro/MetroJs.css') }} 
  @stop 
  @section('body')
@@ -10,9 +11,10 @@
     <div class="wrapper row-offcanvas row-offcanvas-left">
         <!-- Left side column. contains the logo and sidebar -->
         @include('includes.sidebar')
-
-
-       
+  <aside class="right-side">
+    @yield('page')
+    @show
+        </aside><!-- /.right-side -->  
     </div>
     
    

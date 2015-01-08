@@ -21,7 +21,7 @@ Route::get('hello', function()
 });
 Route::get('/test', function()
 {
-    return View::make('pages.admin.profile');
+    return View::make('layout.master');
 });
 Route::get('reg', function()
 {
@@ -33,7 +33,7 @@ Route::filter('auth', function()
 });
 Route::get('/profile', function()
 {
-	return View::make('pages.admin.profile');
+	return View::make('pages.admin.dashboard');
 })->before('auth');
 // route to show the login form
 	Route::get('/login', array('uses' => 'HomeController@showLogin'))->before('guest');

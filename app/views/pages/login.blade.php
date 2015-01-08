@@ -2,7 +2,7 @@
 @section('head')
 
 <title>login here</title>
-{{HTML::style('assets/css/admin.css')}}
+
 {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
