@@ -1,20 +1,16 @@
-## Laravel PHP Framework
+## TBA using Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+[![Latest Unstable alpha Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](http://project.manuknarayanan.in)
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+“Online Customer Complain System Project in Laravel PHP Framework” is a web based application which will be used for handling the various types of complaints occurred in the product of any kind of organization. It provides solution for users to get in touch with company and complete work and raise complaints with their issues through web portal. Three main users are there in this application. Admin, Staff, Customer.
+Also it includes the staff tracking method which company can analyze the apt service of each service man using geo location system.
+
 
 ## Official Documentation
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+Documentation for the entire framework can be found on the [TBA website](http://project.manuknarayanan.in).
 
 ### Contributing To Laravel
 
