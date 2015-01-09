@@ -1095,6 +1095,9 @@ $('.animate-number').each(function(){
     $('[data-aspect-ratio="true"]').each(function(){
         $(this).height($(this).width());
     })
+ $('[data-aspect-ratio2="true"]').each(function(){
+        $(this).height($(this).width()/2);
+    })
 
     $('[data-sync-height="true"]').each(function(){
         equalHeight($(this).children());

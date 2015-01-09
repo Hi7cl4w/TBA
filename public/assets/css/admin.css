@@ -564,10 +564,46 @@ body > .header .navbar .nav > li > a > .label {
   line-height: 1.0em;
   text-align: center;
   padding: 2px;
+   animation: opacity-badge 1s infinite;
+  -webkit-animation: opacity-badge 0.6s infinite;
 }
-body > .header .navbar .nav > li > a:hover > .label {
-  top: 3px;
-}
+ @keyframes opacity-badge 
+ {
+     0% 
+     {
+         transform: scale(0.5)
+     }
+     100% 
+     {
+         transform: scale(1.2)
+     }
+ }
+ @-moz-keyframes opacity-badge 
+ {
+     0% 
+     {
+         transform: scale(0.5)
+     }
+     100% 
+     {
+         transform: scale(1.2)
+     }
+ }
+ @-webkit-keyframes opacity-badge 
+ {
+     0% 
+     {
+         transform: scale(0.5)
+     }
+     100% 
+     {
+         transform: scale(1.2)
+     }
+ }
+ body > .header .navbar .nav > li > a:hover > .label {
+     top: 3px;
+ }
+
 body .logo {
   float: left;
   font-size: 20px;

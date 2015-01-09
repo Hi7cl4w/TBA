@@ -33,7 +33,7 @@ Route::filter('auth', function()
 });
 Route::get('/profile', function()
 {
-	return View::make('pages.admin.dashboard');
+	return View::make('pages.dashboard');
 })->before('auth');
 // route to show the login form
 	Route::get('/login', array('uses' => 'HomeController@showLogin'))->before('guest');
@@ -71,7 +71,7 @@ Route::get('/start', function()
   //  $subscriber->attachPermission($read);
   //  $author->attachPermission($read);
  //   $author->attachPermission($edit);
- $user1 = User::where('id','=','1')->first();
+ //$user1 = User::where('id','=','1')->first();
     
  
  
@@ -112,13 +112,28 @@ Route::get('/add', function()
 Route::get('/secret', function()
 {
     //Auth::loginUsingId(1);
- 
+
     $user = Auth::user();
- 
+
     if ($user->hasRole('Administrator'))
     {
         return 'Redheads party the hardest!';
     }
- 
+
+    return 'Many people like to party.';
+});
+Route::get('/mail', function()
+{
+    //Auth::loginUsingId(1);
+
+    $user = Auth::user();
+    echo $user['email'];
+    Mail::send('hello', array('key' => 'value'), function($message)
+    {
+        $user = Auth::user();
+        $message->to( $user->email , 'John Smith')->subject('Welcome!');
+    });
+
+
     return 'Many people like to party.';
 });

@@ -39,7 +39,7 @@ class HomeController extends BaseController {
 				->withErrors($validator) // send back all errors to the login form
 				->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
 		} else {
-			$f = filter_var(Input::get('username'), FILTER_VALIDATE_EMAIL) ? 'user_email' : 'username';
+			$f = filter_var(Input::get('username'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
 			// create our user data for the authentication
 			$userdata = array(
