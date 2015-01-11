@@ -30,7 +30,7 @@ Route::get('/profile2', function () {
     return View::make('pages.dashboard2');
 })->before('auth');
 Route::get('/profile', function () {
-    return View::make('layout.master');
+    return View::make('pages.dashboard');
 })->before('auth');
 // route to show the login form
 Route::get('/login', array('uses' => 'HomeController@showLogin'))->before('guest');
