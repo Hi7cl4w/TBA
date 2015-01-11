@@ -12,6 +12,8 @@ return array(
     'Barryvdh\\LaravelIdeHelper\\Generator' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Generator.php',
     'Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider' => $vendorDir . '/barryvdh/laravel-ide-helper/src/IdeHelperServiceProvider.php',
     'Barryvdh\\LaravelIdeHelper\\Method' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Method.php',
+    'Barryvdh\\VendorCleanup\\VendorCleanupCommand' => $vendorDir . '/barryvdh/laravel-vendor-cleanup/src/Barryvdh/VendorCleanup/VendorCleanupCommand.php',
+    'Barryvdh\\VendorCleanup\\VendorCleanupServiceProvider' => $vendorDir . '/barryvdh/laravel-vendor-cleanup/src/Barryvdh/VendorCleanup/VendorCleanupServiceProvider.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Bllim\\Datatables\\Datatables' => $vendorDir . '/bllim/datatables/src/Bllim/Datatables/Datatables.php',
     'Bllim\\Datatables\\DatatablesServiceProvider' => $vendorDir . '/bllim/datatables/src/Bllim/Datatables/DatatablesServiceProvider.php',
