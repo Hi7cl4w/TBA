@@ -26,7 +26,7 @@ Route::get('reg', function () {
 Route::filter('auth', function () {
     if (Auth::guest()) return Redirect::guest('login');
 });
-Route::get('/profile', function () {
+Route::get('/profile2', function () {
     return View::make('pages.dashboard');
 })->before('auth');
 Route::get('/profile', function () {
