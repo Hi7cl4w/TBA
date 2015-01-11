@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f864edfc-4ad6-477c-a852-e4386eaf0f03" name="Default" comment="" />
+    <list default="true" id="f864edfc-4ad6-477c-a852-e4386eaf0f03" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/pages/dashboard2.blade.php" afterPath="$PROJECT_DIR$/app/views/pages/dashboard2.blade.php" />
+    </list>
     <ignored path="laravel.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -95,8 +97,8 @@
       <file leaf-file-name="dashboard2.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard2.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5588235" vertical-offset="238" max-vertical-offset="816">
-              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.29411766" vertical-offset="391" max-vertical-offset="969">
+              <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="42" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -655,8 +657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/pages/dashboard2.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235" vertical-offset="238" max-vertical-offset="816">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.29411766" vertical-offset="391" max-vertical-offset="969">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="42" selection-end-column="14" />
           <folding />
         </state>
       </provider>
