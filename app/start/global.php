@@ -85,5 +85,5 @@ require app_path().'/filters.php';
 
 
 App::missing(function() {
-	return Response::make(View::make('error404'), 404);
+	return Response::make(View::make('pages.404'), 404);
 });

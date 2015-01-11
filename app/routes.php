@@ -18,7 +18,7 @@ Route::get('hello', function () {
     return View::make('hello');
 });
 Route::get('/test', function () {
-    return View::make('layout.master');
+    return View::make('pages.404');
 });
 Route::get('reg', function () {
     return View::make('pages.register');
@@ -37,7 +37,7 @@ Route::get('/{username}/profile', function ($username) {
     }
     else
     {
-        echo "404 not found";
+        App::abort(404);
     }
 
 })->before('auth');
