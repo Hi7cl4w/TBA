@@ -14,11 +14,9 @@ class CreateCustomerTable extends Migration {
 	{
 		Schema::create('customer',function(Blueprint $table)
 		{
-			$table->integer('customer_id');				
-			$table->String('customer_name',128);
+			$table->integer('customer_id');
 			$table->String('customer_mobile',20);
 			$table->String('customer_office',20);
-			$table->String('customer_email',128);
 			$table->Integer('customer_branch');
 			$table->Integer('customer_company');
 			$table->Integer('customer_assigned_sales');

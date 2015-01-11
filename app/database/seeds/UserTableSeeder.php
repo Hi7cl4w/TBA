@@ -5,8 +5,10 @@ class UserTableSeeder extends Seeder{
 	{
 		DB::table('users')->delete();
 		User::create(array(
-			'user_id'=> 1 ,
-			'user_name' => 'admin' ,
+			'id'=> 1 ,
+			'username' => 'admin' ,
+			'fname' => 'manu' ,
+			'lname' => 'k' ,
 			'user_password' => Hash::make('123456') ,
 			'user_email' => 'manuknarayanan@gmail.com' ,
 			'user_account_type' => 3 ,

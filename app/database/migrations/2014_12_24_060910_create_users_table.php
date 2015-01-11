@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->String('username' , 64 );
 			$table->String('password' , 256 );
-			$table->String('user_email' , 64 );
+			$table->String('email' , 64 );
 			$table->String('user_rememberme_token' , 64 )->nullable();
 			$table->tinyInteger('user_failed_logins')->default(0);
 			$table->String('user_activation_code' , 40 )->nullable();
