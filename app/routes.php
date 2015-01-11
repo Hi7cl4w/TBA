@@ -27,7 +27,7 @@ Route::filter('auth', function () {
     if (Auth::guest()) return Redirect::guest('login');
 });
 Route::get('/profile2', function () {
-    return View::make('pages.dashboard');
+    return View::make('pages.dashboard2');
 })->before('auth');
 Route::get('/profile', function () {
     return View::make('layout.master');
