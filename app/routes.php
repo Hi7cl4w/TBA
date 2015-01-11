@@ -29,6 +29,9 @@ Route::filter('auth', function () {
 Route::get('/profile', function () {
     return View::make('pages.dashboard');
 })->before('auth');
+Route::get('/profile', function () {
+    return View::make('layout.master');
+})->before('auth');
 // route to show the login form
 Route::get('/login', array('uses' => 'HomeController@showLogin'))->before('guest');
 
