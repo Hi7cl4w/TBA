@@ -78,4 +78,12 @@ App::down(function()
 |
 */
 
+
 require app_path().'/filters.php';
+
+
+
+
+App::missing(function() {
+	return Response::make(View::make('error404'), 404);
+});

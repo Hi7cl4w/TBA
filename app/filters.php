@@ -64,7 +64,10 @@ Route::filter('auth.basic', function()
 
 Route::filter('guest', function()
 {
-	if (Auth::check()) return Redirect::to('/profile');
+	if (Auth::check()) {
+		$user=Auth::user();
+		return Redirect::to($user->username.'/profile');
+	}
 });
 Entrust::routeNeedsPermission( 'admin/post*', 'manage_posts' );
 

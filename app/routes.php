@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return View::make('pages.login');
+    return Redirect::to('/login');
 });
 Route::get('hello', function () {
     return View::make('hello');
@@ -29,8 +29,17 @@ Route::filter('auth', function () {
 Route::get('/profile2', function () {
     return View::make('pages.dashboard2');
 })->before('auth');
-Route::get('/profile', function () {
+Route::get('/{username}/profile', function ($username) {
+    $user = Auth::user();
+    if($user->username==$username){
+
     return View::make('pages.dashboard');
+    }
+    else
+    {
+        echo "404 not found";
+    }
+
 })->before('auth');
 // route to show the login form
 Route::get('/login', array('uses' => 'HomeController@showLogin'))->before('guest');

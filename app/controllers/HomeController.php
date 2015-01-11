@@ -57,7 +57,7 @@ class HomeController extends BaseController {
 				$user = Auth::user();
 				if ($user->hasRole('Administrator'))
     			{
-        			return Redirect::to('profile');
+        			return Redirect::to($user->username.'/profile');
     			}
  
     			
