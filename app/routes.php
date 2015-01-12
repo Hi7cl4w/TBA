@@ -34,7 +34,7 @@ Route::get('/profile/{username}', function ($username) {
 
     if($user->username==$username){
 
-    return View::make('pages.dashboard',$user);
+    return View::make('pages.dashboard')->with('user',$user);
     }
     else
     {

@@ -1112,17 +1112,17 @@ $('.animate-number').each(function(){
         }); 
     });
 
-    $('#search').on('mouseenter mouseleave', function( e ){
+    $('#search.search').on('mouseenter mouseleave', function( e ){
   var mEnt      = e.type=='mouseenter';
   
   var opacity   = mEnt ? 1      : 0      ;
   var width     = mEnt ? 250    : 100    ;
   var show_hide = mEnt ? 'show' : 'hide' ;
   
-  $(this).stop().animate({width: width}, 400);
-  $('a', this).stop().fadeTo(400, !opacity);
-  $('input', this).stop().fadeTo(400,opacity);
-  $('#overlay2').stop().fadeTo(400, opacity, function(){
+  $(this).clearQueue().stop().animate({width: width}, 400);
+  $('a', this).fadeTo(400, !opacity);
+  $('input', this).fadeTo(400,opacity);
+  $('#overlay2').fadeTo(400, opacity, function(){
     $(this)[show_hide]();
   });
   

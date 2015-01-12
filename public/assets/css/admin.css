@@ -729,6 +729,12 @@ margin: 0 auto;
   .navbar .navbar-right {
     float: right;
   }
+  .navbar .navbar-m {
+    float:left;
+    position:relative;
+    left:-50%;
+    
+  }
 }
 @media screen and (max-width: 560px) {
   body > .header {

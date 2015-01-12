@@ -101,7 +101,8 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
 
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="glyphicon glyphicon-user"></i>
-                                <span>root                              <i class="caret"></i></span>
+                                <span>{{$user->username}}
+                                                              <i class="caret"></i></span>
                             </a>
   
   
@@ -111,8 +112,8 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
                                     
-                                    <p>
-                                        root<small>Administrator</small>                                        
+                                    <p>{{$user->fname." ".$user->lname}}
+                                        <small>Administrator</small>
                                     </p>
                                 </li>
                                 
@@ -130,7 +131,7 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
                 </div>
 
 
-                <div class="navbar-right">
+                <div class="navbar-m">
                     <ul id="searchnav" class="nav navbar-nav">
     <li class="search" id="search"><a href="#">Search</a><input type="text" placeholder="Enter search term" /></li>
     </div> </nav>
