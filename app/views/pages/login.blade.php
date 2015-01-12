@@ -23,6 +23,7 @@
             {{ $errors->first('email') }}
             {{ $errors->first('password') }}
 
+
             <div class="form-group form-group-default required">
                 <label>Username or email</label>
 

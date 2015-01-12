@@ -466,56 +466,6 @@
         ]
     },
     {
-        "name": "jeremeamia/SuperClosure",
-        "version": "1.0.1",
-        "version_normalized": "1.0.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/jeremeamia/super_closure.git",
-            "reference": "d05400085f7d4ae6f20ba30d36550836c0d061e8"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/d05400085f7d4ae6f20ba30d36550836c0d061e8",
-            "reference": "d05400085f7d4ae6f20ba30d36550836c0d061e8",
-            "shasum": ""
-        },
-        "require": {
-            "nikic/php-parser": "~0.9",
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "~3.7"
-        },
-        "time": "2013-10-09 04:20:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Jeremeamia\\SuperClosure": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Jeremy Lindblom"
-            }
-        ],
-        "description": "Doing interesting things with closures like serialization.",
-        "homepage": "https://github.com/jeremeamia/super_closure",
-        "keywords": [
-            "closure",
-            "function",
-            "parser",
-            "serializable",
-            "serialize",
-            "tokenizer"
-        ]
-    },
-    {
         "name": "filp/whoops",
         "version": "1.1.3",
         "version_normalized": "1.1.3.0",
@@ -819,134 +769,6 @@
         "keywords": [
             "framework",
             "laravel"
-        ]
-    },
-    {
-        "name": "laravelbook/ardent",
-        "version": "v2.4.2",
-        "version_normalized": "2.4.2.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/laravelbook/ardent.git",
-            "reference": "0a0238b8040abc1c71401ce27a8edf2619fa5bed"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/laravelbook/ardent/zipball/0a0238b8040abc1c71401ce27a8edf2619fa5bed",
-            "reference": "0a0238b8040abc1c71401ce27a8edf2619fa5bed",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/database": "~4.1",
-            "illuminate/support": "~4.1",
-            "illuminate/validation": "~4.1",
-            "php": ">=5.3.0"
-        },
-        "time": "2014-02-25 20:39:04",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "LaravelBook\\Ardent": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Max Ehsan",
-                "email": "contact@laravelbook.com",
-                "homepage": "http://laravelbook.com/",
-                "role": "Maintainer"
-            },
-            {
-                "name": "Igor Santos",
-                "email": "igorsantos07+dev@gmail.com",
-                "homepage": "http://www.igorsantos.com.br",
-                "role": "Developer"
-            }
-        ],
-        "description": "Self-validating smart models for Laravel 4's Eloquent O/RM",
-        "homepage": "http://laravelbook.com/",
-        "keywords": [
-            "Active Record",
-            "activerecord",
-            "database",
-            "eloquent",
-            "framework",
-            "laravel",
-            "orm",
-            "sql",
-            "validation"
-        ]
-    },
-    {
-        "name": "zizaco/entrust",
-        "version": "1.2.5",
-        "version_normalized": "1.2.5.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Zizaco/entrust.git",
-            "reference": "e3145e2435bbc095f8af85218b78d5fc5d5faf0f"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/e3145e2435bbc095f8af85218b78d5fc5d5faf0f",
-            "reference": "e3145e2435bbc095f8af85218b78d5fc5d5faf0f",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/support": "~4.0|~5.0",
-            "laravelbook/ardent": "~2.4",
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "illuminate/database": "~4.0",
-            "mockery/mockery": "~0.9",
-            "phpunit/phpunit": "~4.0",
-            "symfony/process": "~2.3"
-        },
-        "suggest": {
-            "zizaco/confide": "Confide is an authentication solution for Laravel 4 that couples very well with Entrust"
-        },
-        "time": "2014-09-24 02:20:26",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.2-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/commands"
-            ],
-            "psr-4": {
-                "Zizaco\\Entrust\\": "src/Entrust/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Andrew Elkins",
-                "homepage": "http://www.andrewelkins.com"
-            },
-            {
-                "name": "Zizaco Zizuini",
-                "email": "zizaco@gmail.com"
-            }
-        ],
-        "description": "This package provides a flexible way to add Role-based Permissions to Laravel 4",
-        "keywords": [
-            "auth",
-            "illuminate",
-            "laravel",
-            "roles"
         ]
     },
     {
@@ -2086,6 +1908,134 @@
         ]
     },
     {
+        "name": "laravelbook/ardent",
+        "version": "v2.4.2",
+        "version_normalized": "2.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravelbook/ardent.git",
+            "reference": "0a0238b8040abc1c71401ce27a8edf2619fa5bed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravelbook/ardent/zipball/0a0238b8040abc1c71401ce27a8edf2619fa5bed",
+            "reference": "0a0238b8040abc1c71401ce27a8edf2619fa5bed",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": "~4.1",
+            "illuminate/support": "~4.1",
+            "illuminate/validation": "~4.1",
+            "php": ">=5.3.0"
+        },
+        "time": "2014-02-25 20:39:04",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "LaravelBook\\Ardent": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Max Ehsan",
+                "email": "contact@laravelbook.com",
+                "homepage": "http://laravelbook.com/",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Igor Santos",
+                "email": "igorsantos07+dev@gmail.com",
+                "homepage": "http://www.igorsantos.com.br",
+                "role": "Developer"
+            }
+        ],
+        "description": "Self-validating smart models for Laravel 4's Eloquent O/RM",
+        "homepage": "http://laravelbook.com/",
+        "keywords": [
+            "Active Record",
+            "activerecord",
+            "database",
+            "eloquent",
+            "framework",
+            "laravel",
+            "orm",
+            "sql",
+            "validation"
+        ]
+    },
+    {
+        "name": "zizaco/entrust",
+        "version": "1.2.5",
+        "version_normalized": "1.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Zizaco/entrust.git",
+            "reference": "e3145e2435bbc095f8af85218b78d5fc5d5faf0f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Zizaco/entrust/zipball/e3145e2435bbc095f8af85218b78d5fc5d5faf0f",
+            "reference": "e3145e2435bbc095f8af85218b78d5fc5d5faf0f",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~4.0|~5.0",
+            "laravelbook/ardent": "~2.4",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "illuminate/database": "~4.0",
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.0",
+            "symfony/process": "~2.3"
+        },
+        "suggest": {
+            "zizaco/confide": "Confide is an authentication solution for Laravel 4 that couples very well with Entrust"
+        },
+        "time": "2014-09-24 02:20:26",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/commands"
+            ],
+            "psr-4": {
+                "Zizaco\\Entrust\\": "src/Entrust/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://www.andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel 4",
+        "keywords": [
+            "auth",
+            "illuminate",
+            "laravel",
+            "roles"
+        ]
+    },
+    {
         "name": "zizaco/confide",
         "version": "4.1.1",
         "version_normalized": "4.1.1.0",
@@ -2152,6 +2102,56 @@
             "auth",
             "illuminate",
             "laravel"
+        ]
+    },
+    {
+        "name": "jeremeamia/SuperClosure",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeremeamia/super_closure.git",
+            "reference": "4d89ca74994feab128ea46d5b3add92e6cb84554"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/4d89ca74994feab128ea46d5b3add92e6cb84554",
+            "reference": "4d89ca74994feab128ea46d5b3add92e6cb84554",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "~0.9",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~3.7"
+        },
+        "time": "2015-01-10 01:09:28",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Jeremeamia\\SuperClosure": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Lindblom"
+            }
+        ],
+        "description": "Doing interesting things with closures like serialization.",
+        "homepage": "https://github.com/jeremeamia/super_closure",
+        "keywords": [
+            "closure",
+            "function",
+            "parser",
+            "serializable",
+            "serialize",
+            "tokenizer"
         ]
     }
 ]

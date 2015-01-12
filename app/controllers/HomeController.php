@@ -55,19 +55,14 @@ class HomeController extends BaseController {
 				// redirect them to the secure section or whatever
 				echo"sucess";
 				$user = Auth::user();
-				if ($user->hasRole('Administrator'))
-    			{
-        			return Redirect::to($user->username.'/profile');
-    			}
- 
-    			
-				return Redirect::to('/hello');
-				// for now we'll just echo success (even though echoing in a controller is bad)
+       			return Redirect::to('/profile/'.$user->username);
 
-			} else {	 	
+
+			} else {
 
 				// validation not successful, send back to form	
-				return Redirect::to('/login');
+				return Redirect::to('login')
+					->withErrors(array('password' => 'Username or Password invalid'))->withInput(Input::except('password'));
 
 			}
 
@@ -81,6 +76,6 @@ class HomeController extends BaseController {
 		 	Auth::logout();
 		 return Redirect::to('login');
 		 	}
-		 	return Redirect::to('reg');
+		 	return Redirect::to('login');
 		 }
 }

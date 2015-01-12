@@ -6,7 +6,7 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"zizaco/confide": "~4.0@dev",
+		"zizaco/confide": "*",
 		"zizaco/entrust": "1.2.*",
 		"bllim/datatables": "*",
 	  "barryvdh/laravel-ide-helper": "1.*",
