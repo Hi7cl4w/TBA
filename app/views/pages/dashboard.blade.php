@@ -181,7 +181,7 @@ function getOS()
 
                                 <p class="text-white-opacity p-t-10"> {{ date('l jS \of F Y ');}}</p>
 
-                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} <br></p>
+                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
 
                                 <h3 class="no-margin light-x">Details</h3>
 
@@ -192,13 +192,11 @@ function getOS()
 
                                 <p class="text-white-opacity p-t-10"> {{ date('l jS \of F Y ');}}</p>
 
-                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} <br></p>
+                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
 
                                 <h3 class="no-margin light-x">Details</h3>
 
                                 <p class="p-t-10"><span class="bold">PHP-Ver: </span> {{phpversion()}}</p>
-
-                                <p class="p-t-20 "><span class="bold">Laravel ver: </span>{{$app::VERSION;}}</p>
                             </div>
                         </div>
                     </div>
