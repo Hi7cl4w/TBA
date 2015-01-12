@@ -1,4 +1,5 @@
 .idea/
+.idea/workspace.xml
 composer.phar
 composer.lock
 .env.*.php
@@ -54,5 +55,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 
-.idea/workspace.xml
-.idea/workspace.xml
+

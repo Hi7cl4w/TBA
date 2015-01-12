@@ -1,10 +1,10 @@
 @extends('layout.master')
- @section('head') 
- {{ HTML::style('assets/js/metro/MetroJs.css') }} 
- @stop 
- @section('body')
+@section('head')
+    {{ HTML::style('assets/js/metro/MetroJs.css') }}
+@stop
+@section('body')
 
-<body id="bodyskin" class="skin-black fixed">
+    <body id="bodyskin" class="skin-black fixed">
     <div id="overlay2"></div>
     @include('includes.header')
     <div class="wrapper row-offcanvas row-offcanvas-left">
@@ -12,10 +12,9 @@
         @include('includes.sidebar')
 
 
-       
     </div>
-    
-   
+
+
 
 
 
@@ -23,12 +22,12 @@
 
 
     <script type="text/javascript">
-    $(document).ready(function() {
-        $(".live-tile,.flip-list").liveTile();
-    });
+        $(document).ready(function () {
+            $(".live-tile,.flip-list").liveTile();
+        });
     </script>
 
 
 
 
-    @stop
+@stop

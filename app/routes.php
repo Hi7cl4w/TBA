@@ -37,7 +37,7 @@ Route::get('/{username}/profile', function ($username) {
     }
     else
     {
-        App::abort(404);
+        echo "404 not found";
     }
 
 })->before('auth');

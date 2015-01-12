@@ -1,6 +1,6 @@
 html,body {
-	background-position: cover;
-    background: url(cover.jpg) ;
+	background-size: cover;
+    background-image: url('bg.jpg') ;
     height: 100%;
 
 }
@@ -13,7 +13,7 @@ html,body {
 	left: 0;
 	right: 0;
 	position: relative;
-	margin: 5rem auto;
+	margin: 10rem auto;
 	background-color: #fff;
 	padding: 2rem;
 }
@@ -24,5 +24,13 @@ html,body {
 }
 .container {
 	margin-top: 1px;
+	font-family:'Open Sans';
 	
+}
+.container h2{
+	font-family:"Segoe UI";
+	font-weight: 100;
+	text-transform: uppercase;
+	font-size: 5rem;
+
 }
