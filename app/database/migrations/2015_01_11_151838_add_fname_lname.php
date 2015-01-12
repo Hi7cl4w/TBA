@@ -14,7 +14,7 @@ class AddFnameLname extends Migration {
 	{
 		Schema::table('users',function(Blueprint $table)
 			{
-				$table->string('fname')->after('username');
+				$table->string('fname')->after('password');
 				$table->string('lname')->after('fname');
 
 			}

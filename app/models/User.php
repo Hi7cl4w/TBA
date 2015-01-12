@@ -5,10 +5,14 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Zizaco\Entrust\HasRole;
+use Zizaco\Confide\ConfideUser;
+use Zizaco\Confide\ConfideUserInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface,ConfideUserInterface {
 
+	use ConfideUser;
 	use UserTrait, RemindableTrait,HasRole;
+
 
 	/**
 	 * The database table used by the model.

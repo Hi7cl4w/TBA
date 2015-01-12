@@ -38,6 +38,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-core" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/zizaco/confide" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zizaco/entrust" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -75,6 +76,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
           <root url="file://$MODULE_DIR$/vendor/zizaco/entrust" />
           <root url="file://$MODULE_DIR$/vendor/jeremeamia/SuperClosure" />
+          <root url="file://$MODULE_DIR$/vendor/zizaco/confide" />
           <root url="file://$MODULE_DIR$/vendor/laravelbook/ardent" />
           <root url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
@@ -114,6 +116,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/http-kernel" />
           <root url="file://$MODULE_DIR$/vendor/zizaco/entrust" />
           <root url="file://$MODULE_DIR$/vendor/jeremeamia/SuperClosure" />
+          <root url="file://$MODULE_DIR$/vendor/zizaco/confide" />
           <root url="file://$MODULE_DIR$/vendor/laravelbook/ardent" />
           <root url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />

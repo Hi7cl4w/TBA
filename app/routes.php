@@ -20,7 +20,7 @@ Route::get('hello', function () {
 Route::get('/test', function () {
     return View::make('pages.404');
 });
-Route::get('reg', function () {
+Route::get('reg2', function () {
     return View::make('pages.register');
 });
 Route::filter('auth', function () {
@@ -29,11 +29,12 @@ Route::filter('auth', function () {
 Route::get('/profile2', function () {
     return View::make('pages.dashboard2');
 })->before('auth');
-Route::get('/{username}/profile', function ($username) {
+Route::get('/profile/{username}', function ($username) {
     $user = Auth::user();
+
     if($user->username==$username){
 
-    return View::make('pages.dashboard');
+    return View::make('pages.dashboard',$user);
     }
     else
     {
@@ -134,3 +135,16 @@ Route::get('/mail', function () {
 
     return 'sented.';
 });
+//
+
+// Confide routes
+Route::get('users/create', 'UsersController@create');
+Route::post('users', 'UsersController@store');
+Route::get('users/login', 'UsersController@login');
+Route::post('users/login', 'UsersController@doLogin');
+Route::get('users/confirm/{code}', 'UsersController@confirm');
+Route::get('users/forgot_password', 'UsersController@forgotPassword');
+Route::post('users/forgot_password', 'UsersController@doForgotPassword');
+Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
+Route::post('users/reset_password', 'UsersController@doResetPassword');
+Route::get('users/logout', 'UsersController@logout');

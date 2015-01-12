@@ -59,8 +59,8 @@ function getOS()
                     <div class="live-tile slide ha " data-speed="750" data-delay="6000" data-mode="carousel">
                         <div class="slide-front ha tiles green ">
                             <div class="overlayer bottom-left middle-left fullwidth">
-                            <h4 class="text-white semi-bold no-margin">Job Status </h4>
-                                </div>
+                                <h4 class="text-white semi-bold no-margin">Job Status </h4>
+                            </div>
                             <div class="overlayer bottom-left fullwidth">
 
 
@@ -69,6 +69,7 @@ function getOS()
                                     <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
 
                                         <h5 class="text-white semi-bold ">Job Allocated</h5>
+
                                         <p class="text-white semi-bold no-margin"><i class="icon-custom-up "></i> Read
                                             More</p>
                                     </div>
@@ -87,6 +88,7 @@ function getOS()
                                     <div class="tiles gradient-black p-l-20 p-r-20 p-b-20 p-t-20">
 
                                         <h5 class="text-white semi-bold ">Current Status </h5>
+
                                         <p class="text-white semi-bold no-margin"><i class="icon-custom-up "></i> Read
                                             More</p>
                                     </div>
@@ -138,7 +140,8 @@ function getOS()
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
                     <div class="live-tile slide ha" data-speed="750" data-delay="4700" data-mode="carousel">
                         <div class="slide-front ha tiles purple p-t-20 p-l-20 p-r-20 p-b-20">
-                            <h1 class="semi-bold text-white">USER MANAGER <i class="icon-custom-up icon-custom-2x"></i></h1>
+                            <h1 class="semi-bold text-white">USER MANAGER <i class="icon-custom-up icon-custom-2x"></i>
+                            </h1>
 
                             <div class="overlayer bottom-left fullwidth">
                                 <div class="overlayer-wrapper">
@@ -181,7 +184,9 @@ function getOS()
 
                                 <p class="text-white-opacity p-t-10"> {{ date('l jS \of F Y ');}}</p>
 
-                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
+                                <h3 class="text-white">SERVER:</h3>
+
+                                <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
 
                                 <h3 class="no-margin light-x">Details</h3>
 
@@ -192,7 +197,9 @@ function getOS()
 
                                 <p class="text-white-opacity p-t-10"> {{ date('l jS \of F Y ');}}</p>
 
-                                <h3 class="text-white">SERVER:</h3> <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
+                                <h3 class="text-white">SERVER:</h3>
+
+                                <p class="p-t-10">{{ $_SERVER['SERVER_SIGNATURE']}} </p>
 
                                 <h3 class="no-margin light-x">Details</h3>
 
@@ -202,12 +209,7 @@ function getOS()
                     </div>
                 </div>
                 <!-- END ANIMATED TILE -->
-
-
             </div>
-
-
-
         </div>
 
         <div class="col-md-6 col-vlg-4 col-sm-12">
@@ -233,6 +235,7 @@ function getOS()
                         <div class="slide-back ha tiles green adjust-text">
                             <img src="/assets/img/office_blur.jpg" alt=""
                                  class="image-responsive-width xs-image-responsive-width">
+
                             <div class="overlayer middle-left fullwidth">
                                 <div class="overlayer-wrapper">
                                     <div class="tiles transparents p-l-20 p-r-20 p-b-20 p-t-20">
@@ -256,8 +259,6 @@ function getOS()
 
 
         </div>
-
-
 
 
     </div>   <!-- END ROW -->
