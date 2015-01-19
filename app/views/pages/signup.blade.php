@@ -6,20 +6,10 @@
     {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
-    <section class="wrapper h-align-middle">
-
-            <div class="content">
+    <div class="content h-align-middle">
         <div class="row">
-        <div class="panel col-sm-12">
-
-
-            <div class="row">
-                <!-- left column -->
-                <div class="col-md-12">
-                    <!-- general form elements -->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="box simple">
+            <div class="panel col-sm-12">
+                <div class="box simple">
                                 <div class="box-title no-border">
                                     <h4>SIGN <span class="semi-bold">UP</span></h4>
 
@@ -182,18 +172,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-
-                </div>
             </div>
             <!-- /.row -->
 
             <!-- /.content -->
         </div>
-            </div>
-                </div>
-</section>
+
+
 @stop
 
 

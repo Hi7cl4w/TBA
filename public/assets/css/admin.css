@@ -3792,13 +3792,13 @@ form legend,.form-view legend {
   padding-left: 0;
 }
 
-.grid .simple .form-actions{
+.box .simple .form-actions{
   margin-left:-20px !important;
   margin-right:-20px !important;
   margin-bottom: -20px !important;
 }
-.grid.box .form .form-actions,
-.grid.solid .form .form-actions {
+.box.box .form .form-actions,
+.box.solid .form .form-actions {
   margin-left:-10px !important;
   margin-right:-10px !important;
   margin-bottom: -10px !important;
@@ -3925,10 +3925,15 @@ form legend,.form-view legend {
   margin-bottom: 25px;
   padding: 0px;
 }
-.box h4{
+.box h4,
+.box h2,
+
+.box p{
   color:#505458;
 }
-
+.box h3 {
+  color: #282323;
+}
 .box:after, .box:before {
   display: table;
 }
@@ -4221,7 +4226,7 @@ form legend,.form-view legend {
 .box.simple .form-actions{
   margin-right:-26px !important;
   margin-left:-26px !important;
-  margin-bottom:-26px !important;}
+  margin-bottom:-34px !important;}
 /* grid buttons */
 
 .box.simple.transparent .box-body {
@@ -4252,6 +4257,7 @@ form legend,.form-view legend {
   color:#282323;
 }
 .box.simple .box-title {
+  color:#282323;
   margin-bottom: 0px;
   border:1px solid #dddddd;
   border-bottom:0px;
