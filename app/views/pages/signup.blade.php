@@ -8,7 +8,7 @@
 @section('body')
     <section class="wrapper h-align-middle">
 
-            <div class="container">
+            <div class="content">
         <div class="row">
         <div class="panel col-sm-12">
 

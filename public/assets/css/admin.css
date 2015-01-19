@@ -1,12 +1,7 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import url(//fonts.googleapis.com/css?family=Kaushan+Script);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 400;
-  src: url(assets/fonts/small.ttf) format('truetype');
-}
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
 
@@ -1864,6 +1859,62 @@ input {
   border-radius: 0;
 }
 
+/** Input Prepends/Appends **/
+.input-prepend,
+.input-append {
+  border: 0;
+  display: inline-block;
+}
+
+.input-append .add-on,
+.input-prepend .add-on {
+  display: inline-block;
+  width: auto;
+  height: 24px;
+  min-width: 16px;
+  padding: 4px 5px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 24px;
+  text-align: center;
+  text-shadow: 0 1px 0 #ffffff;
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}
+
+.input-append .add-on > .halflings-icon,
+.input-prepend .add-on > i,
+.input-prepend .add-on > .fa
+{
+  margin-top: 5px;
+  margin-left: 3px;
+}
+
+.input-append .add-on > .halflings-icon
+.input-append .add-on > i,
+.input-append .add-on > .fa
+{
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+.input-append ,
+.input-append :focus {
+  border-right: 0 !important;
+}
+
+
+
+.input-append input[class*="span"],
+.input-prepend input[class*="span"],
+.input-append input,.input-prepend input
+{
+  display: inline-block !important;
+  width:100%;
+  float:left;
+}
+
+
 .input-append .add-on:last-child, .input-append .btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{
   border-radius: 0 2px 2px 0;
 }
@@ -3205,60 +3256,6 @@ textarea[class*="span"]
   min-height:29px !important;
 }
 
-/** Input Prepends/Appends **/
-.input-prepend,
-.input-append {
-  border: 0;
-  display: inline-block;
-}
-
-.input-append .add-on,
-.input-prepend .add-on {
-  display: inline-block;
-  width: auto;
-  height: 24px;
-  min-width: 16px;
-  padding: 4px 5px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 24px;
-  text-align: center;
-  text-shadow: 0 1px 0 #ffffff;
-  background-color: #e5e5e5;
-  border: 1px solid #e5e5e5;
-}
-
-.input-append .add-on > .halflings-icon,
-.input-prepend .add-on > i,
-.input-prepend .add-on > .fa
-{
-  margin-top: 5px;
-  margin-left: 3px;
-}
-
-.input-append .add-on > .halflings-icon
-.input-append .add-on > i,
-.input-append .add-on > .fa
-{
-  margin-top: 5px;
-  margin-left: 0px;
-}
-
-.input-append ,
-.input-append :focus {
-  border-right: 0 !important;
-}
-
-
-
-.input-append input[class*="span"],
-.input-prepend input[class*="span"],
-.input-append input,.input-prepend input
-{
-  display: inline-block !important;
-  width:100%;
-  float:left;
-}
 
 .xsmall {
   width: 50px !important;
