@@ -10,7 +10,9 @@
 		"zizaco/entrust": "1.2.*",
 		"bllim/datatables": "*",
 	  "barryvdh/laravel-ide-helper": "1.*",
-	  "barryvdh/laravel-vendor-cleanup": "1.*"
+	  "barryvdh/laravel-vendor-cleanup": "1.*",
+	  "anhskohbo/no-captcha": "*",
+	  "simplesoftwareio/simple-sms": "1.*"
 	},
 	"autoload": {
 		"classmap": [

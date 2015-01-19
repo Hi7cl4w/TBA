@@ -14,41 +14,28 @@
 Route::get('/', function () {
     return Redirect::to('/login');
 });
+Route::get('/authtest', array('before' => 'auth.username', function()
+{
+    return View::make('test');
+}));
+
+
 Route::get('hello', function () {
     return View::make('hello');
 });
 Route::get('/test', function () {
-    return View::make('pages.404');
+    return View::make('pages.signup')->with('user', Auth::user());;
 });
 Route::get('reg2', function () {
     return View::make('pages.register');
 });
-Route::filter('auth', function () {
-    if (Auth::guest()) return Redirect::guest('login');
-});
-Route::get('/profile2', function () {
-    return View::make('pages.dashboard2');
-})->before('auth');
-Route::get('/profile/{username}', function ($username) {
-    $user = Auth::user();
 
-    if($user->username==$username){
-
-    return View::make('pages.dashboard')->with('user',$user);
-    }
-    else
-    {
-        echo "404 not found";
-    }
-
-})->before('auth');
-// route to show the login form
 Route::get('/login', array('uses' => 'UsersController@login'))->before('guest');
 
 // route to process the form
 Route::post('/login', 'UsersController@doLogin');
-Route::get('/Redirect', 'HomeController@doCheck');
-Route::get('/logout', 'UsersController@logout');
+
+
 
 
 Route::get('/start', function () {
@@ -148,3 +135,43 @@ Route::post('users/forgot_password', 'UsersController@doForgotPassword');
 Route::get('users/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('users/reset_password', 'UsersController@doResetPassword');
 Route::get('users/logout', 'UsersController@logout');
+
+
+
+/*profile page auth only*/
+Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
+
+    Route::get('/profile2', function () {
+        return View::make('pages.dashboard2');
+    });
+    /*user dashboard*/
+    Route::get('{username}', function ($username) {
+        $user = Auth::user();
+        if ($user->username == $username) {
+            return View::make('pages.dashboard')->with('user', $user);
+        } else {
+            echo "404 not found";
+        }
+    });
+    /*user dashboard*/
+    Route::get('{username}/ticket', function ($username) {
+        $user = Auth::user();
+        if ($user->username == $username) {
+            return View::make('pages.dashboard')->with('user', $user);
+        } else {
+            echo "404 not found";
+        }
+    });
+
+    Route::get('/Redirect', 'HomeController@doCheck');
+    Route::get('/logout', 'UsersController@logout');
+});
+
+/*API*/
+
+
+Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
+{
+    Route::resource('url', 'UrlController');
+});
+

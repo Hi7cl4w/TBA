@@ -50,6 +50,11 @@ Route::filter('auth.basic', function()
 {
 	return Auth::basic();
 });
+Route::filter('auth.mobile', function()
+{
+
+	return Auth::basic("username");
+});
 
 /*
 |--------------------------------------------------------------------------
