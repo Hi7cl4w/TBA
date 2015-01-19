@@ -47,7 +47,7 @@ body > .header {
 }
 /* Define 2 column template */
 .right-side,
-..nav {
+.nav {
   min-height: 100%;
   display: block;
 }
@@ -404,7 +404,7 @@ img {
   -moz-border-radius: 0 !important;
   border-radius: 0 !important;
 }
-/
+
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -1965,13 +1965,13 @@ input {
   color:#0aa699;
 }
 .input-append.success .add-on, .input-prepend .add-on{
-  background-color:#0090D9;
+  background-color:#01aef3;
   color:#fff;
   display:inline-block;
   float:left;
 }
 .input-append.success .add-on .arrow{
-  color:#0090D9;
+  color:#01aef3;
 }
 .input-append.info .add-on, .input-prepend .add-on{
   background-color:#1F3853;

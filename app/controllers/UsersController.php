@@ -124,7 +124,7 @@ class UsersController extends Controller
      */
     public function forgotPassword()
     {
-        return View::make(Config::get('confide::forgot_password_form'));
+        return View::make('pages.forgot');
     }
 
     /**

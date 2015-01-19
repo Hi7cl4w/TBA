@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Zizaco\Confide\ServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
+		'Anhskohbo\NoCaptcha\NoCaptchaServiceProvider',
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
 
 	),

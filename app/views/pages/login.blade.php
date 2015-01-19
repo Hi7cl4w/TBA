@@ -26,18 +26,35 @@
                                 <div class="input-append col-md-10 col-sm-10 primary">
                                     {{ Form::text('username', Input::old('email'), array('placeholder' => 'your email or username' ,'class' => 'form-control')) }}
                                     <span class="add-on"><span class="arrow"></span><i
-                                                class="fa fa-align-justify"></i> </span>
+                                                class="fa fa-user"></i> </span>
                                 </div>
                             </div>
                             <div class="row form-row">
-                                <div class="input-append col-md-10 col-sm-10 primary">
+                                <div class="input-append col-md-10 col-sm-10 success">
                                     {{ Form::password('password',array('placeholder' => 'your password', 'class' => 'form-control')) }}
                                     <span class="add-on"><span class="arrow"></span><i
                                                 class="fa fa-lock"></i> </span>
                                 </div>
                             </div>
+                                    <div class="checkbox">
+                                        <input type="checkbox" id="checkbox1" value="1">
+                                        <label id="cblabel" for="checkbox1">Keep me reminded </label>
+                                    </div>
+
+                            @if (Session::get('error'))
+                                <div class="row form-row">
+                                <div class="alert alert-error alert-danger col-sm-11 alert-dismissable">{{{ Session::get('error') }}}</div>
+                                    </div>
+                            @endif
+
+                            @if (Session::get('notice'))
+                                <div class="alert alert-info col-sm-11">{{{ Session::get('notice') }}}</div>
+                            @endif
 
                             <div class="form-actions">
+                                <div class="pull-left">
+                                    <a href="/forgot">Trouble login in?</a>
+                                    </div>
                                 <div class="pull-right">
                                     <p>{{ Form::button('Login',array('type' => 'submit' , 'class'=>'btn btn-danger btn-cons')) }}</p>
                                 </div>
