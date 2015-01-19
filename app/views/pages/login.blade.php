@@ -24,7 +24,7 @@
                             {{ $errors->first('password') }}
                             <div class="row form-row">
                                 <div class="input-append col-md-10 col-sm-10 primary">
-                                    {{ Form::text('username', Input::old('email'), array('placeholder' => 'someone@example.com' ,'class' => 'form-control')) }}
+                                    {{ Form::text('username', Input::old('email'), array('placeholder' => 'your email or username' ,'class' => 'form-control')) }}
                                     <span class="add-on"><span class="arrow"></span><i
                                                 class="fa fa-align-justify"></i> </span>
                                 </div>
