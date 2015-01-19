@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import url(//fonts.googleapis.com/css?family=Kaushan+Script);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
@@ -176,9 +177,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Open Sans';
   font-weight: 300;
-  color:#505458;
+
 }
 .normal{
   font-weight:normal;
@@ -1370,6 +1370,8 @@ height:40px;
 
 .form-group-default.form-group-default-select2 {
   padding: 0;
+  border-width: thick;
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .form-group-default.form-group-default-select2 > label {
@@ -1858,7 +1860,7 @@ input {
 .select2.form-control{
   padding: 0;
   box-shadow:none;
-  border:0;
+  border-radius: 0;
 }
 
 .input-append .add-on:last-child, .input-append .btn:last-child, .input-append .btn-group:last-child > .dropdown-toggle{
@@ -3924,6 +3926,9 @@ form legend,.form-view legend {
   margin-top: 0px;
   margin-bottom: 25px;
   padding: 0px;
+}
+.box h4{
+  color:#505458;
 }
 
 .box:after, .box:before {
