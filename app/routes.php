@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-   // return Redirect::to('/login');
-    return View::make('test');
+    return Redirect::to('/login');
+   // return View::make('test');
 });
 Route::get('/authtest', array('before' => 'auth.username', function()
 {
