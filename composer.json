@@ -11,7 +11,7 @@
 		"bllim/datatables": "*",
 	  "barryvdh/laravel-ide-helper": "1.*",
 	  "barryvdh/laravel-vendor-cleanup": "1.*",
-	  "anhskohbo/no-captcha": "*",
+	  "greggilbert/recaptcha": "dev-master",
 	  "simplesoftwareio/simple-sms": "1.*"
 	},
 	"autoload": {

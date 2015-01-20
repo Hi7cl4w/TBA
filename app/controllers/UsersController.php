@@ -134,15 +134,28 @@ class UsersController extends Controller
      */
     public function doForgotPassword()
     {
-        if (Confide::forgotPassword(Input::get('email'))) {
-            $notice_msg = Lang::get('confide::confide.alerts.password_forgot');
-            return Redirect::action('UsersController@login')
-                ->with('notice', $notice_msg);
+
+        $rules = array(
+            'email' => 'required|email', // make sure the email is an actual email
+            'g-recaptcha-response' => 'required|recaptcha' // password can only be alphanumeric and has to be greater than 3 characters
+        );
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails()) {
+            return Redirect::to('forgot')
+                ->withErrors($validator)// send back all errors to the login form
+                ->withInput(Input::except('password')); // send back the input (not the password) so that we can repopulate the form
         } else {
-            $error_msg = Lang::get('confide::confide.alerts.wrong_password_forgot');
-            return Redirect::action('UsersController@doForgotPassword')
-                ->withInput()
-                ->with('error', $error_msg);
+
+            if (Confide::forgotPassword(Input::get('email'))) {
+                $notice_msg = Lang::get('confide::confide.alerts.password_forgot');
+                return Redirect::action('UsersController@login')
+                    ->with('notice', $notice_msg);
+            } else {
+                $error_msg = Lang::get('confide::confide.alerts.wrong_password_forgot');
+                return Redirect::action('UsersController@doForgotPassword')
+                    ->withInput()
+                    ->with('error', $error_msg);
+            }
         }
     }
 

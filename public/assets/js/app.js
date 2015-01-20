@@ -1258,18 +1258,7 @@ $('#search.search').on('mouseenter mouseleave', function (e) {
 
 
 });
-$(document).ready(function () {
-    $('.rc-anchor-standard').css({
-        "background": "transparent",
-        "border": 0
-    });
-    $('.rc-anchor').css({
-        "border-radius": 0,
-        "box-shadow": "none",
-        "-webkit-box-shadow": "none"
 
-    });
-});
 
 
 

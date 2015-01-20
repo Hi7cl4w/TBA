@@ -37,6 +37,7 @@ return array(
     'LaravelBook\\Ardent' => array($vendorDir . '/laravelbook/ardent/src'),
     'Jeremeamia\\SuperClosure' => array($vendorDir . '/jeremeamia/SuperClosure/src'),
     'Illuminate' => array($vendorDir . '/laravel/framework/src'),
+    'Greggilbert\\Recaptcha' => array($vendorDir . '/greggilbert/recaptcha/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'Crypt' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),

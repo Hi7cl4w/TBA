@@ -25,7 +25,8 @@
                                         <div class="alert alert-error alert-danger col-sm-11 alert-dismissable">{{{ Session::get('error') }}}</div>
                                     </div>
                                 @endif
-
+                                {{ $errors->first('g-recaptcha-response') }}
+                                {{ $errors->first('email') }}
                                 @if (Session::get('notice'))
                                     <div class="row form-row">
                                         <div class="alert alert-info col-sm-11">{{{ Session::get('notice') }}}
@@ -44,15 +45,10 @@
 
                                 <div class="row form-row">
                                 <div class="input-append col-md-11 col-sm-11 primary">
-                                    <?php echo Form::captcha() ?>
+                                    {{ Form::captcha(array('theme' => 'plain')) }}
                                 </div>
                                     </div>
-
-
-
-
                                 <div class="form-actions">
-
                                 <div class="pull-right">
                                     <input class="btn btn-default" type="submit" value="{{{ Lang::get('confide::confide.forgot.submit') }}}">
                                 </div>
@@ -65,7 +61,33 @@
                 </div>
             </div>
         </div>
+        <script type="javascript" >
 
+            $('body').load( function() {
+                $('.rc-anchor-standard').css({
+                    "background": "transparent",
+                    "border": 0
+                });
+                $('.rc-anchor').css({
+                    "border-radius": 0,
+                    "box-shadow": "none",
+                    "-webkit-box-shadow": "none"
+
+                });
+            });
+            $(document).ready(function () {
+                $('.rc-anchor-standard').css({
+                    "background": "transparent",
+                    "border": 0
+                });
+                $('.rc-anchor').css({
+                    "border-radius": 0,
+                    "box-shadow": "none",
+                    "-webkit-box-shadow": "none"
+
+                });
+            });
+        </script>
 @stop
 
 

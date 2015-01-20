@@ -7,8 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddFnameLname' => $baseDir . '/app/database/migrations/2015_01_11_151838_add_fname_lname.php',
-    'Anhskohbo\\NoCaptcha\\NoCaptcha' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptcha.php',
-    'Anhskohbo\\NoCaptcha\\NoCaptchaServiceProvider' => $vendorDir . '/anhskohbo/no-captcha/src/NoCaptchaServiceProvider.php',
     'Barryvdh\\LaravelIdeHelper\\Alias' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Alias.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\GeneratorCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/GeneratorCommand.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\ModelsCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/ModelsCommand.php',
@@ -66,6 +64,10 @@ return array(
     'File_ASN1' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
     'File_ASN1_Element' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
     'File_X509' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/X509.php',
+    'Greggilbert\\Recaptcha\\CheckRecaptcha' => $vendorDir . '/greggilbert/recaptcha/src/Greggilbert/Recaptcha/CheckRecaptcha.php',
+    'Greggilbert\\Recaptcha\\CheckRecaptchaV2' => $vendorDir . '/greggilbert/recaptcha/src/Greggilbert/Recaptcha/CheckRecaptchaV2.php',
+    'Greggilbert\\Recaptcha\\RecaptchaInterface' => $vendorDir . '/greggilbert/recaptcha/src/Greggilbert/Recaptcha/RecaptchaInterface.php',
+    'Greggilbert\\Recaptcha\\RecaptchaServiceProvider' => $vendorDir . '/greggilbert/recaptcha/src/Greggilbert/Recaptcha/RecaptchaServiceProvider.php',
     'GuzzleHttp\\Adapter\\AdapterInterface' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/AdapterInterface.php',
     'GuzzleHttp\\Adapter\\Curl\\BatchContext' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/Curl/BatchContext.php',
     'GuzzleHttp\\Adapter\\Curl\\CurlAdapter' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/Curl/CurlAdapter.php',

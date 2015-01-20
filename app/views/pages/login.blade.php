@@ -48,7 +48,9 @@
                             @endif
 
                             @if (Session::get('notice'))
+                                <div class="row form-row">
                                 <div class="alert alert-info col-sm-11">{{{ Session::get('notice') }}}</div>
+                                    </div>
                             @endif
 
                             <div class="form-actions">

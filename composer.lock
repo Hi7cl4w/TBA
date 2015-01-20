@@ -4,53 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "54371c66fbb0c6f35fe469b88fdc297d",
+    "hash": "f2daac6f5fb817e9ccd3a3b27171c149",
     "packages": [
-        {
-            "name": "anhskohbo/no-captcha",
-            "version": "1.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/anhskohbo/no-captcha.git",
-                "reference": "346b704ff916a9d4713c78d66f0ef3450f29465e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/346b704ff916a9d4713c78d66f0ef3450f29465e",
-                "reference": "346b704ff916a9d4713c78d66f0ef3450f29465e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "4.*|5.0.*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Anhskohbo\\NoCaptcha\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "anhskohbo",
-                    "email": "anhskohbo@gmail.com"
-                }
-            ],
-            "description": "No CAPTCHA reCAPTCHA For Laravel.",
-            "keywords": [
-                "captcha",
-                "laravel",
-                "laravel4",
-                "laravel5",
-                "no-captcha",
-                "recaptcha"
-            ],
-            "time": "2014-12-14 12:12:54"
-        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v1.11.3",
@@ -352,6 +307,58 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "greggilbert/recaptcha",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/greggilbert/recaptcha.git",
+                "reference": "9c39f8b8124002b6830eeb1bc299039df9dc558c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/9c39f8b8124002b6830eeb1bc299039df9dc558c",
+                "reference": "9c39f8b8124002b6830eeb1bc299039df9dc558c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/migrations"
+                ],
+                "psr-0": {
+                    "Greggilbert\\Recaptcha": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Gilbert",
+                    "email": "greg@greg-gilbert.com"
+                }
+            ],
+            "description": "reCAPTCHA Validator for Laravel 4",
+            "homepage": "http://github.com/greggilbert/recaptcha",
+            "keywords": [
+                "captcha",
+                "laravel",
+                "laravel4",
+                "recaptcha"
+            ],
+            "time": "2014-12-15 04:23:23"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2367,7 +2374,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "greggilbert/recaptcha": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

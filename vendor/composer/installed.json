@@ -2394,30 +2394,38 @@
         ]
     },
     {
-        "name": "anhskohbo/no-captcha",
-        "version": "1.2.3",
-        "version_normalized": "1.2.3.0",
+        "name": "greggilbert/recaptcha",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/anhskohbo/no-captcha.git",
-            "reference": "346b704ff916a9d4713c78d66f0ef3450f29465e"
+            "url": "https://github.com/greggilbert/recaptcha.git",
+            "reference": "9c39f8b8124002b6830eeb1bc299039df9dc558c"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/anhskohbo/no-captcha/zipball/346b704ff916a9d4713c78d66f0ef3450f29465e",
-            "reference": "346b704ff916a9d4713c78d66f0ef3450f29465e",
+            "url": "https://api.github.com/repos/greggilbert/recaptcha/zipball/9c39f8b8124002b6830eeb1bc299039df9dc558c",
+            "reference": "9c39f8b8124002b6830eeb1bc299039df9dc558c",
             "shasum": ""
         },
         "require": {
-            "illuminate/support": "4.*|5.0.*",
+            "illuminate/support": "*",
             "php": ">=5.3.0"
         },
-        "time": "2014-12-14 12:12:54",
+        "time": "2014-12-15 04:23:23",
         "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
         "installation-source": "dist",
         "autoload": {
-            "psr-4": {
-                "Anhskohbo\\NoCaptcha\\": "src/"
+            "classmap": [
+                "src/migrations"
+            ],
+            "psr-0": {
+                "Greggilbert\\Recaptcha": "src/"
             }
         },
         "notification-url": "https://packagist.org/downloads/",
@@ -2426,17 +2434,16 @@
         ],
         "authors": [
             {
-                "name": "anhskohbo",
-                "email": "anhskohbo@gmail.com"
+                "name": "Greg Gilbert",
+                "email": "greg@greg-gilbert.com"
             }
         ],
-        "description": "No CAPTCHA reCAPTCHA For Laravel.",
+        "description": "reCAPTCHA Validator for Laravel 4",
+        "homepage": "http://github.com/greggilbert/recaptcha",
         "keywords": [
             "captcha",
             "laravel",
             "laravel4",
-            "laravel5",
-            "no-captcha",
             "recaptcha"
         ]
     }
