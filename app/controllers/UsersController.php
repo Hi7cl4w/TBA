@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return View::make(Config::get('confide::signup_form'));
+        return View::make('pages.signup');
     }
 
     /**
@@ -31,6 +31,7 @@ class UsersController extends Controller
         $user = $repo->signup(Input::all());
 
         if ($user->id) {
+
             if (Config::get('confide::signup_email')) {
                 Mail::queueOn(
                     Config::get('confide::email_queue'),

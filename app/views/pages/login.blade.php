@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('head')
 
-    <title>login here</title>
+    <title>Login</title>
 
     {{HTML::style('assets/css/login.css')}}
 @stop

@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return Redirect::to('/login');
+   // return Redirect::to('/login');
+    return View::make('test');
 });
 Route::get('/authtest', array('before' => 'auth.username', function()
 {
@@ -122,8 +123,8 @@ Route::get('/mail', function () {
 //
 
 // Confide routes
-Route::get('users/create', 'UsersController@create');
-Route::post('users', 'UsersController@store');
+//Route::get('users/create', 'UsersController@create');
+//Route::post('users', 'UsersController@store');
 Route::get('users/confirm/{code}', 'UsersController@confirm');
 
 Route::get('users/logout', 'UsersController@logout');
@@ -135,7 +136,8 @@ Route::get('/forgot', 'UsersController@forgotPassword');
 Route::post('/forgot', 'UsersController@doForgotPassword');
 Route::get('/reset_password/{token}', 'UsersController@resetPassword');
 Route::post('/reset_password', 'UsersController@doResetPassword');
-
+Route::get('/signup', 'UsersController@create');
+Route::post('/', 'UsersController@store');
 
 /*profile page auth only*/
 Route::group(array('prefix' => 'profile','before' => 'auth'), function() {

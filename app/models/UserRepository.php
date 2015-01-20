@@ -24,6 +24,8 @@ class UserRepository
         $user->username = array_get($input, 'username');
         $user->email    = array_get($input, 'email');
         $user->password = array_get($input, 'password');
+        $user->fname = array_get($input, 'FirstName');
+        $user->lname = array_get($input, 'LastName');
 
         // The password confirmation will be removed from model
         // before saving. This field will be used in Ardent's

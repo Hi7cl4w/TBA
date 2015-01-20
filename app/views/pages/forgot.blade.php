@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('head')
 
-    <title>login here</title>
+    <title>Forgot Password</title>
 
     {{HTML::style('assets/css/login.css')}}
 @stop
@@ -11,9 +11,9 @@
             <div class="panel col-sm-12">
                 <div class="box simple">
                     <div class="box-title no-border">
-                        <h3>Login <span class="semi-bold">Here</span></h3>
+                        <h3>Forgot your <span class="semi-bold"> Password </span> ?</h3>
 
-                        <p>Enter your username and password to login</p>
+                        <p>Enter your email and proceed</p>
                         <br>
                     </div>
                     <div class="box-body no-border">
