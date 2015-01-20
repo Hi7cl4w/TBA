@@ -129,7 +129,15 @@ Route::get('users/confirm/{code}', 'UsersController@confirm');
 
 
 Route::get('/sitemap', function () {
-    return View::make('pages.sitemap');
+    $file = public_path(). "/assets/sitemap.xml";  // <- Replace with the path to your .xml file
+    // check if the file exists
+    if (file_exists($file)) {
+        // read the file into a string
+        $content = file_get_contents($file);
+        // create a Laravel Response using the content string, an http response code of 200(OK),
+        //  and an array of html headers including the pdf content type
+        return Response::make($content, 200, array('content-type'=>'application/xml'));
+    }
 });
 
 Route::get('/login', array('uses' => 'UsersController@login'))->before('guest');
