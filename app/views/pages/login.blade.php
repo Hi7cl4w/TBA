@@ -23,14 +23,14 @@
                             {{ $errors->first('email') }}
                             {{ $errors->first('password') }}
                             <div class="row form-row">
-                                <div class="input-append col-md-10 col-sm-10 primary">
+                                <div class="input-append col-md-11 col-sm-11 primary">
                                     {{ Form::text('username', Input::old('email'), array('placeholder' => 'your email or username' ,'class' => 'form-control')) }}
                                     <span class="add-on"><span class="arrow"></span><i
                                                 class="fa fa-user"></i> </span>
                                 </div>
                             </div>
                             <div class="row form-row">
-                                <div class="input-append col-md-10 col-sm-10 success">
+                                <div class="input-append col-md-11 col-sm-11 success">
                                     {{ Form::password('password',array('placeholder' => 'your password', 'class' => 'form-control')) }}
                                     <span class="add-on"><span class="arrow"></span><i
                                                 class="fa fa-lock"></i> </span>
