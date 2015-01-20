@@ -111,7 +111,7 @@ Route::get('/mail', function () {
 
     //$user = Auth::user();
     //echo $user['email'];
-    Mail::send('hello', array('key' => 'value'), function ($message) {
+    Mail::send('test', array('key' => 'value'), function ($message) {
         $user = Auth::user();
         $message->to($user->email, 'John Smith')->subject('Welcome!');
     });
