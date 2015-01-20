@@ -127,7 +127,10 @@ Route::get('/mail', function () {
 //Route::post('users', 'UsersController@store');
 Route::get('users/confirm/{code}', 'UsersController@confirm');
 
-Route::get('users/logout', 'UsersController@logout');
+
+Route::get('/sitemap.xml', function () {
+    return View::make('pages.sitemap');
+});
 
 Route::get('/login', array('uses' => 'UsersController@login'))->before('guest');
 // route to process the form
