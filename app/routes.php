@@ -128,7 +128,7 @@ Route::get('/mail', function () {
 Route::get('users/confirm/{code}', 'UsersController@confirm');
 
 
-Route::get('/sitemap.xml', function () {
+Route::get('/sitemap', function () {
     return View::make('pages.sitemap');
 });
 
