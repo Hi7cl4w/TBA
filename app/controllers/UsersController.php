@@ -28,8 +28,11 @@ class UsersController extends Controller
     public function store()
     {
         $repo = App::make('UserRepository');
-        $user = $repo->signup(Input::all());
 
+
+      $user = $repo->signupcustomer(Input::all());
+        echo $user;
+/*
         if ($user->id) {
 
             if (Config::get('confide::signup_email')) {
@@ -53,7 +56,7 @@ class UsersController extends Controller
             return Redirect::action('UsersController@create')
                 ->withInput(Input::except('password'))
                 ->with('error', $error);
-        }
+        }*/
     }
 
     /**

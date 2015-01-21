@@ -14,31 +14,82 @@ class CreateTicketTable extends Migration {
 	{
 		Schema::create('ticket', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->bigIncrements('id');
+			$table->String('prefix');
+			$table->Integer('Customer_id');
+			$table->Integer('Staff_id');
+			$table->String('Subject',1000);
+			$table->String('Description',5000);
+			$table->String('Status',65);
+			$table->timestamp('Closing_date');
+			$table->String('Remark',5000);
+			$table->tinyInteger('Priority');
+			$table->String('GeoLocation',300);
+			$table->String('Coordinates',300);
+			$table->String('Product_vendor',200);
+			$table->String('Product_model',200);
+			$table->Integer('Purchase_id');
+			$table->String('Branch');
+			$table->Integer('Rating');
+			$table->String('Feedback',5000);
 			$table->timestamps();
-			Ticket_Idint(10)No
-Ticket_Customer_Idint(10)No
-Ticket_Unique_Codevarchar(1000)No
-Ticket_Emailvarchar(1000)No
-Ticket_Descriptionvarchar(1000)No
-Ticket_Staff_Idint(10)No
-Ticket_Statusint(10)No
-Ticket_Service_Namevarchar(1000)No
-Ticket_Branch_Idint(10)No
-Print view - phpMyAdmin 4.1.14http://localhost/phpmyadmin/db_datadict.php?db=call&token=d22f1afa...
-4 of 512/23/2014 5:11 PM
-Ticket_DatedateNo
-Ticket_TimetimeNo
-Ticket_Remarkvarchar(1000)No
-Ticket_Closing_DatedatetimeNo
-Ticket_Priorityvarchar(100)No
-Ticket_Contact_Namevarchar(1000)No
-Ticket_Contact_Emailvarchar(1000)No
-Ticket_Contact_Novarchar(1000)No
-Ticket_Subjectvarchar(1000)No
-Ticket_Geo_Locationvarchar(1000)No
-Ticket_Problem_Idint(10)No
-Ticket_Codevarchar(1000)No
+		});
+		Schema::table('customer', function(Blueprint $table)
+		{
+
+			$table->String('DOB',100);
+			$table->String('Occupation',200);
+			$table->String('Gender',10);
+			$table->String('Address',1000);
+			$table->String('City',200);
+			$table->String('State',200);
+			$table->String('Pin',20);
+			$table->String('Phone',20);
+			$table->timestamps();
+			$table->dropColumn('customer_mobile');
+			$table->dropColumn('customer_branch');
+			$table->dropColumn('customer_company');
+			$table->dropColumn('customer_office');
+			$table->dropColumn('customer_company');
+		});
+		Schema::table('staff', function(Blueprint $table)
+		{
+
+			$table->String('DOB',100);
+			$table->String('Designation',200);
+			$table->String('Branch',200);
+			$table->String('Vendor',200);
+			$table->String('Gender',10);
+			$table->String('Address',1000);
+			$table->String('City',200);
+			$table->String('State',200);
+			$table->String('Pin',20);
+			$table->String('Phone',20);
+			$table->timestamps();
+
+		});
+		Schema::table('admin', function(Blueprint $table)
+		{
+			$table->String('Branch',20);
+			$table->timestamps();
+
+		});
+		Schema::create('products', function(Blueprint $table)
+		{
+			$table->Integer('id');
+			$table->String('Name');
+			$table->String('Vendor');
+			$table->timestamps();
+
+		});
+		Schema::create('purchases', function(Blueprint $table)
+		{
+			$table->bigIncrements('id');
+			$table->String('Name');
+			$table->String('email');
+			$table->Integer('product_id');
+			$table->timestamps();
+
 		});
 	}
 
@@ -50,6 +101,8 @@ Ticket_Codevarchar(1000)No
 	public function down()
 	{
 		Schema::drop('ticket');
+		Schema::drop('purchases');
+		Schema::drop('products');
 	}
 
 }

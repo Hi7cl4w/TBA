@@ -194,6 +194,8 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Confide'           => 'Zizaco\Confide\Facade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
+
 
 	),
 

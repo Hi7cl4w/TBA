@@ -20,12 +20,14 @@ class UserRepository
     public function signup($input)
     {
         $user = new User;
+        $c = new Customer;
 
         $user->username = array_get($input, 'username');
         $user->email    = array_get($input, 'email');
         $user->password = array_get($input, 'password');
         $user->fname = array_get($input, 'FirstName');
         $user->lname = array_get($input, 'LastName');
+        $c->customer_mobile=array_get($input, 'TeleNo');
 
         // The password confirmation will be removed from model
         // before saving. This field will be used in Ardent's
@@ -40,6 +42,37 @@ class UserRepository
 
         return $user;
     }
+
+    /**
+     * @param $input
+     * @return Customer
+     */
+    public function signupcustomer($input)
+    {
+
+        $c = new Customer ;
+
+       // $c->username = array_get($input, 'username');
+       // $c->email    = array_get($input, 'email');
+       // $c->password = array_get($input, 'password');
+       // $c->fname = array_get($input, 'FirstName');
+        //$c->lname = array_get($input, 'LastName');
+        $c->customer_mobile=array_get($input, 'TeleNo');
+
+        // The password confirmation will be removed from model
+        // before saving. This field will be used in Ardent's
+        // auto validation.
+
+
+        // Save if valid. Password field will be hashed before save
+        $c->save();
+
+        return $c;
+    }
+
+
+
+
 
     /**
      * Attempts to login with the given credentials.

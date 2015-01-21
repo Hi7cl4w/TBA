@@ -12,7 +12,8 @@
 	  "barryvdh/laravel-ide-helper": "1.*",
 	  "barryvdh/laravel-vendor-cleanup": "1.*",
 	  "greggilbert/recaptcha": "dev-master",
-	  "simplesoftwareio/simple-sms": "1.*"
+	  "simplesoftwareio/simple-sms": "1.*",
+	  "webpatser/laravel-uuid": "1.*"
 	},
 	"autoload": {
 		"classmap": [
