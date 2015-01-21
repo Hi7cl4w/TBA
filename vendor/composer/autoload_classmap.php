@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddFnameLname' => $baseDir . '/app/database/migrations/2015_01_11_151838_add_fname_lname.php',
+    'Admin' => $baseDir . '/app/models/Admin.php',
     'Barryvdh\\LaravelIdeHelper\\Alias' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Alias.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\GeneratorCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/GeneratorCommand.php',
     'Barryvdh\\LaravelIdeHelper\\Console\\ModelsCommand' => $vendorDir . '/barryvdh/laravel-ide-helper/src/Console/ModelsCommand.php',
@@ -58,6 +59,7 @@ return array(
     'Crypt_Rijndael' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Rijndael.php',
     'Crypt_TripleDES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/TripleDES.php',
     'Crypt_Twofish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Twofish.php',
+    'Customer' => $baseDir . '/app/models/Customer.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'EntrustSetupTables' => $baseDir . '/app/database/migrations/2015_01_02_072115_entrust_setup_tables.php',
     'File_ANSI' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ANSI.php',
@@ -1197,6 +1199,7 @@ return array(
     'SimpleSoftwareIO\\SMS\\SMSServiceProvider' => $vendorDir . '/simplesoftwareio/simple-sms/src/SimpleSoftwareIO/SMS/SMSServiceProvider.php',
     'Stack\\Builder' => $vendorDir . '/stack/builder/src/Stack/Builder.php',
     'Stack\\StackedHttpKernel' => $vendorDir . '/stack/builder/src/Stack/StackedHttpKernel.php',
+    'Staff' => $baseDir . '/app/models/Staff.php',
     'StaffTable' => $baseDir . '/app/database/migrations/2015_01_02_071409_staff_table.php',
     'Symfony\\Component\\BrowserKit\\Client' => $vendorDir . '/symfony/browser-kit/Symfony/Component/BrowserKit/Client.php',
     'Symfony\\Component\\BrowserKit\\Cookie' => $vendorDir . '/symfony/browser-kit/Symfony/Component/BrowserKit/Cookie.php',
@@ -1769,6 +1772,8 @@ return array(
     'UserTableSeeder' => $baseDir . '/app/database/seeds/UserTableSeeder.php',
     'UsergroupTableSeeder' => $baseDir . '/app/database/seeds/UsergroupTableSeeder.php',
     'UsersController' => $baseDir . '/app/controllers/UsersController.php',
+    'Webpatser\\Uuid\\Uuid' => $vendorDir . '/webpatser/laravel-uuid/src/Webpatser/Uuid/Uuid.php',
+    'Webpatser\\Uuid\\UuidFacade' => $vendorDir . '/webpatser/laravel-uuid/src/Webpatser/Uuid/UuidFacade.php',
     'Whoops\\Exception\\ErrorException' => $vendorDir . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
     'Whoops\\Exception\\Formatter' => $vendorDir . '/filp/whoops/src/Whoops/Exception/Formatter.php',
     'Whoops\\Exception\\Frame' => $vendorDir . '/filp/whoops/src/Whoops/Exception/Frame.php',
