@@ -43,6 +43,7 @@ class CreateTicketTable extends Migration {
 			$table->String('Address',1000);
 			$table->String('City',200);
 			$table->String('State',200);
+			$table->String('Country',20);
 			$table->String('Pin',20);
 			$table->String('Phone',20);
 			$table->timestamps();

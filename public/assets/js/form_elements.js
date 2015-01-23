@@ -63,7 +63,7 @@ $(document).ready(function(){
 	$('.auto').autoNumeric('init');
 	
 	//HTML5 editor
-	$('#text-editor').wysihtml5();
+	$('#Description').wysihtml5();
 	
 	//Drag n Drop up-loader
 	$("div#myId").dropzone({ url: "/file/post" });

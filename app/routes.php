@@ -140,7 +140,7 @@ Route::get('/sitemap', function () {
     }
 });
 
-Route::get('/login', array('uses' => 'UsersController@login'))->before('guest');
+Route::get('/login', 'UsersController@login')->before('guest');
 // route to process the form
 Route::post('/login', 'UsersController@doLogin');
 Route::get('/forgot', 'UsersController@forgotPassword');
@@ -152,33 +152,37 @@ Route::post('/', 'UsersController@store');
 
 /*profile page auth only*/
 Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
+    $user = Auth::user();
+    Route::group(array('prefix' => $user['username'],'before' => 'auth' ), function() {
+        Route::get('/profile2', function () {
+            return View::make('pages.dashboard2');
+        });
+        /*user dashboard*/
+        Route::get('/', function () {
+            $user = Auth::user();
 
-    Route::get('/profile2', function () {
-        return View::make('pages.dashboard2');
-    });
-    /*user dashboard*/
-    Route::get('{username}', function ($username) {
-        $user = Auth::user();
-        if ($user->username == $username) {
-            return View::make('pages.dashboard')->with('user', $user);
-        } else {
-            echo "404 not found";
-        }
-    });
-    /*user dashboard*/
-    Route::get('{username}/ticket', function ($username) {
-        $user = Auth::user();
-        if ($user->username == $username) {
-            return View::make('pages.dashboard')->with('user', $user);
-        } else {
-            echo "404 not found";
-        }
-    });
+                return View::make('pages.dashboard')->with('user', $user);
 
-    Route::get('/Redirect', 'HomeController@doCheck');
-    Route::get('/logout', 'UsersController@logout');
+        });
+        /*ticket*/
+        Route::get('/ticket/create', 'TicketController@create');
+        Route::post('/ticket/create', 'TicketController@store');
+        Route::post('/ticket', 'TicketController@store');
+        Route::get('/ticket', 'TicketController@paging');
+        /*product*/
+        Route::get('/products/create', 'ProductsController@create');
+        Route::post('/products/create', 'ProductsController@store');
+        Route::post('/products', 'ProductsController@view');
+        /*purchases*/
+        Route::get('/purchases/create', 'PurchasesController@create');
+        Route::post('/purchases/create', 'PurchasesController@store');
+        Route::post('/purchases', 'PurchasesController@view');
+        Route::get('/purchases', 'PurchasesController@view');
+
+
+    });
 });
-
+Route::get('/logout', 'UsersController@logout');
 /*API*/
 
 

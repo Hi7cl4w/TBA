@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * Class UserRepository
  *
@@ -17,61 +16,133 @@ class UserRepository
      *
      * @return  User User object that may or may not be saved successfully. Check the id to make sure.
      */
-    public function signup($input)
+    public function signup_customer($input)
     {
         $user = new User;
-        $c = new Customer;
-
         $user->username = array_get($input, 'username');
-        $user->email    = array_get($input, 'email');
+        $user->email = array_get($input, 'email');
         $user->password = array_get($input, 'password');
         $user->fname = array_get($input, 'FirstName');
         $user->lname = array_get($input, 'LastName');
-        $c->customer_mobile=array_get($input, 'TeleNo');
-
         // The password confirmation will be removed from model
         // before saving. This field will be used in Ardent's
         // auto validation.
         $user->password_confirmation = array_get($input, 'password_confirmation');
-
         // Generate a random confirmation code
-        $user->confirmation_code     = md5(uniqid(mt_rand(), true));
-
+        $user->confirmation_code = md5(uniqid(mt_rand(), true));
         // Save if valid. Password field will be hashed before save
         $this->save($user);
+        if ($user->id) {
+            $c = new Customer;
+            $c->customer_id = $user->id;
+            $c->DOB = array_get($input, 'DOB');
+            $c->Occupation = array_get($input, 'Occupation');
+            $c->Gender = array_get($input, 'Gender');
+            $c->Address = array_get($input, 'Address');
+            $c->City = array_get($input, 'City');
+            $c->Country = array_get($input, 'Country');
+            $c->State = array_get($input, 'City');
+            $c->Pin = array_get($input, 'Pin');
+            $c->Phone = array_get($input, 'TeleNo');
+            // Save if valid. Password field will be hashed before save
+            $c->save();
+            $admin = Role::where('name', '=', 'Customer')->get()->first();
+            $user_assign = User::where('id','=',$user->id)->first();
+            $user_assign->attachRole($admin);
+            //return $c;
+        }
 
         return $user;
+
+    }
+
+    public function signup_staff($input)
+    {
+        $user = new User;
+        $user->username = array_get($input, 'username');
+        $user->email = array_get($input, 'email');
+        $user->password = array_get($input, 'password');
+        $user->fname = array_get($input, 'FirstName');
+        $user->lname = array_get($input, 'LastName');
+        // The password confirmation will be removed from model
+        // before saving. This field will be used in Ardent's
+        // auto validation.
+        $user->password_confirmation = array_get($input, 'password_confirmation');
+        // Generate a random confirmation code
+        $user->confirmation_code = md5(uniqid(mt_rand(), true));
+        // Save if valid. Password field will be hashed before save
+        $this->save($user);
+        if ($user->id) {
+            $c = new Staff;
+            $c->staff_id = $user->id;
+            $c->DOB = array_get($input, 'DOB');
+            $c->Designation = array_get($input, 'Designation');
+            $c->Gender = array_get($input, 'Gender');
+            $c->Address = array_get($input, 'Address');
+            $c->City = array_get($input, 'City');
+            $c->Country = array_get($input, 'Country');
+            $c->Catagory = array_get($input, 'Category');
+            $c->Branch = array_get($input, 'Branch');
+            $c->State = array_get($input, 'City');
+            $c->Pin = array_get($input, 'Pin');
+            $c->Phone = array_get($input, 'TeleNo');
+            // Save if valid. Password field will be hashed before save
+            $c->save();
+            $staff = Role::where('name', '=', 'Staff')->get()->first();
+            $user_assign = User::where('id','=',$user->id)->first();
+            $user_assign->attachRole($staff);
+            //return $c;
+        }
+
+
+        return $user;
+
+    }
+
+    public function signup_admin($input)
+    {
+        $user = new User;
+        $user->username = array_get($input, 'username');
+        $user->email = array_get($input, 'email');
+        $user->password = array_get($input, 'password');
+        $user->fname = array_get($input, 'FirstName');
+        $user->lname = array_get($input, 'LastName');
+        // The password confirmation will be removed from model
+        // before saving. This field will be used in Ardent's
+        // auto validation.
+        $user->password_confirmation = array_get($input, 'password_confirmation');
+        // Generate a random confirmation code
+        $user->confirmation_code = md5(uniqid(mt_rand(), true));
+        // Save if valid. Password field will be hashed before save
+        $this->save($user);
+        if ($user->id) {
+            $c = new Admin;
+            $c->admin_id = $user->id;
+            $c->DOB = array_get($input, 'DOB');
+            $c->Occupation = array_get($input, 'Occupation');
+            $c->Gender = array_get($input, 'Gender');
+            $c->Address = array_get($input, 'Address');
+            $c->City = array_get($input, 'City');
+            $c->Country = array_get($input, 'Country');
+            $c->State = array_get($input, 'City');
+            $c->Pin = array_get($input, 'Pin');
+            $c->Phone = array_get($input, 'TeleNo');
+            // Save if valid. Password field will be hashed before save
+            $c->save();
+            $admin = Role::where('name', '=', 'Administrator')->get()->first();
+            $user_assign = User::where('id','=',$user->id)->first();
+            $user_assign->attachRole($admin);
+            //return $c;
+        }
+
+        return $user;
+
     }
 
     /**
      * @param $input
-     * @return Customer
+     * @return Admin
      */
-    public function signupcustomer($input)
-    {
-
-        $c = new Customer ;
-
-       // $c->username = array_get($input, 'username');
-       // $c->email    = array_get($input, 'email');
-       // $c->password = array_get($input, 'password');
-       // $c->fname = array_get($input, 'FirstName');
-        //$c->lname = array_get($input, 'LastName');
-        $c->customer_mobile=array_get($input, 'TeleNo');
-
-        // The password confirmation will be removed from model
-        // before saving. This field will be used in Ardent's
-        // auto validation.
-
-
-        // Save if valid. Password field will be hashed before save
-        $c->save();
-
-        return $c;
-    }
-
-
-
 
 
     /**
@@ -83,7 +154,7 @@ class UserRepository
      */
     public function login($input)
     {
-        if (! isset($input['password'])) {
+        if (!isset($input['password'])) {
             $input['password'] = null;
         }
 
@@ -121,7 +192,7 @@ class UserRepository
                 $user->password
             );
 
-            return (! $user->confirmed && $correctPassword);
+            return (!$user->confirmed && $correctPassword);
         }
     }
 
@@ -135,10 +206,10 @@ class UserRepository
     public function resetPassword($input)
     {
         $result = false;
-        $user   = Confide::userByResetPasswordToken($input['token']);
+        $user = Confide::userByResetPasswordToken($input['token']);
 
         if ($user) {
-            $user->password              = $input['password'];
+            $user->password = $input['password'];
             $user->password_confirmation = $input['password_confirmation'];
             $result = $this->save($user);
         }

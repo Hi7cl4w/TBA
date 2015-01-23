@@ -10,27 +10,35 @@
 
 
             <li id="dash" >
-                <a href="index.php">
+                <a href="{{{ URL::to('/profile/'.$user->username) }}}">
                     <span>Home</span><i id="sp" class="fa fa-home pull-right"></i> 
                 </a>
             </li>
-            <li id="usertree" class="treeview">
+            <li id="tickettree" class="treeview">
                 <a href="">
-                     <span>User Manager</span><i id="sp" class="fa fa-th pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
+                     <span>Tickets</span><i id="sp" class="fa fa-th pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu" >
-                    <li id="usersubtree" ><a href="index.php?page=usermanage"><i class="fa fa-angle-double-right"></i>Manage</a></li>
-                    <li id="addstudent" ><a href="#"><i class="fa fa-angle-double-right"></i>Add Student Account<i class="fa pull-right">S</i></a></li>
-                    <li id="addstaff" ><a href="index.php?page=addstaff"><i class="fa fa-angle-double-right"></i>Add Staff Account</a></li>
-                    <li id="addadmin" ><a href="index.php?page=addadmin"><i class="fa fa-angle-double-right"></i>Add Administrator Account</a></li>
+                    <li id="ticketcreate" ><a href="{{{ URL::to('/profile/'.$user->username.'/ticket/create') }}}"><i class="fa fa-angle-double-right"></i>Create<i class="fa pull-right">C</i></a></li>
+                    <li id="view" ><a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}"><i class="fa fa-angle-double-right"></i>View<i class="fa pull-right">V</i></a></li>
+
                 </ul>
             </li>
-            <li id="damtree" class="treeview">
-                <a href="">
-                     <span>Disciplinary Action</span><i id="sp" class="fa fa-edit pull-right"></i> <i class="fa fa-angle-left pull-right"></i></a>
+            <li id="producttree" class="treeview">
+                <a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}">
+                     <span>Products</span><i id="sp" class="fa fa-edit pull-right"></i> </a>
                 <ul class="treeview-menu" >
-                    <li id="dam_manage" ><a href="index.php?page=dam_manage"><i class="fa fa-angle-double-right"></i>Manage</a></li>
-                    <li id="dam_reg" ><a href="index.php?page=dam_reg"><i class="fa fa-angle-double-right"></i>Register</a></li>
-                    
+                    <li id="productreg" ><a href="{{{ URL::to('/profile/'.$user->username.'/products/register') }}}"><i class="fa fa-angle-double-right"></i>Create<i class="fa pull-right">C</i></a></li>
+                    <li id="productview" ><a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}"><i class="fa fa-angle-double-right"></i>View<i class="fa pull-right">V</i></a></li>
+
+                </ul>
+            </li>
+            <li id="purchasetree" class="treeview">
+                <a href="">
+                    <span>Purchases</span><i id="sp" class="fa fa-th pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu" >
+                    <li id="ticketcreate" ><a href="{{{ URL::to('/profile/'.$user->username.'/purchases') }}}"><i class="fa fa-angle-double-right"></i>View all<i class="fa pull-right">V</i></a></li>
+                    <li id="view" ><a href="{{{ URL::to('/profile/'.$user->username.'/purchases/create') }}}"><i class="fa fa-angle-double-right"></i>Register a Purchase<i class="fa pull-right">R</i></a></li>
+
                 </ul>
             </li>
             

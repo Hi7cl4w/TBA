@@ -86,24 +86,17 @@
                                             <input name="LastName" id="LastName" type="text"
                                                    class="form-control" placeholder="Last Name"><span
                                                     class="error" style="display: none;"><span
-                                                        for="LastName" class="error">This field is required.</span></span>
+                                                        for="LastName"
+                                                        class="error">This field is required.</span></span>
                                         </div>
                                     </div>
                                     <div class="row form-row">
-                                        <div class="col-md-5">
-                                            <select name="Gender" id="Gender"
-                                                    class="select2 form-control select2-offscreen"
-                                                    tabindex="-1">
-                                                <option value="1">Male</option>
-                                                <option value="2">Female</option>
-                                            </select><span class="error" style="display: none;"><span
-                                                        for="Gender" class="error"></span></span>
-                                        </div>
-                                        <div class="col-md-7">
+
+                                        <div class="col-md-12">
                                             <input type="text" placeholder="Date of Birth"
-                                                   class="form-control" id="DateOfBirth"
-                                                   name="DateOfBirth"><span class="error"
-                                                                                 style="display: none;"><span
+                                                   class="form-control" id="DOB"
+                                                   name="DOB"><span class="error"
+                                                                    style="display: none;"><span
                                                         for="DateOfBirth"
                                                         class="error">This field is required.</span></span>
                                         </div>
@@ -120,10 +113,10 @@
                                     <div class="row form-row">
                                         <div class="col-md-8">
                                             <div class="radio">
-                                                <input id="male" type="radio" name="gender" value="male"
+                                                <input id="male" type="radio" name="Gender" value="male"
                                                        checked="checked">
                                                 <label for="male">Male</label>
-                                                <input id="female" type="radio" name="gender"
+                                                <input id="female" type="radio" name="Gender"
                                                        value="female">
                                                 <label for="female">Female</label>
                                             </div>
@@ -141,7 +134,8 @@
                                             <input name="Address" id="Address" type="text"
                                                    class="form-control" placeholder="Address"><span
                                                     class="error" style="display: none;"><span
-                                                        for="Address" class="error">This field is required.</span></span>
+                                                        for="Address"
+                                                        class="error">This field is required.</span></span>
                                         </div>
                                     </div>
                                     <div class="row form-row">
@@ -165,10 +159,11 @@
                                             <input name="Country" id="Country" type="text"
                                                    class="form-control" placeholder="Country"><span
                                                     class="error" style="display: none;"><span
-                                                        for="Country" class="error">This field is required.</span></span>
+                                                        for="Country"
+                                                        class="error">This field is required.</span></span>
                                         </div>
                                         <div class="col-md-4">
-                                            <input name="PostalCode" id="PostalCode" type="text"
+                                            <input name="Pin" id="Pin" type="text"
                                                    class="form-control" placeholder="Postal Code"><span
                                                     class="error" style="display: none;"><span
                                                         for="PostalCode"
@@ -180,7 +175,8 @@
                                             <input name="TeleCode" id="TeleCode" type="text"
                                                    class="form-control" placeholder="+91"><span
                                                     class="error" style="display: none;"><span
-                                                        for="TeleCode" class="error">This field is required.</span></span>
+                                                        for="TeleCode"
+                                                        class="error">This field is required.</span></span>
                                         </div>
                                         <div class="col-md-8">
                                             <input name="TeleNo" id="TeleNo" type="text"
@@ -189,7 +185,13 @@
                                                         for="TeleNo" class="error"></span></span>
                                         </div>
                                     </div>
-                                    <div class="row small-text">
+                                    <div class="row form-row">
+                                        <div class="col-md-4">
+                                            {{ Form::captcha(array('theme' => 'plain')) }}
+                                        </div>
+
+                                    </div>
+                                    <div class="row small-text" style="display: none;">
                                         <p class="col-md-12">
                                             NOTE - Facts to be considered, Simply remove or edit this as for
                                             what you desire. Disabled font Color and size

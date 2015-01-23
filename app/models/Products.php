@@ -1,5 +1,5 @@
 <?php
-class Customer extends Eloquent {
+class Products extends Eloquent {
 
     protected $table = 'products';
 

@@ -8,7 +8,7 @@
 @section('body')
     <div class="content h-align-middle">
         <div class="row">
-            <div class="panel col-sm-12">
+            <div class="panel panel-group col-sm-12">
                 <div class="box simple">
                     <div class="box-title no-border">
                         <h3>Login <span class="semi-bold">Here</span></h3>

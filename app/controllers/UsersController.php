@@ -1,7 +1,6 @@
 <?php
 
 
-
 /**
  * UsersController Class
  *
@@ -25,38 +24,202 @@ class UsersController extends Controller
      *
      * @return  Illuminate\Http\Response
      */
+    public function staff_store()
+    {
+        $rules = array(
+            'email' => 'required|email',// password can only be alphanumeric and has to be greater than 3 characters
+            'username' => 'required|alphaNum|min:3',
+            'FirstName' => 'required|alphaNum',
+            'LastName' => 'required|alphaNum',
+            'TeleNo' => 'required|alphaNum',
+            'DOB' => 'required|alphaNum',
+            'Gender' => 'required|alphaNum',
+            'Address' => 'required|alphaNum|min:3',
+            'City' => 'required|alphaNum|min:3',
+            'Country' => 'required|alphaNum|min:3',
+            'City' => 'required|alphaNum|min:3',
+            'Pin' => 'required|alphaNum|min:3',
+            'TeleNo' => 'required|alphaNum|min:3'
+        );
+
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
+
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            $error = $validator->errors()->all(':message');
+            return Redirect::action('UsersController@create')
+                ->withErrors($validator)// send back all errors to the login form
+                ->withInput(Input::except('password'))
+                ->with('error', $error);// send back the input (not the password) so that we can repopulate the form
+        } else {
+            $repo = App::make('UserRepository');
+            $user = $repo->signup_customer(Input::all());
+            echo $user;
+
+            if ($user->id) {
+
+                if (Config::get('confide::signup_email')) {
+                    Mail::queueOn(
+                        Config::get('confide::email_queue'),
+                        Config::get('confide::email_account_confirmation'),
+                        compact('user'),
+                        function ($message) use ($user) {
+                            $message
+                                ->to($user->email, $user->username)
+                                ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                        }
+                    );
+                }
+
+                return Redirect::action('UsersController@login')
+                    ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+            } else {
+                $error = $user->errors()->all(':message');
+
+                return Redirect::action('UsersController@create')
+                    ->withInput(Input::except('password'))
+                    ->with('error', $error);
+            }
+        }
+    }
+
+    /**
+     * Stores new account
+     *
+     * @return  Illuminate\Http\Response
+     */
+    public function admin_store()
+            {
+                $rules = array(
+                    'email' => 'required|email',// password can only be alphanumeric and has to be greater than 3 characters
+                    'username' => 'required|alphaNum|min:3',
+                    'FirstName' => 'required|alphaNum|min:3',
+                    'LastName' => 'required|alphaNum|min:3',
+                    'TeleNo' => 'required|alphaNum|min:3',
+                    'DOB' => 'required|alphaNum|min:3',
+                    'Gender' => 'required|alphaNum',
+                    'Address' => 'required|alphaNum|min:3',
+                    'City' => 'required|alphaNum|min:3',
+                    'Country' => 'required|alphaNum|min:3',
+                    'City' => 'required|alphaNum|min:3',
+                    'Pin' => 'required|alphaNum|min:3',
+                    'TeleNo' => 'required|alphaNum|min:3',
+                    'g-recaptcha-response' => 'required|recaptcha'
+                );
+
+                // run the validation rules on the inputs from the form
+                $validator = Validator::make(Input::all(), $rules);
+
+                // if the validator fails, redirect back to the form
+                if ($validator->fails()) {
+                    $error = $validator->errors()->all(':message');
+                    return Redirect::action('UsersController@create')
+                        ->withErrors($validator)// send back all errors to the login form
+                        ->withInput(Input::except('password'))
+                        ->with('error', $error);// send back the input (not the password) so that we can repopulate the form
+        } else {
+            $repo = App::make('UserRepository');
+            $user = $repo->signup_customer(Input::all());
+            echo $user;
+
+            if ($user->id) {
+
+                if (Config::get('confide::signup_email')) {
+                    Mail::queueOn(
+                        Config::get('confide::email_queue'),
+                        Config::get('confide::email_account_confirmation'),
+                        compact('user'),
+                        function ($message) use ($user) {
+                            $message
+                                ->to($user->email, $user->username)
+                                ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                        }
+                    );
+                }
+
+                return Redirect::action('UsersController@login')
+                    ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+            } else {
+                $error = $user->errors()->all(':message');
+
+                return Redirect::action('UsersController@create')
+                    ->withInput(Input::except('password'))
+                    ->with('error', $error);
+            }
+        }
+    }
+
+
+
+
+
+
+
+    /**
+     * Stores new account
+     *
+     * @return  Illuminate\Http\Response
+     */
     public function store()
     {
-        $repo = App::make('UserRepository');
+        $rules = array(
+            'email' => 'required|email',// password can only be alphanumeric and has to be greater than 3 characters
+            'username' => 'required|alphaNum|min:3',
+            'FirstName' => 'required|alphaNum|min:3',
+            'LastName' => 'required|alphaNum|min:3',
+            'TeleNo' => 'required|alphaNum|min:3',
+            'DOB' => 'required|alphaNum|min:3',
+            'Gender' => 'required|alphaNum',
+            'Address' => 'required|alphaNum|min:3',
+            'City' => 'required|alphaNum|min:3',
+            'Country' => 'required|alphaNum|min:3',
+            'City' => 'required|alphaNum|min:3',
+            'Pin' => 'required|alphaNum|min:3',
+            'TeleNo' => 'required|alphaNum',
+            'g-recaptcha-response' => 'required|recaptcha'
+        );
 
+        // run the validation rules on the inputs from the form
+        $validator = Validator::make(Input::all(), $rules);
 
-      $user = $repo->signupcustomer(Input::all());
-        echo $user;
-/*
-        if ($user->id) {
-
-            if (Config::get('confide::signup_email')) {
-                Mail::queueOn(
-                    Config::get('confide::email_queue'),
-                    Config::get('confide::email_account_confirmation'),
-                    compact('user'),
-                    function ($message) use ($user) {
-                        $message
-                            ->to($user->email, $user->username)
-                            ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
-                    }
-                );
-            }
-
-            return Redirect::action('UsersController@login')
-                ->with('notice', Lang::get('confide::confide.alerts.account_created'));
-        } else {
-            $error = $user->errors()->all(':message');
-
+        // if the validator fails, redirect back to the form
+        if ($validator->fails()) {
+            $error = $validator->errors()->all(':message');
             return Redirect::action('UsersController@create')
+                ->withErrors($validator)// send back all errors to the login form
                 ->withInput(Input::except('password'))
-                ->with('error', $error);
-        }*/
+                ->with('error', $error);// send back the input (not the password) so that we can repopulate the form
+        } else {
+            $repo = App::make('UserRepository');
+            $user = $repo->signup_customer(Input::all());
+            echo $user;
+
+            if ($user->id) {
+
+                if (Config::get('confide::signup_email')) {
+                    Mail::queueOn(
+                        Config::get('confide::email_queue'),
+                        Config::get('confide::email_account_confirmation'),
+                        compact('user'),
+                        function ($message) use ($user) {
+                            $message
+                                ->to($user->email, $user->username)
+                                ->subject(Lang::get('confide::confide.email.account_confirmation.subject'));
+                        }
+                    );
+                }
+
+                return Redirect::action('UsersController@login')
+                    ->with('notice', Lang::get('confide::confide.alerts.account_created'));
+            } else {
+                $error = $user->errors()->all(':message');
+
+                return Redirect::action('UsersController@create')
+                    ->withInput(Input::except('password'))
+                    ->with('error', $error);
+            }
+        }
     }
 
     /**
@@ -84,8 +247,8 @@ class UsersController extends Controller
         $input = Input::all();
 
         if ($repo->login($input)) {
-            $user=Auth::user();
-            return Redirect::intended('/profile/'.$user->username);
+            $user = Auth::user();
+            return Redirect::intended('/profile/' . $user->username);
         } else {
             if ($repo->isThrottled($input)) {
                 $err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
@@ -185,9 +348,9 @@ class UsersController extends Controller
     {
         $repo = App::make('UserRepository');
         $input = array(
-            'token'                 =>Input::get('token'),
-            'password'              =>Input::get('password'),
-            'password_confirmation' =>Input::get('password_confirmation'),
+            'token' => Input::get('token'),
+            'password' => Input::get('password'),
+            'password_confirmation' => Input::get('password_confirmation'),
         );
 
         // By passing an array with the token, password and confirmation
@@ -197,7 +360,7 @@ class UsersController extends Controller
                 ->with('notice', $notice_msg);
         } else {
             $error_msg = Lang::get('confide::confide.alerts.wrong_password_reset');
-            return Redirect::action('UsersController@resetPassword', array('token'=>$input['token']))
+            return Redirect::action('UsersController@resetPassword', array('token' => $input['token']))
                 ->withInput()
                 ->with('error', $error_msg);
         }

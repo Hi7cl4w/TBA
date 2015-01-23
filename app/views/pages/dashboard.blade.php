@@ -50,10 +50,10 @@ function getOS()
 @section('page')
 
 
-    <div class="row">
+    <div class="row" id="dashboard">
 
         <div class="col-md-6 col-vlg-4 col-sm-12">
-            <div class="row ">
+
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
                     <div class="live-tile slide ha " data-speed="750" data-delay="6000" data-mode="carousel">
@@ -136,6 +136,7 @@ function getOS()
                     </div>
                 </div>
                 <!-- END ANIMATED TILE -->
+
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
                     <div class="live-tile slide ha" data-speed="750" data-delay="4700" data-mode="carousel">
@@ -209,11 +210,13 @@ function getOS()
                     </div>
                 </div>
                 <!-- END ANIMATED TILE -->
-            </div>
-        </div>
 
+
+
+
+    </div>   <!-- END ROW -->
         <div class="col-md-6 col-vlg-4 col-sm-12">
-            <div class="row ">
+
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-12 col-sm-6 m-b-20" data-aspect-ratio2="true">
@@ -258,10 +261,8 @@ function getOS()
             </div>
 
 
-        </div>
+     </div>
 
-
-    </div>   <!-- END ROW -->
 
 
 

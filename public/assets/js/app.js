@@ -144,10 +144,10 @@ $(function () {
 $(function () {
     $('.left-side').hover(function () {
 
-        $(this).stop().animate({marginLeft: '0px'}, 500);
+        $(this).stop().animate({marginLeft: '220px'}, 500);
 
     }, function () {
-        $(this).stop().animate({marginLeft: '-220px'}, 500);
+        $(this).stop().animate({marginLeft: '0px'}, 500);
     }).trigger('mouseleave');
 });
 function fix_sidebar() {
@@ -169,7 +169,7 @@ $(window).load(function () {
     (function () {
         var a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V = [].slice, W = {}.hasOwnProperty, X = function (a, b) {
             function c() {
-                this.constructor = a
+                this.constructor = a;
             }
 
             for (var d in b)
@@ -1222,8 +1222,19 @@ function equalHeight(group) {
     group.height(tallest);
 }
 
+$('[data-row-ratio="true"]').each(function () {
+    $width=$(this).width()/1.0001;
+    $(this).height($width);
+
+})
+
+
+
+
 $('[data-aspect-ratio="true"]').each(function () {
-    $(this).height($(this).width());
+    $width=$(this).width();
+    $(this).height($width);
+
 })
 $('[data-aspect-ratio2="true"]').each(function () {
     $(this).height($(this).width() / 1.015);
