@@ -23,7 +23,9 @@
     @yield('head')
 </head>
 <body id="bodyskin" class="skin-black fixed animated fade fadeIn" body-ratio="true">
+@yield('bodyfirst')
 
+<?php if(Auth::check()) { ?>
 <div class="clearfix"></div>
 
 <div class="container">
@@ -122,9 +124,7 @@
 
 </div><!-- /container -->
 
-@yield('bodyfirst')
 
-<?php if(Auth::check()) { ?>
 
 @include('includes.header')
 
