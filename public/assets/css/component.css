@@ -1,3 +1,62 @@
+.morphsearch .uneditable-input,
+.morphsearch textarea,
+.morphsearch input[type="text"],
+.morphsearch input[type="password"],
+.morphsearch input[type="datetime"],
+.morphsearch input[type="datetime-local"],
+.morphsearch input[type="date"],
+.morphsearch input[type="month"],
+.morphsearch input[type="time"],
+.morphsearch input[type="week"],
+.morphsearch input[type="number"],
+.morphsearch input[type="email"],
+.morphsearch input[type="url"],
+.morphsearch input[type="search"],
+.morphsearch input[type="tel"],
+.morphsearch input[type="color"] {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	-webkit-appearance: none !important;
+	outline: 0;
+	line-height: normal;
+
+	vertical-align: inherit;
+
+	min-height: 37px;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	border: 1px solid #e5e9ec;
+	transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
+	width: 100%;
+	height: 100%;
+	padding: 0 10% 0 10px;
+	font-weight: 700;
+	border: none;
+	background: transparent;
+	font-size: 0.8em;
+	color: #ec5a62;
+	-webkit-transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);
+	transition: font-size 0.5s cubic-bezier(0.7,0,0.3,1);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .morphsearch {
 	width: 200px;
 	min-height: 40px;
