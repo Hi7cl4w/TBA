@@ -6,9 +6,9 @@
     {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
-    <div class="content h-align-middle">
+    <div class="wrapper row-offcanvas row-offcanvas-left h-align-middle">
         <div class="row">
-            <div class="panel panel-group col-sm-12">
+            <div class="panel col-sm-12 animated fadeInUp">
                 <div class="box simple">
                     <div class="box-title no-border">
                         <h3>Login <span class="semi-bold">Here</span></h3>

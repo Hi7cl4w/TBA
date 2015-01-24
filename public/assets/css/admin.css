@@ -3,18 +3,18 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+html,body{
+  height: 100%;
+}
 
 
-html,
 body {
   overflow-x: hidden!important;
   font-family: 'Open Sans',"Segoe UI",'Source Sans Pro', sans-serif;
-  text-rendering: optimizeLegibility !important;
--webkit-font-smoothing: antialiased !important;
-
-      background: #f0f0f0 ;
-  overflow-x: hidden;
-
+  -webkit-font-smoothing: antialiased !important;
+  overflow-y:auto;
+  min-height: 100%;
+  background: #f0f0f0 ;
 }
 
 a {
@@ -56,8 +56,6 @@ body > .header {
 /*right side - contins main content*/
 .right-side {
   margin-top: 20px;
-
-
 }
 /*left side - contains sidebar*/
 .left-side {
@@ -123,9 +121,13 @@ body > .header {
     margin-right: 15px;
     
   }
-  .left-side {
 
-    left: -280px;
+  .left-side.collapse-left {
+    top:0px;
+    left: 0px;
+
+  }
+  .left-side.sidebar-offcanvase {
     top:0px;
   }
 
@@ -810,18 +812,16 @@ height:40px;
     left: 60px;
   }
   .sidebar-offcanvas {
-    left: 0;
+    left: -280px;
   }
-  body.fixed .sidebar-offcanvas {
-    margin-top: 60px;
-    left: -60px;
-  }
+
+
   body.fixed .row-offcanvas-left.active .navbar {
     left: 280px !important;
     right: 0;
   }
   body.fixed .row-offcanvas-left.active .sidebar-offcanvas {
-    left: 0px;
+    left: 0;
 
   }
 }
@@ -3035,23 +3035,6 @@ table.fc-border-separate{
 label{
   font-family: 'Montserrat';
 }
-label,
-input,
-button,
-select,
-textarea {
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 20px;
-
-}
-
-input,
-button,
-select,
-textarea {
-  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
 
 label {
   display: block;
@@ -3077,29 +3060,16 @@ input[type="url"],
 input[type="search"],
 input[type="tel"],
 input[type="color"] {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  -webkit-appearance: none !important;
-  color: #282323;
-  outline: 0;
-  height: 16px;
-  padding: 6px 11px !important;
-  line-height: 15px;
-  font-size: 13px;
-  font-weight: normal;
-  vertical-align: top;
-  background-color:#fff;
-  min-height: 37px;
+
+
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   box-shadow: none !important;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  border: 1px solid #e5e9ec;
-  transition: background 0.2s linear 0s, box-shadow 0.2s linear 0s;
+
+
 }
 input.no-boarder {
   border: none;

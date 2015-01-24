@@ -1,20 +1,11 @@
-html, body {
-	height: 100%;
-}
-
-body {
-
-}
-
-
 .morphsearch {
 	width: 200px;
 	min-height: 40px;
 	background: #f1f1f1;
 	position: absolute;
 	z-index: 10000;
-	top: 50px;
-	right: 50px;
+	top: 10px;
+	right: 25%;
 	-webkit-transform-origin: 100% 0;
 	transform-origin: 100% 0;
 	-webkit-transition-property: min-height, width, top, right;
@@ -102,8 +93,8 @@ body {
 }
 
 input[type="search"] { /* reset normalize */
-	-webkit-box-sizing: border-box; 
-	box-sizing: border-box;	
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .morphsearch-input:focus,
@@ -281,7 +272,7 @@ input[type="search"] { /* reset normalize */
 
 .dummy-media-object img {
 	display: inline-block;
-	width: 50px;	
+	width: 50px;
 	margin: 0 10px 0 0;
 	vertical-align: middle;
 }

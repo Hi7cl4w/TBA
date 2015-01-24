@@ -25,7 +25,7 @@ Route::get('hello', function () {
     return View::make('hello');
 });
 Route::get('/test', function () {
-    return View::make('test');
+    return View::make('pages.search');
 });
 Route::get('reg2', function () {
     return View::make('pages.register');

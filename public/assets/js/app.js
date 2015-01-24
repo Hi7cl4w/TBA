@@ -14,6 +14,7 @@ var left_side_width = 280; //Sidebar width in pixels
 $(function () {
     "use strict";
 
+    $('html').height($('body').height());
     //Enable sidebar toggle
     $("[data-toggle='offcanvas']").click(function (e) {
         e.preventDefault();
@@ -21,9 +22,9 @@ $(function () {
         //If window is small enough, enable sidebar push menu
         if ($(window).width() <= 992) {
             $('.row-offcanvas').toggleClass('active');
-            $('.left-side').removeClass("collapse-left");
+
+            $('.left-side').toggleClass("collapse-left");
             $(".right-side").removeClass("strech");
-            $('.row-offcanvas').toggleClass("relative");
         } else {
             //Else, enable content streching
             $('.left-side').toggleClass("collapse-left");
@@ -152,10 +153,9 @@ $(function () {
         }).trigger('mouseleave');
 
     }
-    else{
-        $(this).stop().animate({marginLeft: '220px'}, 500);
-    }
+
 });
+
 
 function fix_sidebar() {
     //Make sure the body tag has the .fixed class
@@ -1232,6 +1232,11 @@ function equalHeight(group) {
 $('[data-row-ratio="true"]').each(function () {
     $width=$(this).width()/1.0001;
     $(this).height($width);
+
+})
+$('[body-ratio="true"]').each(function () {
+    $h=$('body').height();
+    $('.morphsearch-content').height($h);
 
 })
 

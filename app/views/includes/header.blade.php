@@ -131,49 +131,5 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
                 </div>
 
 
-                <div class="navbar-m">
-                    <ul id="searchnav" class="nav navbar-nav">
-    <li class="search" id="search">
-
-
-
-
-
-
-    </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div> </nav>
+                </nav>
         </header> 

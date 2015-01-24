@@ -1,6 +1,7 @@
-html,body {
+body{
 	background-size: cover;
     background-image: url('bg.jpg') ;
+	overflow-y:hidden;
 }
 .content {
 	margin: 10rem auto;
