@@ -11,6 +11,12 @@ class ProductsController extends \BaseController {
 	{
 		//
 	}
+	public function getlist()
+	{
+		$term= DB::table('products')->orderBy('Vendor', 'asc')->get();
+
+		return Response::json($term);
+	}
 
 
 	/**
@@ -21,7 +27,7 @@ class ProductsController extends \BaseController {
 	public function create()
 	{
 		$user=Auth::user();
-		return View::make('pages.PurchaseRegister')->with('user', $user);
+		return View::make('pages.ProductRegister')->with('user', $user);
 	}
 
 
@@ -82,6 +88,7 @@ class ProductsController extends \BaseController {
 	{
 		//
 	}
+
 
 
 }

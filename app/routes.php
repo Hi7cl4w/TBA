@@ -27,6 +27,13 @@ Route::get('hello', function () {
 Route::get('/test', function () {
     return View::make('pages.search');
 });
+Route::get('/getdata', function () {
+    $term= Input::get('term');
+    $r=[];
+    for($i=0;$i<8;$i++)
+    $r[]=['value'=> rand() ];
+    return Response::json($r);
+});
 Route::get('reg2', function () {
     return View::make('pages.register');
 });
@@ -173,6 +180,7 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         Route::get('/products/create', 'ProductsController@create');
         Route::post('/products/create', 'ProductsController@store');
         Route::post('/products', 'ProductsController@view');
+        Route::post('/products/list', 'ProductsController@getlist');
         /*purchases*/
         Route::get('/purchases/create', 'PurchasesController@create');
         Route::post('/purchases/create', 'PurchasesController@store');

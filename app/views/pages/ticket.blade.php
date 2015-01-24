@@ -28,97 +28,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="page-title">
         <h1><i class="fa fa-arrow-circle-left"></i>Support</h1>
 
@@ -157,8 +66,10 @@
                                        name="Subject" value="{{{ Input::old('Subject') }}}">
                             </div>
                             <div class="col-md-3">
-                                <input type="text" placeholder="Product" class="form-control" id="Product_id"
-                                       name="Product_id">
+                                <select id="Product_id" name="Product_id" style="width:100%">
+                                    <option value="">Loading Products...</option>
+
+                                </select>
                             </div>
                             <div class="col-md-3">
                                 <input type="text" placeholder="Purchase ID" class="form-control" id="Purchase_id"
@@ -299,10 +210,28 @@
 @section('javascript')
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js')}}
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js')}}
-    {{HTML::script('assets/js/form_elements.js')}}
+
     {{HTML::script('assets/js/support_ticket.js')}}
 
-    <script>
+
+        <script type="text/javascript">
+            $("#Product_id option[value='']").remove();
+            $.ajax({
+                type: "POST",
+                url: "{{{ URL::to('/profile/'.$user->username.'/products/list') }}}",
+                success: function (data) {
+                    // Parse the returned json data
+
+                    // Use jQuery's each to iterate over the opts value
+                    $.each(data, function (i, d) {
+                        // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                        $('#Product_id').append('<option value="' + d.id + '">' + d.Vendor +" : "+ d.Name  + '</option>');
+                    });
+                }
+            });
+
+
+
 
         $('.view').on('click', function () {
 

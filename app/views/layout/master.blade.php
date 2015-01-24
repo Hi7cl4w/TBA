@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
 
-
+    {{HTML::style('assets/js/jquery-ui-1.11.2/jquery-ui.min.css')}}
     {{ HTML::style('assets/css/bootstrap.min.css') }}
     {{ HTML::style('assets/css/animate.css') }}
     {{ HTML::style('assets/css/font-awesome-4.2.0/css/font-awesome.min.css') }}
@@ -12,11 +12,10 @@
     {{HTML::style('assets/plugins/boostrap-checkbox/css/bootstrap-checkbox.css')}}
     {{HTML::style('assets/css/admin.css')}}
     {{HTML::style('assets/css/pace.css')}}
-
     {{HTML::style('assets/css/component.css')}}
 
-
     {{HTML::script('assets/js/jquery-2.1.3.min.js')}}
+    {{HTML::script('assets/js/jquery-ui-1.11.2/jquery-ui.min.js')}}
     {{HTML::script('assets/js/metro/pace.min.js')}}
 
 
@@ -144,7 +143,7 @@
 <?php } ?>
 @yield('body')
 {{--scripts--}}
-{{HTML::script('assets/js/jquery-ui-1.11.2/jquery-ui.min.js')}}
+
 {{HTML::script('assets/js/bootstrap.min.js')}}
 {{HTML::script('assets/js/metro/MetroJs.min.js')}}
 {{HTML::script('assets/js/jquery.smoothState.js')}}
