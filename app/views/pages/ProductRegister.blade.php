@@ -48,12 +48,6 @@
                                                name="Subject" id="Subject" value="{{{ Input::old('Subject') }}}">
                                     </div>
                                 </div>
-
-
-
-
-
-
                             </div>
                             <div class="col-md-6">
 
@@ -72,10 +66,7 @@
                                         </select>
                                     </div>
                                 </div>
-
                             </div>
-
-
                             <div class="col-sm-12">
 
                                 <div class="row form-row">
@@ -85,16 +76,12 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="row form-row">
                             <div class="col-md-4">
                                 {{ Form::captcha(array('theme' => 'plain')) }}
                             </div>
-
                         </div>
-
-
                         <div class="form-actions">
                             <div class="pull-left">
                                 <div class="pull-left">
@@ -103,7 +90,6 @@
                                         <label for="chkTerms">I Here by agree on the Term and
                                             condition. </label>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="pull-right">
@@ -117,20 +103,11 @@
                 </div>
             </div>
         </div>
-
     </div>   <!-- END ROW -->
-
-
-
 @stop
 @section('javascript')
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js')}}
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js')}}
     {{HTML::script('assets/js/form_elements.js')}}
-    <script>
-
-    </script>
-
-
 @stop
 

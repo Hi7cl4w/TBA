@@ -1,9 +1,9 @@
-   <aside class="left-side sidebar-offcanvas">
+   <aside class="left-side sidebar-offcanvas animated slideInLeft">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
 
-       
+
         <!-- sidebar vhvjh -->
         <ul class="sidebar-menu">
 
@@ -11,7 +11,7 @@
 
             <li id="dash" >
                 <a href="{{{ URL::to('/profile/'.$user->username) }}}">
-                    <span>Home</span><i id="sp" class="fa fa-home pull-right"></i> 
+                    <span>Home</span><i id="sp" class="fa fa-home pull-right"></i>
                 </a>
             </li>
             <li id="tickettree" class="treeview">
@@ -41,7 +41,7 @@
 
                 </ul>
             </li>
-            
+
 
         </ul>
     </section>

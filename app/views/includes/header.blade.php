@@ -1,7 +1,7 @@
   <header class="header">
            
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top" role="navigation">
+            <nav class="navbar navbar-static-top animated fadeInDown" role="navigation">
 
 
                 <!-- Sidebar toggle button-->
@@ -133,6 +133,47 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
 
                 <div class="navbar-m">
                     <ul id="searchnav" class="nav navbar-nav">
-    <li class="search" id="search"><a href="#">Search</a><input type="text" placeholder="Enter search term" /></li>
+    <li class="search" id="search">
+
+
+
+
+
+
+    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div> </nav>
         </header> 

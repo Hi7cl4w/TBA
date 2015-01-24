@@ -142,14 +142,21 @@ $(function () {
 
 });
 $(function () {
-    $('.left-side').hover(function () {
+    if($(window).width() >= 993) {
+        $('.left-side').hover(function () {
 
+            $(this).stop().animate({marginLeft: '220px'}, 500);
+
+        }, function () {
+            $(this).stop().animate({marginLeft: '0px'}, 500);
+        }).trigger('mouseleave');
+
+    }
+    else{
         $(this).stop().animate({marginLeft: '220px'}, 500);
-
-    }, function () {
-        $(this).stop().animate({marginLeft: '0px'}, 500);
-    }).trigger('mouseleave');
+    }
 });
+
 function fix_sidebar() {
     //Make sure the body tag has the .fixed class
     if (!$("body").hasClass("fixed")) {
