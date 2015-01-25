@@ -17,6 +17,32 @@ class TicketController extends \BaseController {
 	{
 		//
 	}
+public function search()
+	{
+
+
+		$search=Input::get('query');
+
+		$q = "%".$search."%";
+
+		$tickets = Ticket::where('id', 'like', $q)->orWhere('subject', 'like', $q)->orderBy('id', 'asc')->with('usercustomer')->with('userstaff')->paginate(8);
+
+
+
+		//$tickets= Ticket::paginate(10);
+		$ticket = [
+			'tickets'   => $tickets->getItems(),
+			'pagination' => [
+				'total'        => $tickets->getTotal(),
+				'per_page'     => $tickets->getPerPage(),
+				'current_page' => $tickets->getCurrentPage(),
+				'last_page'    => $tickets->getLastPage(),
+				'from'         => $tickets->getFrom(),
+				'to'           => $tickets->getTo()
+			]
+		];
+		return Response::json($ticket);
+	}
 
 
 	/**
@@ -27,7 +53,7 @@ class TicketController extends \BaseController {
 	public function create()
 	{
 		$user=Auth::user();
-		return View::make('pages.ticketcreate')->with('user', $user);
+		return View::make('pages.ticket')->with('user', $user);
 	}
 
 
@@ -62,9 +88,20 @@ class TicketController extends \BaseController {
 		} else {
 			$repo = App::make('TicketRespository');
 			$ticket = $repo->ticket_create(Input::all());
-			echo $ticket;
+			if ($ticket->id) {
+				if ($repo->isThrottled($input)) {
+					$err_msg = Lang::get('confide::confide.alerts.too_many_attempts');
+				} elseif ($repo->existsButNotConfirmed($input)) {
+					$err_msg = Lang::get('confide::confide.alerts.not_confirmed');
+				} else {
+					$err_msg = Lang::get('confide::confide.alerts.wrong_credentials');
+				}
 
-			//if ($user->id) {
+				return Redirect::action('Ticket@Controller@create')
+					->withInput(Input::except('password'))
+					->with('error', $err_msg);
+
+			}
 
 		}
 	}

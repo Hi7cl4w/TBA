@@ -30,6 +30,7 @@ a:focus {
 /* Layouts */
 .wrapper {
   min-height: 100%;
+  z-index: -22;
 }
 .wrapper:before,
 .wrapper:after {
@@ -655,6 +656,7 @@ margin: 0 auto;
 .sidebar {
     position: relative;
   margin-bottom: 5px;
+  z-index: -23;
 
 
 
@@ -3372,7 +3374,10 @@ textarea[class*="span"]
 .radio.radio-danger input[type=radio]:checked + label:before {
   border:1px solid #F35958;
 }
-
+.label-important, .badge-important {
+  background-color: #f35958;
+  color: #fff;
+}
 .checkbox label {
   display: inline-block;
   cursor: pointer;
@@ -6394,11 +6399,13 @@ a.icon:hover {
 .tiles-container{
   margin-left:0px;
   margin-right:0px;
+  z-index: -22;
 }
 .tiles{ 
   background-color:#c1cace;
   color:#fff;
   font-family: 'Open Sans',"Segoe UI";
+  z-index: -22;
   
 }
 

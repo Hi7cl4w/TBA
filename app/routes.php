@@ -27,6 +27,7 @@ Route::get('hello', function () {
 Route::get('/test', function () {
     return View::make('pages.search');
 });
+Route::get('/test2', 'TicketController@search');
 Route::get('/getdata', function () {
     $term= Input::get('term');
     $r=[];
@@ -172,15 +173,15 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
 
         });
         /*ticket*/
-        Route::get('/ticket/create', 'TicketController@create');
-        Route::post('/ticket/create', 'TicketController@store');
-        Route::post('/ticket', 'TicketController@store');
-        Route::get('/ticket', 'TicketController@paging');
+        Route::get('/ticket/create', 'TicketController@create')->before('auth');
+        Route::post('/ticket/create', 'TicketController@store')->before('auth');
+        Route::post('/ticket', 'TicketController@store')->before('auth');
+        Route::get('/ticket', 'TicketController@paging')->before('auth');
         /*product*/
         Route::get('/products/create', 'ProductsController@create');
         Route::post('/products/create', 'ProductsController@store');
         Route::post('/products', 'ProductsController@view');
-        Route::post('/products/list', 'ProductsController@getlist');
+        Route::get('/products/list', 'ProductsController@getlist');
         /*purchases*/
         Route::get('/purchases/create', 'PurchasesController@create');
         Route::post('/purchases/create', 'PurchasesController@store');

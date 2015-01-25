@@ -22,5 +22,11 @@ class User extends Eloquent implements ConfideUserInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password', 'remember_token');
+	public function ticketcustomer(){
+		return $this->hasMany('Ticket','Customer_id','id');
+	}
+	public function ticketstaff(){
+		return $this->hasMany('Ticket','Staff_id','id');
+	}
 
 }

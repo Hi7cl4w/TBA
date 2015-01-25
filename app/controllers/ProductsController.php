@@ -14,7 +14,6 @@ class ProductsController extends \BaseController {
 	public function getlist()
 	{
 		$term= DB::table('products')->orderBy('Vendor', 'asc')->get();
-
 		return Response::json($term);
 	}
 

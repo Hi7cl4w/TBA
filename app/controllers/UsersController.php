@@ -244,6 +244,7 @@ class UsersController extends Controller
     public function doLogin()
     {
         $repo = App::make('UserRepository');
+
         $input = Input::all();
 
         if ($repo->login($input)) {

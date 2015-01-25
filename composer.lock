@@ -2280,16 +2280,16 @@
         },
         {
             "name": "zizaco/confide",
-            "version": "4.1.1",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Zizaco/confide.git",
-                "reference": "7af8093506da1b08eb2111e916509e4f195736b8"
+                "reference": "e2be5ff2b744c4912ff78c7e690db5d314696803"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Zizaco/confide/zipball/7af8093506da1b08eb2111e916509e4f195736b8",
-                "reference": "7af8093506da1b08eb2111e916509e4f195736b8",
+                "url": "https://api.github.com/repos/Zizaco/confide/zipball/e2be5ff2b744c4912ff78c7e690db5d314696803",
+                "reference": "e2be5ff2b744c4912ff78c7e690db5d314696803",
                 "shasum": ""
             },
             "require": {
@@ -2343,7 +2343,7 @@
                 "illuminate",
                 "laravel"
             ],
-            "time": "2014-11-26 14:58:50"
+            "time": "2015-01-22 00:43:23"
         },
         {
             "name": "zizaco/entrust",

@@ -1234,11 +1234,7 @@ $('[data-row-ratio="true"]').each(function () {
     $(this).height($width);
 
 })
-$('[body-ratio="true"]').each(function () {
-    $h=$('body').height();
-    $('.morphsearch-content').height($h);
 
-})
 
 
 

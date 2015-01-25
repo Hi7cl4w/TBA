@@ -215,19 +215,23 @@
 
 
         <script type="text/javascript">
-            $("#Product_id option[value='']").remove();
-            $.ajax({
-                type: "POST",
-                url: "{{{ URL::to('/profile/'.$user->username.'/products/list') }}}",
-                success: function (data) {
-                    // Parse the returned json data
+            $('#btn-new-ticket').on('click', function (e) {
 
-                    // Use jQuery's each to iterate over the opts value
-                    $.each(data, function (i, d) {
-                        // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                        $('#Product_id').append('<option value="' + d.id + '">' + d.Vendor +" : "+ d.Name  + '</option>');
-                    });
-                }
+
+                $("#Product_id option[value='']").remove();
+                $.ajax({
+                    type: "GET",
+                    url: "{{{ URL::to('/profile/'.$user->username.'/products/list') }}}",
+                    success: function (data) {
+                        // Parse the returned json data
+
+                        // Use jQuery's each to iterate over the opts value
+                        $.each(data, function (i, d) {
+                            // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                            $('#Product_id').append('<option value="' + d.id + '">' + d.Vendor + " : " + d.Name + '</option>');
+                        });
+                    }
+                });
             });
 
 

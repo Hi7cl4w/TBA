@@ -23,23 +23,51 @@
             <option value="1">Quattro</option>
             <option value="2">A6 hatchback</option>
         </select>
+        <p id="results">
+        {{Ticket::with('userstaff')->find(1024)}}
+ss
+        </p>
 </div>
 
     </div>
         </div>
 
     <script>
-        $('#search').autocomplete({
+     /*   $('#search').autocomplete({
             source : 'getdata',
             minLength : 1,
             select:function(e,ui){
                 console.log('selected');
 
             }
+        });*/
+
+
+     $('#search').keyup( function(){
+            //alert($(this).val());
+            // Set Search String
+            var search_string = $(this).val();
+           // alert(search_string);
+            // Do Search
+            if(search_string !== ''){
+                $.ajax({
+                    type: "GET",
+                    url: "test2",
+                    data: { query: search_string },
+                    cache: false,
+                    success: function(a,e,h){
+
+                        var r;
+                        $.each( a, function( key, value ) {
+                            $("#results").html("&nbsp");
+                            r+="<p>" + value.Name +"hh"+ Math.random()+"</p>";
+                            $("#results").html(r);
+
+                        });
+                    }
+                });
+            }return false;
         });
-
-
-
 
 
     </script>

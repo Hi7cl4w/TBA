@@ -16,9 +16,10 @@
 
     {{HTML::script('assets/js/jquery-2.1.3.min.js')}}
     {{HTML::script('assets/js/jquery-ui-1.11.2/jquery-ui.min.js')}}
-    {{HTML::script('assets/js/metro/pace.min.js')}}
+    {{HTML::script('assets/js/pace.min.js')}}
+    {{HTML::script('assets/js/jquery.bootpag.min.js')}}
 
-
+    <meta name="_token" content="{{ csrf_token() }}" />
 
     @yield('head')
 </head>
@@ -36,86 +37,18 @@
             <button class="morphsearch-submit" type="submit">Search</button>
         </form>
         <div class="morphsearch-content">
-            <div class="dummy-column">
-                <h2>People</h2>
-                <a class="dummy-media-object" href="http://twitter.com/SaraSoueidan">
-                    <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan"/>
-                    <h3>Sara Soueidan</h3>
-                </a>
-                <a class="dummy-media-object" href="http://twitter.com/rachsmithtweets">
-                    <img class="round" src="http://0.gravatar.com/avatar/48959f453dffdb6236f4b33eb8e9f4b7?s=50&d=identicon&r=G" alt="Rachel Smith"/>
-                    <h3>Rachel Smith</h3>
-                </a>
-                <a class="dummy-media-object" href="http://www.twitter.com/peterfinlan">
-                    <img class="round" src="http://0.gravatar.com/avatar/06458359cb9e370d7c15bf6329e5facb?s=50&d=identicon&r=G" alt="Peter Finlan"/>
-                    <h3>Peter Finlan</h3>
-                </a>
-                <a class="dummy-media-object" href="http://www.twitter.com/pcridesagain">
-                    <img class="round" src="http://1.gravatar.com/avatar/db7700c89ae12f7d98827642b30c879f?s=50&d=identicon&r=G" alt="Patrick Cox"/>
-                    <h3>Patrick Cox</h3>
-                </a>
-                <a class="dummy-media-object" href="https://twitter.com/twholman">
-                    <img class="round" src="http://0.gravatar.com/avatar/cb947f0ebdde8d0f973741b366a51ed6?s=50&d=identicon&r=G" alt="Tim Holman"/>
-                    <h3>Tim Holman</h3>
-                </a>
-                <a class="dummy-media-object" href="https://twitter.com/shaund0na">
-                    <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona"/>
-                    <h3>Shaun Dona</h3>
-                </a>
+
+            <div class="col-sm-8 colspecial" id="products">
+                    <h1><i class="fa fa-search " ></i> Just type here </h1>
             </div>
-            <div class="dummy-column">
-                <h2>Popular</h2>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/05/page-preloading-effect/">
-                    <img src="img/thumbs/PagePreloadingEffect.png" alt="PagePreloadingEffect"/>
-                    <h3>Page Preloading Effect</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/05/28/arrow-navigation-styles/">
-                    <img src="img/thumbs/ArrowNavigationStyles.png" alt="ArrowNavigationStyles"/>
-                    <h3>Arrow Navigation Styles</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/06/19/ideas-for-subtle-hover-effects/">
-                    <img src="img/thumbs/HoverEffectsIdeasNew.png" alt="HoverEffectsIdeasNew"/>
-                    <h3>Ideas for Subtle Hover Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/07/14/freebie-halcyon-days-one-page-website-template/">
-                    <img src="img/thumbs/FreebieHalcyonDays.png" alt="FreebieHalcyonDays"/>
-                    <h3>Halcyon Days Template</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/">
-                    <img src="img/thumbs/ArticleIntroEffects.png" alt="ArticleIntroEffects"/>
-                    <h3>Inspiration for Article Intro Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/06/26/draggable-dual-view-slideshow/">
-                    <img src="img/thumbs/DraggableDualViewSlideshow.png" alt="DraggableDualViewSlideshow"/>
-                    <h3>Draggable Dual-View Slideshow</h3>
-                </a>
-            </div>
-            <div class="dummy-column">
-                <h2>Recent</h2>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/">
-                    <img src="img/thumbs/TooltipStylesInspiration.png" alt="TooltipStylesInspiration"/>
-                    <h3>Tooltip Styles Inspiration</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/23/animated-background-headers/">
-                    <img src="img/thumbs/AnimatedHeaderBackgrounds.png" alt="AnimatedHeaderBackgrounds"/>
-                    <h3>Animated Background Headers</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/16/off-canvas-menu-effects/">
-                    <img src="img/thumbs/OffCanvas.png" alt="OffCanvas"/>
-                    <h3>Off-Canvas Menu Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/02/tab-styles-inspiration/">
-                    <img src="img/thumbs/TabStyles.png" alt="TabStyles"/>
-                    <h3>Tab Styles Inspiration</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/">
-                    <img src="img/thumbs/ResponsiveSVGs.png" alt="ResponsiveSVGs"/>
-                    <h3>Make SVGs Responsive with CSS</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/07/23/notification-styles-inspiration/">
-                    <img src="img/thumbs/NotificationStyles.png" alt="NotificationStyles"/>
-                    <h3>Notification Styles Inspiration</h3>
-                </a>
+
+
+
+            <div class="row" >
+            <div class="form-group col-sm-12" >
+
+             <div id="page-selection"></div>
+                </div>
             </div>
         </div><!-- /morphsearch-content -->
         <span class="morphsearch-close"></span>
@@ -171,6 +104,7 @@
 {{HTML::script('assets/js/form_elements.js')}}
 {{HTML::script('assets/js/form_validations.js')}}
 <script type="text/javascript">
+
     (function() {
         var morphSearch = document.getElementById( 'morphsearch' ),
                 input = morphSearch.querySelector( 'input.morphsearch-input' ),
@@ -180,8 +114,7 @@
                 toggleSearch = function(evt) {
                     // return if open and the input gets focused
                     if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
-                    $h=$('html').height();
-                    $('.morphsearch-content').height($h);
+
                     var offsets = morphsearch.getBoundingClientRect();
                     if( isOpen ) {
                         classie.remove( morphSearch, 'open' );
@@ -223,7 +156,115 @@
         morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
     })();
 
+    $('.morphsearch-input').keyup( function(){
+        //alert($(this).val());
+        // Set Search String
+        var search_string = $(this).val();
 
+            ajaxpaginate(search_string, 1, "/test2", "GET", "true");
+
+
+
+
+    });
+    function ajaxpaginate(search_string, num, url, method, firstcall) {
+        if (search_string !== '') {
+            if (firstcall) {
+                $.ajax({
+                    type: method,
+                    url: url + "?page=" + 1,//for server side
+                    data: {query: search_string},
+                    cache: false,
+                    success: function (a) {
+                        //alert(a.pagination.total);
+
+                        var r = "";
+                        if (a.tickets != "") {
+                            $.each(a.tickets, function (key, value) {
+                                $( "#page-selection" ).show();
+                                var fname=null;
+                                var lname=null;
+                                var cfname=null;
+                                var clname=null;
+                                if(value.userstaff){
+                                    var fname=value.userstaff.fname;
+                                    var lname=value.userstaff.lname;
+                                }
+                                if(value.usercustomer){
+                                    var cfname=value.userstaff.fname;
+                                    var clname=value.userstaff.lname;
+                                }
+
+                                r += "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned to " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                $("#products").html(r); // some ajax content loading...
+                            });
+                            search(search_string, a.pagination.last_page, url, method);
+                            $(this).bootpag({total: 0, maxVisible: 0});
+
+                        }
+                        else {
+                            $( "#page-selection" ).hide();
+                            $("#products").html("<h1><i class='fa fa-search'></i> Not found </h1>");
+                            $('#page-selection').bootpag({total: 0, maxVisible: 0});
+                        }
+                        //search( search_string, a.pagination.total);
+                    }
+                });
+
+            }
+            else {
+
+                $.ajax({
+                    type: method,
+                    url: url + "?page=" + num + "&firstcall=" + firstcall,
+                    data: {query: search_string},
+                    cache: false,
+                    success: function (a) {
+                        //alert(a.pagination.total);
+                        var r = "";
+                        $('#page-selection').bootpag({total: 0, maxVisible: 0});
+                        if (a.tickets != "") {
+                            $( "#page-selection" ).show();
+                            $.each(a.tickets, function (key, value) {
+                                r += "<div class='box simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + value.Customer_id + " </h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                $("#products").html(r); // some ajax content loading...
+                            });
+                            //search( search_string, a.pagination.total);
+
+                        }
+                        else {
+                            alert("sds");
+                            $("#products").html("<h1><i class='fa fa-search'></i> Not found </h1>");
+                            $( "#page-selection" ).hide();
+
+                            search_string = null;
+                        }
+
+                    }
+                });
+            }
+        }
+        return false;
+
+    };
+
+
+         function search (search_string,total ,url,method) {
+
+        $('#page-selection').bootpag({
+            maxVisible: 25,
+            total: total
+        }).on("page", function(event, num){
+               // $("#content").html("Insert content"); // some ajax content loading...
+
+            search_string=null;
+
+            ajaxpaginate(search, num, url, method, false);
+
+
+            });
+
+    };
 
 
 
@@ -241,19 +282,25 @@
 $('#Description').wysihtml5();
 //$('.left-side').addClass('animated bounceInLeft');
     //$('.left-side').smoothState();
-
+    $(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-Token': $('meta[name="_token"]').attr('content')
+            }
+        });
+    });
 
 (function($) {
     'use strict';
     var $body = $('html, body'),
-            content = $('.box').smoothState({
+            content = $('.left-side').smoothState({
                 // Runs when a link has been activated
                 onStart: {
                     duration: 250, // Duration of our animation
                     render: function (url, $container) {
                         // toggleAnimationClass() is a public method
                         // for restarting css animations with a class
-                        content.toggleAnimationClass('.bounceDown');
+                        content.toggleAnimationClass('.animated .bounceDown');
                         // Scroll user to the top
                         $body.animate({
                             scrollTop: 0
