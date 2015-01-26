@@ -18,6 +18,15 @@ class UsersController extends Controller
     {
         return View::make('pages.signup');
     }
+    public function create_staff()
+    {
+        $user = Auth::user();
+        return View::make('pages.signupstaff')->with('user', $user);
+    }
+    public function create_admin()
+    {
+        return View::make('pages.signup');
+    }
 
     /**
      * Stores new account
@@ -31,15 +40,11 @@ class UsersController extends Controller
             'username' => 'required|alphaNum|min:3',
             'FirstName' => 'required|alphaNum',
             'LastName' => 'required|alphaNum',
-            'TeleNo' => 'required|alphaNum',
-            'DOB' => 'required|alphaNum',
-            'Gender' => 'required|alphaNum',
-            'Address' => 'required|alphaNum|min:3',
-            'City' => 'required|alphaNum|min:3',
-            'Country' => 'required|alphaNum|min:3',
-            'City' => 'required|alphaNum|min:3',
-            'Pin' => 'required|alphaNum|min:3',
-            'TeleNo' => 'required|alphaNum|min:3'
+            'Gender' => 'required',
+            'Address' => 'required',
+            'City' => 'required|alphaNum',
+            'Pin' => 'required|alphaNum|min:6',
+            'TeleNo' => 'required|alphaNum|min:10'
         );
 
         // run the validation rules on the inputs from the form
@@ -48,13 +53,13 @@ class UsersController extends Controller
         // if the validator fails, redirect back to the form
         if ($validator->fails()) {
             $error = $validator->errors()->all(':message');
-            return Redirect::action('UsersController@create')
+            return Redirect::action('UsersController@create_staff')
                 ->withErrors($validator)// send back all errors to the login form
                 ->withInput(Input::except('password'))
                 ->with('error', $error);// send back the input (not the password) so that we can repopulate the form
         } else {
             $repo = App::make('UserRepository');
-            $user = $repo->signup_customer(Input::all());
+            $user = $repo->signup_staff(Input::all());
             echo $user;
 
             if ($user->id) {
@@ -72,12 +77,12 @@ class UsersController extends Controller
                     );
                 }
 
-                return Redirect::action('UsersController@login')
+                return Redirect::action('UsersController@create_staff')
                     ->with('notice', Lang::get('confide::confide.alerts.account_created'));
             } else {
                 $error = $user->errors()->all(':message');
 
-                return Redirect::action('UsersController@create')
+                return Redirect::action('UsersController@create_staff')
                     ->withInput(Input::except('password'))
                     ->with('error', $error);
             }
@@ -93,18 +98,18 @@ class UsersController extends Controller
             {
                 $rules = array(
                     'email' => 'required|email',// password can only be alphanumeric and has to be greater than 3 characters
-                    'username' => 'required|alphaNum|min:3',
-                    'FirstName' => 'required|alphaNum|min:3',
-                    'LastName' => 'required|alphaNum|min:3',
-                    'TeleNo' => 'required|alphaNum|min:3',
-                    'DOB' => 'required|alphaNum|min:3',
+                    'username' => 'required|alphaNum',
+                    'FirstName' => 'required|alphaNum',
+                    'LastName' => 'required|alphaNum',
+                    'TeleNo' => 'required|alphaNum',
+                    'DOB' => 'required|alphaNum',
                     'Gender' => 'required|alphaNum',
-                    'Address' => 'required|alphaNum|min:3',
-                    'City' => 'required|alphaNum|min:3',
-                    'Country' => 'required|alphaNum|min:3',
-                    'City' => 'required|alphaNum|min:3',
-                    'Pin' => 'required|alphaNum|min:3',
-                    'TeleNo' => 'required|alphaNum|min:3',
+                    'Address' => 'required|alphaNum|',
+                    'City' => 'required|alphaNum',
+                    'Country' => 'required|alphaNum',
+                    'City' => 'required|alphaNum',
+                    'Pin' => 'required|alphaNum',
+                    'TeleNo' => 'required|alphaNum',
                     'g-recaptcha-response' => 'required|recaptcha'
                 );
 

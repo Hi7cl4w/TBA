@@ -181,9 +181,12 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         });
         /*ticket*/
 
+        Route::get('/staff/create', 'UsersController@create_staff')->before('auth');
+        Route::post('/staff/create', 'UsersController@staff_store')->before('auth');
         Route::post('/ticket/create', 'TicketController@store')->before('auth');
         Route::post('/ticket', 'TicketController@store')->before('auth');
         Route::get('/ticket', 'TicketController@paging')->before('auth');
+        Route::get('/ticket/{id}', 'TicketController@index')->before('auth');
         /*product*/
         Route::get('/products/create', 'ProductsController@create');
         Route::post('/products/create', 'ProductsController@store');

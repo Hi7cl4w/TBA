@@ -46,4 +46,5 @@ return array(
     'Boris' => array($vendorDir . '/d11wtq/boris/lib'),
     'Bllim\\Datatables' => array($vendorDir . '/bllim/datatables/src'),
     'Barryvdh\\VendorCleanup' => array($vendorDir . '/barryvdh/laravel-vendor-cleanup/src'),
+    'Artistan\\Nexmo' => array($vendorDir . '/artistan/nexmo/src'),
 );

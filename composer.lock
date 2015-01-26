@@ -4,8 +4,57 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "06d62fa5b7a19c15c04cd41d9a162e83",
+    "hash": "04a0a62518185a20aab4932a9c4adb03",
     "packages": [
+        {
+            "name": "artistan/nexmo",
+            "version": "v0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Artistan/nexmo.git",
+                "reference": "5271a0e3a56b39d1488776723868a2abe02a466c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Artistan/nexmo/zipball/5271a0e3a56b39d1488776723868a2abe02a466c",
+                "reference": "5271a0e3a56b39d1488776723868a2abe02a466c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "4.*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "dev-master@dev",
+                "orchestra/testbench": "2.1.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Artistan\\Nexmo": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Charles Peterson",
+                    "email": "artistan@gmail.com"
+                }
+            ],
+            "description": "Nexmo Sms Client",
+            "keywords": [
+                "artistan",
+                "client",
+                "laravel",
+                "laravel4",
+                "sms"
+            ],
+            "time": "2014-10-31 17:33:26"
+        },
         {
             "name": "barryvdh/laravel-ide-helper",
             "version": "v1.11.3",

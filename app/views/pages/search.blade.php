@@ -12,11 +12,11 @@
 {{HTML::script('assets/js/jquery.smoothState.js')}}
 {{HTML::script('assets/js/app.js')}}
     <title>Login</title>
-
+{{  NexmoAccount::numbersList()}}
     <!-- Main Title -->
     <div class="row wrapper h-align-middle">
     <div class="col-md-12">
-      s
+    <!--
         <input class="form-control input-sm" type="text" id="search" name="auto" >
         <select id="emptyDropdown">
             <option value="0">R8</option>
@@ -26,12 +26,31 @@
         <p id="results">
         {{Ticket::with('userstaff')->find(1024)}}
 ss
-        </p>
+        </p>-->
         <?php
-        SMS::queue('emails.ticket.admin', array('sdd' =>'ede'), function($sms) {
-            $sms->to('+919656693740');
-        });
-        ?>
+
+        $receipt = new Artistan\Nexmo\Service\Receipt;
+        $sms = NexmoSmsMessage::sendText('919656693740','NEXMO','Your Ticket has been registered successfully Ticket id:TI22343 manukn.in');
+
+        if ($receipt->exists()) {
+        switch ($receipt->status)
+        { case $receipt::STATUS_DELIVERED;
+                echo "d";
+                break;
+
+             case $receipt::STATUS_FAILED:
+                 echo "fail";
+                break;
+                case $receipt::STATUS_EXPIRED:
+                echo "ex";
+                break;
+                }
+        }
+
+
+
+                ?>
+
 </div>
 
     </div>

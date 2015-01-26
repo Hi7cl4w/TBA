@@ -15,11 +15,51 @@ class TicketController extends \BaseController
         return View::make('pages.ticket', compact('tickets'))->with('user', $user);
     }
 
-    public function index()
+    public function index($id)
     {
-        //
-    }
+        $user = Auth::user();
 
+        if ($user->hasRole('Administrator')) {
+
+            $tickets = Ticket::where('id', '=', $id)->get();
+            $user = Auth::user();
+            if (!$tickets->isEmpty()) {
+                return View::make('pages.ticketview', $tickets)
+                    ->with(array(
+                            'user' => $user,
+                            'ticket' => $tickets
+                        )
+                    );
+            }
+            App::abort('404');
+        } elseif ($user->hasRole('Staff')) {
+            $user = Auth::user();
+            $tickets = Ticket::where('Staff_id', '=', $user->id)->where('id', '=', $id)->get();
+            if (!$tickets->isEmpty()) {
+                return View::make('pages.ticketview', $tickets)
+                    ->with(array(
+                            'user' => $user,
+                            'ticket' => $tickets
+                        )
+                    );
+            }
+            App::abort('404');
+
+        } elseif ($user->hasRole('Customer')) {
+            $user = Auth::user();
+            $tickets = Ticket::where('Customer_id', '=', $user->id)->where('id', '=', $id)->get();
+            if (!$tickets->isEmpty()) {
+                return View::make('pages.ticketview', $tickets)
+                    ->with(array(
+                            'user' => $user,
+                            'ticket' => $tickets
+                        )
+                    );
+
+            }
+            App::abort('404');
+        }
+    }
     public function search()
     {
 
@@ -93,14 +133,14 @@ class TicketController extends \BaseController
             if ($ticket->id) {
 
 
-                Mail::laterOn('ticket',5, 'emails.ticket.admin',array('key' => 'value') , function ($message) use ($ticket) {
+                Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
                     $customer = User::find($ticket->Customer_id);
                     $e = $customer->email;
                     if ($ticket->Staff_id)
                         $staff = User::find($ticket->Staff_id);
                     $message->to($e, 'no-replay')->subject('Welcome!');
                 });
-                Mail::laterOn('ticket',5, 'emails.ticket.admin',array('key' => 'value') , function ($message) use ($ticket) {
+                Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
                     $customer = User::find($ticket->Customer_id);
                     $e = $customer->email;
                     if ($ticket->Staff_id)

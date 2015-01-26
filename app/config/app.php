@@ -125,7 +125,8 @@ return array(
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
-		'SimpleSoftwareIO\SMS\SMSServiceProvider'
+		'SimpleSoftwareIO\SMS\SMSServiceProvider',
+		'Artistan\Nexmo\NexmoServiceProvider',
 
 	),
 

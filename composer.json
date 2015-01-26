@@ -13,7 +13,8 @@
 	  "barryvdh/laravel-vendor-cleanup": "1.*",
 	  "greggilbert/recaptcha": "dev-master",
 	  "simplesoftwareio/simple-sms": "1.1.*",
-	  "webpatser/laravel-uuid": "1.*"
+	  "webpatser/laravel-uuid": "1.*",
+	  "artistan/nexmo": "0.1.*"
 
 	},
 	"autoload": {

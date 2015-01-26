@@ -45,6 +45,13 @@
 
 
 
+.w{
+	background: rgba(241, 241, 241,.6);
+
+
+
+
+}
 
 
 
@@ -52,9 +59,9 @@
 .morphsearch {
 	width: 200px;
 	min-height: 40px;
-	background: rgb(241, 241, 241);
-	opacity:.95;
-	position: absolute;
+	background-size: cover;
+background: inherit;
+	position: fixed;
 	z-index: 1000000;
 	top: 10px;
 	right: 75%;
@@ -68,9 +75,7 @@
 	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 
 }
-.morphsearch .box{
- opacity: 1;
-}
+
 .morphsearch .box-title h4{
  padding-top: 0;
 }
@@ -84,6 +89,8 @@
 	min-height: 180rem;
 	top: 0px;
 	right: 0px;
+	position: absolute;
+
 
 }
 
@@ -198,7 +205,7 @@ input[type="search"] { /* reset normalize */
 .morphsearch-close {
 	width: 36px;
 	height: 36px;
-	position: absolute;
+	position: fixed;
 	right: 1em;
 	top: 1em;
 	overflow: hidden;
@@ -256,7 +263,7 @@ input[type="search"] { /* reset normalize */
 	height: 0;
 	overflow: hidden;
 	padding: 0 8.5%;
-	background: inherit;
+
 	position: absolute;
 	pointer-events: none;
 	opacity: 0;

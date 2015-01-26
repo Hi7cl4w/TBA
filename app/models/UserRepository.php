@@ -75,13 +75,10 @@ class UserRepository
         if ($user->id) {
             $c = new Staff;
             $c->staff_id = $user->id;
-            $c->DOB = array_get($input, 'DOB');
             $c->Designation = array_get($input, 'Designation');
             $c->Gender = array_get($input, 'Gender');
             $c->Address = array_get($input, 'Address');
             $c->City = array_get($input, 'City');
-            $c->Country = array_get($input, 'Country');
-            $c->Catagory = array_get($input, 'Category');
             $c->Branch = array_get($input, 'Branch');
             $c->State = array_get($input, 'City');
             $c->Pin = array_get($input, 'Pin');

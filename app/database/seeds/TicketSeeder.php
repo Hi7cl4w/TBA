@@ -18,7 +18,7 @@ class TicketSeeder extends Seeder{
 
             DB::table('ticket')->insert(array(array(
                 'prefix' => "TI",
-                'Customer_id' => rand(1, 50),
+                'Customer_id' => rand(1, 10),
                 'Staff_id' => rand(1, 10),
                 'Subject' => "Subject " . rand(50, 500000),
                 'Description' => $string,

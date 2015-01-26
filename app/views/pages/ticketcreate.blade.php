@@ -10,10 +10,12 @@
     <div class="row">
 
         <div class="col-sm-12">
-            <div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+            <div class="pace  pace-inactive">
+                <div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
                     <div class="pace-progress-inner"></div>
                 </div>
-                <div class="pace-activity"></div></div>
+                <div class="pace-activity"></div>
+            </div>
             <div class="box simple">
                 <div class="box-title no-border">
                     <h4>Create a <span class="semi-bold"> Ticket</span></h4>
@@ -36,7 +38,8 @@
                         <div class="alert">{{ Session::get('notice') }}</div>
                     @endif
 
-                    <form method="POST" action="{{{ URL::to('/profile/'.$user->username.'/ticket/create') }}}" accept-charset="UTF-8"
+                    <form method="POST" action="{{{ URL::to('/profile/'.$user->username.'/ticket/create') }}}"
+                          accept-charset="UTF-8"
                           class="form-no-horizontal-spacing" id="form-condensed"
                           novalidate="novalidate">
                         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
@@ -51,10 +54,6 @@
                                                name="Subject" id="Subject" value="{{{ Input::old('Subject') }}}">
                                     </div>
                                 </div>
-
-
-
-
 
 
                             </div>
@@ -76,18 +75,19 @@
                                     </div>
                                 </div>
 
-                        </div>
+                            </div>
 
 
                             <div class="col-sm-12">
 
-                        <div class="row form-row">
-                            <div class="col-md-12">
-                                <label for="comment">Description</label>
-                                <textarea class="form-control" rows="10" id="Description" name="Description"></textarea>
-                            </div>
-                        </div>
+                                <div class="row form-row">
+                                    <div class="col-md-12">
+                                        <label for="comment">Description</label>
+                                        <textarea class="form-control" rows="10" id="Description"
+                                                  name="Description"></textarea>
+                                    </div>
                                 </div>
+                            </div>
 
                         </div>
                         <div class="row form-row">
@@ -119,9 +119,9 @@
                     </form>
                 </div>
             </div>
-            </div>
+        </div>
+    </div>
 
-    </div>   <!-- END ROW -->
 
 
 
