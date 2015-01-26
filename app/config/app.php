@@ -125,7 +125,7 @@ return array(
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Greggilbert\Recaptcha\RecaptchaServiceProvider',
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
-		'CooperativeComputing\Laravel4Twilio\Laravel4TwilioServiceProvider',
+		'SimpleSoftwareIO\SMS\SMSServiceProvider'
 
 	),
 
@@ -196,7 +196,7 @@ return array(
 		'Confide'           => 'Zizaco\Confide\Facade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
 		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
-		'Twilio'          => 'CooperativeComputing\Laravel4Twilio\Facades\Laravel4Twilio',
+		'SMS' => 'SimpleSoftwareIO\SMS\Facades\SMS'
 
 
 	),

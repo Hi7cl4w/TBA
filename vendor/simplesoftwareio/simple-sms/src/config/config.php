@@ -48,12 +48,12 @@
 */
 
 return [
-    'driver' => 'twilio',
-    'from' => '+12015911080',
+    'driver' => 'Selected Driver',
+    'from' => 'Your Number or Email',
     'twilio' => [
-        'account_sid' => 'AC649de417423dddd66e5f76230611ef08',
-        'auth_token' => 'cc6c77f102a94a1f432a6588d53741b8',
-        'verify' => false,
+        'account_sid' => 'Your SID',
+        'auth_token' => 'Your Token',
+        'verify' => true,
     ],
     'eztexting' => [
         'username' => 'Your EZTexting Username',
@@ -64,8 +64,8 @@ return [
         'app_password' => 'Your CallFire API Password'
     ],
     'mozeo' => [
-        'companyKey' => 'CCnGuxmQCA9eMFg',
-        'username' => 'manuknm',
-        'password' => 'fvZ5FMDj'
+        'companyKey' => 'Your Mozeo Company Key',
+        'username' => 'Your Mozeo Username',
+        'password' => 'Your Mozeo Password'
     ]
 ];
