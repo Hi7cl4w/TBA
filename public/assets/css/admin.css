@@ -12,9 +12,10 @@ body {
   overflow-x: hidden!important;
   font-family: 'Open Sans',"Segoe UI",'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased !important;
-  overflow-y:auto;
-  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background: #f0f0f0 ;
+  height:auto;
 }
 
 a {
@@ -30,7 +31,6 @@ a:focus {
 /* Layouts */
 .wrapper {
   min-height: 100%;
-  z-index: -22;
 }
 .wrapper:before,
 .wrapper:after {
@@ -656,11 +656,11 @@ margin: 0 auto;
 .sidebar {
     position: relative;
   margin-bottom: 5px;
-  z-index: -23;
 
 
 
-  line-height:40px;
+
+  line-height:35px;
  
 }
 
@@ -6399,13 +6399,11 @@ a.icon:hover {
 .tiles-container{
   margin-left:0px;
   margin-right:0px;
-  z-index: -22;
 }
 .tiles{ 
   background-color:#c1cace;
   color:#fff;
   font-family: 'Open Sans',"Segoe UI";
-  z-index: -22;
   
 }
 

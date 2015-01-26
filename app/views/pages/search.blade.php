@@ -27,6 +27,10 @@
         {{Ticket::with('userstaff')->find(1024)}}
 ss
         </p>
+        <?php SMS::send('emails.ticket.admin', array('g' => 'dwe'), function($sms) {
+            $sms->to('+919656693740');
+        });
+        ?>
 </div>
 
     </div>

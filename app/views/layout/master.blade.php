@@ -29,7 +29,7 @@
 <?php if(Auth::check()) { ?>
 <div class="clearfix"></div>
 
-<div class="container">
+<div class="container" >
 
     <div id="morphsearch" class="morphsearch">
         <form class="morphsearch-form">
@@ -37,13 +37,9 @@
             <button class="morphsearch-submit" type="submit">Search</button>
         </form>
         <div class="morphsearch-content">
-
-            <div class="col-sm-8 colspecial" id="products">
+            <div class="dummy-column colspecial" id="products">
                     <h1><i class="fa fa-search " ></i> Just type here </h1>
             </div>
-
-
-
             <div class="row" >
             <div class="form-group col-sm-12" >
 
@@ -54,8 +50,8 @@
         <span class="morphsearch-close"></span>
     </div><!-- /morphsearch -->
 
-
 </div><!-- /container -->
+
 
 
 
@@ -182,8 +178,8 @@
                         if (a.tickets != "") {
                             $.each(a.tickets, function (key, value) {
                                 $( "#page-selection" ).show();
-                                var fname=null;
-                                var lname=null;
+                                var fname="not";
+                                var lname="allocated";
                                 var cfname=null;
                                 var clname=null;
                                 if(value.userstaff){
@@ -195,7 +191,7 @@
                                     var clname=value.userstaff.lname;
                                 }
 
-                                r += "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned to " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                r += "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").html(r); // some ajax content loading...
                             });
                             search(search_string, a.pagination.last_page, url, method);
@@ -205,7 +201,7 @@
                         else {
                             $( "#page-selection" ).hide();
                             $("#products").html("<h1><i class='fa fa-search'></i> Not found </h1>");
-                            $('#page-selection').bootpag({total: 0, maxVisible: 0});
+
                         }
                         //search( search_string, a.pagination.total);
                     }
@@ -216,28 +212,38 @@
 
                 $.ajax({
                     type: method,
-                    url: url + "?page=" + num + "&firstcall=" + firstcall,
+                    url: url + "?page=" + num ,
                     data: {query: search_string},
                     cache: false,
                     success: function (a) {
                         //alert(a.pagination.total);
                         var r = "";
-                        $('#page-selection').bootpag({total: 0, maxVisible: 0});
                         if (a.tickets != "") {
                             $( "#page-selection" ).show();
                             $.each(a.tickets, function (key, value) {
-                                r += "<div class='box simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + value.Customer_id + " </h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                $( "#page-selection" ).show();
+                                var fname="not";
+                                var lname="allocated";
+                                var cfname=null;
+                                var clname=null;
+                                if(value.userstaff){
+                                    var fname=value.userstaff.fname;
+                                    var lname=value.userstaff.lname;
+                                }
+                                if(value.usercustomer){
+                                    var cfname=value.userstaff.fname;
+                                    var clname=value.userstaff.lname;
+                                }
+                                r += "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").html(r); // some ajax content loading...
                             });
                             //search( search_string, a.pagination.total);
 
                         }
                         else {
-                            alert("sds");
-                            $("#products").html("<h1><i class='fa fa-search'></i> Not found </h1>");
                             $( "#page-selection" ).hide();
+                            $("#products").html("<h1><i class='fa fa-search'></i> Not found </h1>");
 
-                            search_string = null;
                         }
 
                     }
@@ -256,10 +262,7 @@
             total: total
         }).on("page", function(event, num){
                // $("#content").html("Insert content"); // some ajax content loading...
-
-            search_string=null;
-
-            ajaxpaginate(search, num, url, method, false);
+            ajaxpaginate(search_string, num, url, method, false);
 
 
             });

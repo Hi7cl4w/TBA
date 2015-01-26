@@ -27,6 +27,13 @@ Route::get('hello', function () {
 Route::get('/test', function () {
     return View::make('pages.search');
 });
+Route::get('/test', function () {
+    return View::make('pages.search');
+});
+Route::get('foo', array('https', function()
+{
+    return View::make('pages.search');
+}));
 Route::get('/test2', 'TicketController@search');
 Route::get('/getdata', function () {
     $term= Input::get('term');
@@ -173,7 +180,7 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
 
         });
         /*ticket*/
-        Route::get('/ticket/create', 'TicketController@create')->before('auth');
+
         Route::post('/ticket/create', 'TicketController@store')->before('auth');
         Route::post('/ticket', 'TicketController@store')->before('auth');
         Route::get('/ticket', 'TicketController@paging')->before('auth');

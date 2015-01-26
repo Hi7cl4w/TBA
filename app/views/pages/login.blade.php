@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                                     <div class="checkbox">
-                                        <input type="checkbox" id="checkbox1" value="1">
+                                        <input type="checkbox" id="checkbox1" name="remember" value="1">
                                         <label id="cblabel" for="checkbox1">Keep me reminded </label>
                                     </div>
 
