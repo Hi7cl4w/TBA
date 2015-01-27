@@ -9,7 +9,7 @@
     <div class="content h-align-middle">
         <div class="row">
             <div class="panel col-sm-12">
-                <div class="box simple">
+
                     <div class="box-title no-border">
                         <h3>Forgot your <span class="semi-bold"> Password </span> ?</h3>
 

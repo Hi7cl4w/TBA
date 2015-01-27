@@ -28,6 +28,7 @@ return array(
     'Stack' => array($vendorDir . '/stack/builder/src'),
     'SimpleSoftwareIO\\SMS\\' => array($vendorDir . '/simplesoftwareio/simple-sms/src'),
     'Services_Twilio' => array($vendorDir . '/twilio/sdk'),
+    'Rfifteen\\Peculiar' => array($vendorDir . '/r15ch13/peculiar/src'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log'),
     'Predis' => array($vendorDir . '/predis/predis/lib'),
     'Patchwork' => array($vendorDir . '/patchwork/utf8/class'),

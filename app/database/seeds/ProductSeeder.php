@@ -27,8 +27,11 @@ class ProductSeeder extends Seeder{
                 'Purchase_id' => Uuid::generate(4)
             )));
            */
+
+            $p=$i+1001;
+            $product="pr".$p;
             DB::table('products')->insert(array(array(
-                'product_id' => rand(1000,10000),
+                'product_id' => $product,
                 'Name' => "Product" . rand(1000, 9999),
                 'Vendor' => "Vendor".rand(1, 10),
             )));

@@ -197,6 +197,7 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         Route::post('/purchases/create', 'PurchasesController@store');
         Route::post('/purchases', 'PurchasesController@view');
         Route::get('/purchases', 'PurchasesController@view');
+        Route::get('/purchases/get', 'PurchasesController@get');
 
 
     });

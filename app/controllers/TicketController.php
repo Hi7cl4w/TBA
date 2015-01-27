@@ -8,6 +8,7 @@ class TicketController extends \BaseController
      *
      * @return Response
      */
+    //pagination
     public function paging()
     {
         $tickets = Ticket::paginate(10);
@@ -21,10 +22,11 @@ class TicketController extends \BaseController
 
         if ($user->hasRole('Administrator')) {
 
-            $tickets = Ticket::where('id', '=', $id)->get();
+            $tickets = Ticket::find($id);
             $user = Auth::user();
-            if (!$tickets->isEmpty()) {
-                return View::make('pages.ticketview', $tickets)
+
+            if ($tickets!=null) {
+                return View::make('pages.ticketview')
                     ->with(array(
                             'user' => $user,
                             'ticket' => $tickets
@@ -34,9 +36,9 @@ class TicketController extends \BaseController
             App::abort('404');
         } elseif ($user->hasRole('Staff')) {
             $user = Auth::user();
-            $tickets = Ticket::where('Staff_id', '=', $user->id)->where('id', '=', $id)->get();
-            if (!$tickets->isEmpty()) {
-                return View::make('pages.ticketview', $tickets)
+            $tickets = Ticket::where('Staff_id', '=', $user->id)->find($id);
+            if ($tickets!=null) {
+                return View::make('pages.ticketview')
                     ->with(array(
                             'user' => $user,
                             'ticket' => $tickets
@@ -47,9 +49,9 @@ class TicketController extends \BaseController
 
         } elseif ($user->hasRole('Customer')) {
             $user = Auth::user();
-            $tickets = Ticket::where('Customer_id', '=', $user->id)->where('id', '=', $id)->get();
-            if (!$tickets->isEmpty()) {
-                return View::make('pages.ticketview', $tickets)
+            $tickets = Ticket::where('Customer_id', '=', $user->id)->find($id);;
+            if ($tickets!=null) {
+                return View::make('pages.ticketview')
                     ->with(array(
                             'user' => $user,
                             'ticket' => $tickets

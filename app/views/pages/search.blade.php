@@ -24,12 +24,22 @@
             <option value="2">A6 hatchback</option>
         </select>
         <p id="results">
-        {{Ticket::with('userstaff')->find(1024)}}
+
 ss
         </p>-->
         <?php
 
-        $receipt = new Artistan\Nexmo\Service\Receipt;
+
+
+
+            $p =new Purchases;
+            $p->Name="purchase";
+            $p->email="manuknarayanan@gmail.com";
+        $p->product_id="pr1001";
+        $p->save();
+        echo $p->id;
+
+     /*  $receipt = new Artistan\Nexmo\Service\Receipt;
         $sms = NexmoSmsMessage::sendText('919656693740','NEXMO','Your Ticket has been registered successfully Ticket id:TI22343 manukn.in');
 
         if ($receipt->exists()) {
@@ -45,7 +55,7 @@ ss
                 echo "ex";
                 break;
                 }
-        }
+        }*/
 
 
 

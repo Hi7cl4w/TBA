@@ -9,10 +9,15 @@
     {{ HTML::style('assets/css/animate.css') }}
     {{ HTML::style('assets/css/font-awesome-4.2.0/css/font-awesome.min.css') }}
     {{ HTML::style('assets/js/metro/MetroJs.css') }}
-    {{HTML::style('assets/plugins/boostrap-checkbox/css/bootstrap-checkbox.css')}}
+
+
+
+    {{HTML::style('assets/css/material.min.css')}}
+    {{HTML::style('assets/css/ripples.min.css')}}
     {{HTML::style('assets/css/admin.css')}}
     {{HTML::style('assets/css/pace.css')}}
     {{HTML::style('assets/css/component.css')}}
+
 
     {{HTML::script('assets/js/jquery-2.1.3.min.js')}}
     {{HTML::script('assets/js/jquery-ui-1.11.2/jquery-ui.min.js')}}
@@ -31,7 +36,7 @@
 
 <div class="w" >
 
-    <div id="morphsearch" class="morphsearch">
+    <div id="morphsearch" class="morphsearch animated zoomIn">
         <form class="morphsearch-form">
             <input class="morphsearch-input" type="search" placeholder="Search..."/>
             <button class="morphsearch-submit" type="submit">Search</button>
@@ -61,10 +66,12 @@
     @include('includes.sidebar')
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
+    <div class="scrollbar" id="ex3">
     <aside class="right-side animated bounceInRight">
         @yield('page')
 
     </aside>
+        </div>
     <!-- /.right-side -->
 
 </div>
@@ -74,6 +81,8 @@
 {{--scripts--}}
 
 {{HTML::script('assets/js/bootstrap.min.js')}}
+{{HTML::script('assets/js/material.min.js')}}
+{{HTML::script('assets/js/ripples.min.js')}}
 {{HTML::script('assets/js/metro/MetroJs.min.js')}}
 {{HTML::script('assets/js/jquery.smoothState.js')}}
 {{HTML::script('assets/js/app.js')}}

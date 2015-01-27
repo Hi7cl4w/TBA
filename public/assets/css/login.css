@@ -3,11 +3,6 @@ body{
     background-image: url('bg.jpg') ;
 	overflow-y:hidden;
 }
-.content {
-	margin: 10rem auto;
-}
-.checkbox label{
-	font-family: 'Montserrat';
-	color: #9ca2af;
-}
+
+
 

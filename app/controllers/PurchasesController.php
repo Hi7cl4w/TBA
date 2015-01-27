@@ -7,6 +7,17 @@ class PurchasesController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	public function get(){
+		$id=Input::get('value');
+		$product=null;
+		if($p= Purchases::find($id))
+		$product = Products::find($p->product_id);
+
+		return Response::json($product);
+	}
+
+
+
 	public function index()
 	{
 		//

@@ -53,10 +53,10 @@
     <div class="row">
 
             <div class="col-md-12">
-                @foreach($ticket as $ticket)
-                <div class="box simple ">
+
+                <div class="box simple no-border ">
                     <div class="box-title no-border">
-                        <h4 class="semi-bold">{{ $ticket->Subject }}</h4>
+                        <h3 class="semi-bold">Subject : {{ $ticket->Subject }}</h3>
 
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;<span
@@ -116,7 +116,7 @@
 
 
                 </div>
-                @endforeach
+
 
 
 

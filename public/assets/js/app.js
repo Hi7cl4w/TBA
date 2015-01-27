@@ -14,7 +14,6 @@ var left_side_width = 280; //Sidebar width in pixels
 $(function () {
     "use strict";
 
-    $('html').height($('body').height());
     //Enable sidebar toggle
     $("[data-toggle='offcanvas']").click(function (e) {
         e.preventDefault();
@@ -166,8 +165,13 @@ function fix_sidebar() {
     //Add slimscroll
     $(".sidebar").slimscroll({
         height: ($(window).height() - $(".header").height()) + "px",
-        color: "rgba(0,0,0,0.2)"
+        color: "rgba(0,0,0,0.02)"
     });
+    $(".right-side").slimscroll({
+        height: ($(window).height() - $(".header").height()) + "px",
+        color: "rgba(0,0,0,1)"
+    });
+
 }
 
 /*END DEMO*/

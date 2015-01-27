@@ -29,7 +29,7 @@
 
 
     <div class="page-title">
-        <h1><i class="fa fa-arrow-circle-left"></i>Support</h1>
+        <h1>Support</h1>
 
         <div class="row form-row">
             <div class="col-md-12">
@@ -159,12 +159,12 @@
                                         Thank you for reaching us, We are looking into this issue and will update
                                         you.<br>
                                         <br>
-                                        Alex<br>
+                                        Manu K<br>
                                         <hr>
                                         <p>Posted on 10/29/13 at 07:21</p>
                                     </div>
                                     <div class="form-group">
-                                        <label class="form-label"><i class="fa fa-reply"></i>&nbsp;Amount</label>
+                                        <label class="form-label"><i class="fa fa-reply"></i>&nbsp;Comment</label>
 
                                         <div class="input-with-icon  right"><i class=""></i>
                                             <input type="text" class="form-control">
@@ -250,6 +250,34 @@
                 el.slideDown(200);
             }
         });
+
+
+            $( "#Purchase_id" ).bind("keyup change",function() {
+                        var value = $( this ).val();
+
+
+                $("#Product_id option[value='']").remove();
+                $.ajax({
+                    type: "GET",
+                    url: "{{{ URL::to('/profile/'.$user->username.'/purchases/get') }}}",
+                    data: {value: value},
+                    cache: false,
+                    success: function (d) {
+                        // Parse the returned json data
+
+                        if(d.id) {   // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                            $('#Product_id').html('<option value="' + d.id + '">' + d.Vendor + " : " + d.Name + '</option>');
+                        }
+                        else {
+                            $('#Product_id').html("<option value='' > --invalid purchase id-- </option>");
+                        }
+
+
+                    }
+                });
+
+                    });
+
 
     </script>
 

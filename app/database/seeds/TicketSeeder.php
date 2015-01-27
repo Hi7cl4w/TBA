@@ -13,18 +13,20 @@ class TicketSeeder extends Seeder{
 <HR>";
 
 
-        for($i=0;$i<200;$i++)
+        for($i=0;$i<100;$i++)
         {
 
             DB::table('ticket')->insert(array(array(
                 'prefix' => "TI",
-                'Customer_id' => rand(1, 10),
-                'Staff_id' => rand(1, 10),
-                'Subject' => "Subject " . rand(50, 500000),
+                'Customer_id' => rand(3, 4),
+                'Staff_id' => 2,
+                'Subject' => "Subject " . rand(10000, 500000),
                 'Description' => $string,
                 'Status' => "Pending",
-                'Product_id' => rand(1000, 9999),
-                'Purchase_id' => Uuid::generate(4)
+                'Product_id' => rand(1, 200),
+                'Purchase_id' => "e44700f4-0958-47ab-9b00-a7171068d6e1",
+                'created_at' => new DateTime,
+                'updated_at' => new DateTime
             )));
         }
     }

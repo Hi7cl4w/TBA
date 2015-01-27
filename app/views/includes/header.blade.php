@@ -110,7 +110,7 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
 
 
                                 <!-- User image -->
-                                <li class="user-header bg-light-blue">
+                                <li class="user-header">
                                     
                                     <p>{{$user->fname." ".$user->lname}}
                                         <small>Administrator</small>
@@ -122,7 +122,7 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
                                 <li class="user-footer">
                                     
                                     <div class="pull-right">
-                                        <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="/logout" class="btn btn-danger">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
