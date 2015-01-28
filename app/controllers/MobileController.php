@@ -11,18 +11,18 @@ class MobileController extends \BaseController {
 	{
 		$user = Auth::user();
 		if ($user->hasRole('Customer')) {
-			$tickets = Ticket::where('Customer_id', '=', $user->id);
+			$tickets = Ticket::where('Customer_id', '=', $user->id)->get();
 			return Response::json(array(
 					'error' => true,
-					'tickets' => $tickets),
+					'tickets' => $tickets->toArray()),
 				200
 			);
 		}
 		elseif ($user->hasRole('Staff')){
-			$tickets = Ticket::where('Staff_id', '=', $user->id);
+			$tickets = Ticket::where('Staff_id', '=', $user->id)->get();
 			return Response::json(array(
 					'error' => true,
-					'tickets' => $tickets),
+					'tickets' => $tickets->toArray()),
 				200
 			);
 		}
