@@ -49,7 +49,7 @@ class UrlController extends \BaseController {
 
 		return Response::json(array(
 				'error' => false,
-				'urls' => $urls->toArray()),
+				'urls' => $url->toArray()),
 			200
 		);
 	}

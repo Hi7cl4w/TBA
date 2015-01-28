@@ -27,13 +27,13 @@
                         <br>
 
                         @if (Session::get('error'))
-                            <div class="row form-row">
+                            <div class="row form-row col-sm-12">
                                 <div class="alert alert-error alert-danger col-sm-11 alert-dismissable">{{{ Session::get('error') }}}</div>
                             </div>
                         @endif
 
                         @if (Session::get('notice'))
-                            <div class="row form-row">
+                            <div class="row form-row col-sm-12">
                                 <div class="alert alert-info col-sm-11">{{{ Session::get('notice') }}}</div>
                             </div>
                         @endif

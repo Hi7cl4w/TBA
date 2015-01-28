@@ -9,7 +9,10 @@ class MobileController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$user = Auth::user();
+		$tickets = Ticket::where('customer_id','=',$user->id)->paginate(6);
+
+		return Response::json($tickets);
 	}
 
 
