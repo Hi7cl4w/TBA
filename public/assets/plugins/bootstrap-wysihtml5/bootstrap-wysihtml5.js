@@ -5,7 +5,7 @@
         "font-styles": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li class='dropdown'>" +
-              "<a class='btn dropdown-toggle btn-white" + size + "' data-toggle='dropdown' href='#'>" +
+              "<a class='btn dropdown-toggle btn btn-flat btn-default" + size + "' data-toggle='dropdown' href='#'>" +
               "<i class='fa fa-font'></i>&nbsp;<span class='current-font'>" + locale.font_styles.normal + "</span>&nbsp;<b class='caret'></b>" +
               "</a>" +
               "<ul class='dropdown-menu'>" +
@@ -24,9 +24,9 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group '>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='bold' title='CTRL+B'>" + locale.emphasis.bold + "</a>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='italic' title='CTRL+I'>" + locale.emphasis.italic + "</a>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='underline' title='CTRL+U'>" + locale.emphasis.underline + "</a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='bold' title='CTRL+B'>" + locale.emphasis.bold + "</a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='italic' title='CTRL+I'>" + locale.emphasis.italic + "</a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='underline' title='CTRL+U'>" + locale.emphasis.underline + "</a>" +
               "</div>" +
             "</li>";
         },
@@ -35,10 +35,10 @@
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li>" +
               "<div class='btn-group'>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "'><i class='fa fa-list'></i></a>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "'><i class='fa fa-th-list'></i></a>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "'><i class='fa fa-align-right'></i></a>" +
-                "<a class='btn btn-white" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "'><i class='fa fa-align-left'></i></a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='insertUnorderedList' title='" + locale.lists.unordered + "'><i class='fa fa-list'></i></a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='insertOrderedList' title='" + locale.lists.ordered + "'><i class='fa fa-th-list'></i></a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='Outdent' title='" + locale.lists.outdent + "'><i class='fa fa-align-right'></i></a>" +
+                "<a class='btn btn-flat btn-default" + size + "' data-wysihtml5-command='Indent' title='" + locale.lists.indent + "'><i class='fa fa-align-left'></i></a>" +
               "</div>" +
             "</li>";
         },
@@ -59,7 +59,7 @@
                   "<a href='#' class='btn green  btn-primary' data-dismiss='modal'>" + locale.link.insert + "</a>" +
                 "</div>" +
               "</div></div></div>" +
-              "<a class='btn btn-white" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' data-toggle='modal' data-target='#linkmodal'><i class='fa fa-share'></i></a>" +
+              "<a class='btn btn-default btn-fab btn-raised mdi-action-open-in-new" + size + "' data-wysihtml5-command='createLink' title='" + locale.link.insert + "' data-toggle='modal' data-target='#linkmodal'></a>" +
             "</li>";
         },
 
@@ -79,7 +79,7 @@
                   "<a href='#' class='btn  green btn-primary' data-dismiss='modal'>" + locale.image.insert + "</a>" +
                 "</div>" +
              "</div></div></div>" +
-              "<a class='btn btn-white" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "' data-toggle='modal' data-target='#imgmodal'><i class='fa fa-picture-o'></i></a>" +
+              "<a class='btn btn-default btn-fab btn-raised fa fa-picture-o" + size + "' data-wysihtml5-command='insertImage' title='" + locale.image.insert + "' data-toggle='modal' data-target='#imgmodal'></a>" +
             "</li>";
         },
 
@@ -95,7 +95,7 @@
         "color": function(locale, options) {
             var size = (options && options.size) ? ' btn-'+options.size : '';
             return "<li class='dropdown'>" +
-              "<a class='btn dropdown-toggle btn-white" + size + "' data-toggle='dropdown' href='#'>" +
+              "<a class='btn dropdown-toggle btn btn-flat btn-default" + size + "' data-toggle='dropdown' href='#'>" +
                 "<span class='current-color'>" + locale.colours.black + "</span>&nbsp;<b class='caret'></b>" +
               "</a>" +
               "<ul class='dropdown-menu'>" +

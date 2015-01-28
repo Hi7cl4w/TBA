@@ -28,5 +28,9 @@ class User extends Eloquent implements ConfideUserInterface {
 	public function ticketstaff(){
 		return $this->hasMany('Ticket','Staff_id','id');
 	}
+	public function roles()
+	{
+		return $this->belongsToMany('Role','assigned_roles');
+	}
 
 }

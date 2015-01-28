@@ -303,7 +303,13 @@
 
 
 
-$('#Description').wysihtml5();
+$('#Description').wysihtml5({
+    "image": false,
+    "color": false,
+    "font-styles": false,
+    "lists": false,
+    "link": false
+});
 //$('.left-side').addClass('animated bounceInLeft');
     //$('.left-side').smoothState();
     $(function() {

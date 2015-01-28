@@ -112,7 +112,7 @@ echo $_SERVER['HTTP_USER_AGENT']; ?>{{"wdwe"}}</li>
                                 <!-- User image -->
                                 <li class="user-header">
                                     
-                                    <p>{{$user->fname." ".$user->lname}}
+                                    <p>{{$user->fname}} <strong>{{$user->lname}}</strong>
                                         <small>Administrator</small>
                                     </p>
                                 </li>
