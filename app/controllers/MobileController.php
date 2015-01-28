@@ -10,9 +10,21 @@ class MobileController extends \BaseController {
 	public function index()
 	{
 		$user = Auth::user();
-		$tickets = Ticket::where('customer_id','=',$user->id)->paginate(6);
+		if ($user->hasRole('Customer')) {
+			$tickets = Ticket::where('customer_id', '=', $user->id)->paginate(6);
+		}
+		elseif ($user->hasRole('Staff')){
+			$tickets = Ticket::where('staff_id', '=', $user->id);
+			return Response::json($tickets);
+		}
+		else
+			return Response::json(array(
+					'error' => true,
+					'message' => 'invalid user'),
+				200
+			);
 
-		return Response::json($tickets);
+
 	}
 
 
