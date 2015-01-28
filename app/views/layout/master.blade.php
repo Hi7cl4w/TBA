@@ -15,20 +15,20 @@
     {{HTML::style('assets/css/material.min.css')}}
     {{HTML::style('assets/css/ripples.min.css')}}
     {{HTML::style('assets/css/admin.css')}}
-    {{HTML::style('assets/css/pace.css')}}
+
     {{HTML::style('assets/css/component.css')}}
 
 
     {{HTML::script('assets/js/jquery-2.1.3.min.js')}}
     {{HTML::script('assets/js/jquery-ui-1.11.2/jquery-ui.min.js')}}
-    {{HTML::script('assets/js/pace.min.js')}}
+
     {{HTML::script('assets/js/jquery.bootpag.min.js')}}
 
     <meta name="_token" content="{{ csrf_token() }}" />
 
     @yield('head')
 </head>
-<body id="bodyskin" class="skin-black fixed animated fade fadeIn" body-ratio="true">
+<body id="bodyskin" class="skin-black fixed animated fade fadeIn" >
 @yield('bodyfirst')
 
 <?php if(Auth::check()) { ?>
@@ -66,12 +66,12 @@
     @include('includes.sidebar')
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
-    <div class="scrollbar" id="ex3">
+
     <aside class="right-side animated bounceInRight">
         @yield('page')
 
     </aside>
-        </div>
+
     <!-- /.right-side -->
 
 </div>
@@ -206,7 +206,7 @@
                                     Staff="not assigned";
                                 }
 
-                                r = "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                r = "<div class='panel simple no-border shadow-z-5 animated flipInX'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").append(r); // some ajax content loading...
                             });
                             search(search_string, a.pagination.last_page, url, method);
@@ -251,7 +251,7 @@
                                     var cfname=value.userstaff.fname;
                                     var clname=value.userstaff.lname;
                                 }
-                                r = "<div class='panel simple no-border'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                r = "<div class='panel simple no-border shadow-z-4'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").append(r); // some ajax content loading...
                             });
                             //search( search_string, a.pagination.total);

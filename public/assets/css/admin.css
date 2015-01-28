@@ -3,9 +3,8 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-html{
-
-  overflow-y: hidden;
+html,body{
+height: 100%;
 }
 
 
@@ -14,8 +13,9 @@ body {
   overflow-x: hidden!important;
  -webkit-font-smoothing: antialiased !important;
   overflow-y: auto;
+  height: auto;
 
-background: #FFFFFF;
+background: #eeeeee;
   height:auto;
   font-family: 'Open Sans', "Segoe UI";
 }
@@ -54,6 +54,12 @@ body > .header {
 /*right side - contins main content*/
 .right-side {
   margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+
+  overflow-y: auto;
+  overflow-x:hidden ;
+
 }
 /*left side - contains sidebar*/
 .left-side {
@@ -63,6 +69,7 @@ body > .header {
   width: 280px;
   height: 100%;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+
 
 
 
@@ -486,8 +493,7 @@ body > .header .navbar .nav > li > a > .label {
   line-height: 1.0em;
   text-align: center;
   padding: 2px;
-   animation: opacity-badge 1s infinite;
-  -webkit-animation: opacity-badge 0.6s infinite;
+
 }
  @keyframes opacity-badge 
  {
@@ -3265,7 +3271,7 @@ form legend,.form-view legend {
   margin-top: 0px;
   margin-bottom: 25px;
   padding: 5px;
-  box-shadow: 2px 8px 17px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 8px 17px 0 rgba(0, 0, 0, 0.2);
 
 
 }
@@ -3855,13 +3861,17 @@ Component: timeline
   left: 18px;
   top: 0;
 }
-/*
-    Component: Buttons
--------------------------
 
 
 .breadcrumb{
   background: inherit;
+}
+.container-fluid{
+  position: absolute;
+  background: #00bcd4;
+
+
+
 }
 /* 
     Component: callout
@@ -4731,12 +4741,17 @@ a.icon:hover {
 .tiles-container{
   margin-left:0px;
   margin-right:0px;
+
 }
 .tiles{ 
   background-color:#c1cace;
   color:#fff;
   font-family: 'Open Sans',"Segoe UI";
+
   
+}
+.shadow{
+  box-shadow: 1px 10px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .tiles.overflow-hidden{

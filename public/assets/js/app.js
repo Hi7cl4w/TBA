@@ -112,6 +112,8 @@ $(function () {
         if (content > height)
         //then set sidebar height to the wrapper
             $(".left-side, html, body").css("min-height", content + "px");
+
+
         else {
             //Otherwise, set the sidebar to the height of the window
             $(".left-side, html, body").css("min-height", height + "px");
@@ -167,10 +169,7 @@ function fix_sidebar() {
         height: ($(window).height() - $(".header").height()) + "px",
         color: "rgba(0,0,0,0.02)"
     });
-    $(".right-side").slimscroll({
-        height: ($(window).height() - $(".header").height()) + "px",
-        color: "rgba(0,0,0,1)"
-    });
+
 
 }
 

@@ -1,7 +1,7 @@
-  <header class="header">
+  <header class="header  animated fadeInDown">
            
             <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top animated fadeInDown" role="navigation">
+            <nav class="navbar navbar-static-top" role="navigation">
 
 
                 <!-- Sidebar toggle button-->

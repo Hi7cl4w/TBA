@@ -56,7 +56,9 @@ function getOS()
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
-                    <div class="live-tile slide ha " data-speed="750" data-delay="6000" data-mode="carousel">
+                    <div class="">
+
+                    <div class="live-tile slide ha shadow-z-5" data-speed="750" data-delay="6000" data-mode="carousel">
                         <div class="slide-front ha tiles green ">
                             <div class="overlayer bottom-left middle-left fullwidth">
                                 <h4 class="text-white semi-bold no-margin">Job Status </h4>
@@ -99,11 +101,12 @@ function getOS()
                         </div>
                     </div>
                 </div>
+                </div>
                 <!-- END ANIMATED TILE -->
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
-                    <div class="live-tile tiles slide ha " data-speed="750" data-delay="3000" data-mode="carousel">
+                    <div class="live-tile tiles slide ha shadow-z-5" data-speed="750" data-delay="3000" data-mode="carousel">
                         <div class="slide-front ha tiles adjust-text red">
                             <div class="p-t-20 p-l-20 p-r-20 p-b-20"><i class="fa fa-map-marker fa-2x"></i>
 
@@ -139,7 +142,7 @@ function getOS()
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
-                    <div class="live-tile slide ha" data-speed="750" data-delay="4700" data-mode="carousel">
+                    <div class="live-tile slide ha shadow-z-5" data-speed="750" data-delay="4700" data-mode="carousel">
                         <div class="slide-front ha tiles purple p-t-20 p-l-20 p-r-20 p-b-20">
                             <h1 class="semi-bold text-white">USER MANAGER <i class="icon-custom-up icon-custom-2x"></i>
                             </h1>
@@ -179,7 +182,7 @@ function getOS()
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-6 col-sm-6 m-b-20" data-aspect-ratio="true">
-                    <div class="live-tile tiles slide ha " data-speed="750" data-delay="1000" data-mode="carousel">
+                    <div class="live-tile tiles slide ha shadow-z-5" data-speed="750" data-delay="1000" data-mode="carousel">
                         <div class="slide-front ha tiles adjust-text orange">
                             <div class="p-t-20 p-l-20 p-r-20 p-b-20"><i class="fa fa-map-marker fa-2x"></i>
 
@@ -220,7 +223,7 @@ function getOS()
 
                 <!-- BEGIN ANIMATED TILE -->
                 <div class="col-md-12 col-sm-6 m-b-20" data-aspect-ratio2="true">
-                    <div class="live-tile slide ha " data-speed="750" data-delay="5000" data-mode="carousel">
+                    <div class="live-tile slide ha shadow-z-4" data-speed="750" data-delay="5000" data-mode="carousel">
                         <div class="slide-front ha tiles green ">
                             <div class="overlayer middle-left fullwidth">
                                 <div class="overlayer-wrapper">
@@ -254,16 +257,9 @@ function getOS()
 
                         </div>
                     </div>
-                </div>
-                <!-- END ANIMATED TILE -->
-
-
-            </div>
-
-
+                </div>                     <!-- END ANIMATED TILE -->
+ </div>
      </div>
-
-
 
 
 @stop

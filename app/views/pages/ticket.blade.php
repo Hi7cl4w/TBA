@@ -16,15 +16,13 @@
         <li><a href="#" class="active">Support</a></li>
     </ul>
     <div class="pull-right actions">
-        <button class="btn btn-danger btn-cons" type="button" id="btn-new-ticket">New Ticket</button>
+        <button class="btn btn-fab btn-raised btn-material-red" type="button" id="btn-new-ticket"><i class="fa fa-plus"></i> </button>
     </div>
-
 
 
     <div class="pull-right actions">
 
     </div>
-
 
 
 
@@ -51,11 +49,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="grid simple transparent" id="new-ticket-wrapper" style="display:none">
+            <div class="box simple transparent" id="new-ticket-wrapper" style="display:none">
                 <div class="grid-title no-border">
                     <h4 class="semi-bold">How can we help you?</h4>
                 </div>
-                <div class="grid-body">
+                <div class="box-body">
                     <form class="" method="POST" id="new-ticket-form"
                           action="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}">
                         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
@@ -70,6 +68,7 @@
                                     <option value="">Loading Products...</option>
 
                                 </select>
+                             
                             </div>
                             <div class="col-md-3">
                                 <input type="text" placeholder="Purchase ID" class="form-control" id="Purchase_id"
