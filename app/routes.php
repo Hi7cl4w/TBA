@@ -155,9 +155,9 @@ Route::get('/sitemap', function () {
     }
 });
 
-Route::get('/login', 'UsersController@login')->before('guest');
+Route::get('/login', 'UsersController@slogin')->before('guest');
 // route to process the form
-Route::post('/login', 'UsersController@doLogins');
+Route::post('/login', 'UsersController@sdoLogin');
 Route::get('/forgot', 'UsersController@forgotPassword');
 Route::post('/forgot', 'UsersController@doForgotPassword');
 Route::get('/reset_password/{token}', 'UsersController@resetPassword');
