@@ -13,7 +13,7 @@ class MobileController extends \BaseController {
 		if ($user->hasRole('Customer')) {
 			$tickets = Ticket::where('Customer_id', '=', $user->id)->get();
 			return Response::json(array(
-					'error' => true,
+					'error' => false,
 					'tickets' => $tickets->toArray()),
 				200
 			);
@@ -21,7 +21,7 @@ class MobileController extends \BaseController {
 		elseif ($user->hasRole('Staff')){
 			$tickets = Ticket::where('Staff_id', '=', $user->id)->get();
 			return Response::json(array(
-					'error' => true,
+					'error' => false,
 					'tickets' => $tickets->toArray()),
 				200
 			);
