@@ -209,12 +209,12 @@ Route::get('/logout', 'UsersController@logout');
 
 
 /*API*/
-
+/*
 Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
 {
     Route::resource('url', 'UrlController');
-});
-Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
+});*/
+Route::group(array('prefix' => 'api/v1', 'before' => 'auth.basic'), function()
 {
     Route::resource('ticket', 'MobileController');
 });
