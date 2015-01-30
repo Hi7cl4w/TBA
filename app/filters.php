@@ -71,7 +71,7 @@ Route::filter('guest', function()
 {
 	if (Auth::check()) {
 		$user=Auth::user();
-		//return Redirect::to('/profile/'.$user->username);
+		return Redirect::to('/profile/'.$user->username);
 	}
 });
 Entrust::routeNeedsPermission( 'admin/post*', 'manage_posts' );

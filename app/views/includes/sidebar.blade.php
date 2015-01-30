@@ -14,14 +14,12 @@
                     <span>Home</span><i id="sp" class="fa fa-home side-icon pull-right"></i>
                 </a>
             </li>
-            <li id="tickettree" class="treeview">
-                <a href="">
-                     <span>Tickets</span><i id="sp" class="fa fa-th side-icon pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu" >
-                    <li id="ticketcreate" ><a href="{{{ URL::to('/profile/'.$user->username.'/ticket/create') }}}"><i class="fa fa-angle-double-right"></i>Create<i class="fa pull-right">C</i></a></li>
-                    <li id="view" ><a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}"><i class="fa fa-angle-double-right"></i>View<i class="fa pull-right">V</i></a></li>
+            <li id="tickettree" >
+               <a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}">
+                   <span>Tickets</span>
+                  <i class="fa pull-right side-icon">V</i>
+               </a>
 
-                </ul>
             </li>
             <li id="producttree" class="treeview">
                 <a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}">
