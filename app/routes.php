@@ -155,9 +155,9 @@ Route::get('/sitemap', function () {
     }
 });
 
-Route::get('/login', 'UsersController@login')->before('guest');
+Route::get('/login', 'UsersController@slogin')->before('guest');
 // route to process the form
-Route::post('/login', 'UsersController@doLogin');
+Route::post('/login', 'UsersController@sdoLogin');
 Route::get('/forgot', 'UsersController@forgotPassword');
 Route::post('/forgot', 'UsersController@doForgotPassword');
 Route::get('/reset_password/{token}', 'UsersController@resetPassword');
@@ -188,8 +188,8 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         Route::get('/ticket', 'TicketController@paging')->before('auth');
         Route::get('/ticket/{id}', 'TicketController@index')->before('auth');
         /*product*/
-        Route::get('/products/register', 'ProductsController@create');
-        Route::post('/products/register', 'ProductsController@store');
+        Route::get('/products/create', 'ProductsController@create');
+        Route::post('/products/create', 'ProductsController@store');
         Route::post('/products', 'ProductsController@view');
         Route::get('/products/list', 'ProductsController@getlist');
         /*purchases*/

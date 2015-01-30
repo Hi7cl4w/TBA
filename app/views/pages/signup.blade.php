@@ -6,10 +6,10 @@
     {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
-    <div class="wrapper row-offcanvas  row-offcanvas-left"  >
-        <div class="col-md-10 col-xs-11 col-sm-10 center-block" id="login" >
-            <div class="row">
-                <div class="panel col-xs-12 animated fadeInUp" >
+    <div class="content h-align-middle">
+        <div class="row">
+            <div class="panel col-sm-12">
+                <div class="box simple">
                     <div class="box-title no-border">
                         <h4>SIGN <span class="semi-bold">UP</span></h4>
 
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="row form-row">
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <input type="text" placeholder="Date of Birth"
                                                    class="form-control" id="DOB"
                                                    name="DOB"><span class="error"
@@ -100,7 +100,9 @@
                                                         for="DateOfBirth"
                                                         class="error">This field is required.</span></span>
                                         </div>
-                                        <div class="col-md-6">
+                                    </div>
+                                    <div class="row form-row">
+                                        <div class="col-md-12">
                                             <input name="Occupation" id="Occupation" type="text"
                                                    class="form-control" placeholder="Occupation"><span
                                                     class="error" style="display: none;"><span
@@ -108,27 +110,21 @@
                                                         class="error">This field is required.</span></span>
                                         </div>
                                     </div>
-
                                     <div class="row form-row">
-
                                         <div class="col-md-8">
-                                            <div class="radio radio-success">
-                                                    <label>
+                                            <div class="radio">
                                                 <input id="male" type="radio" name="Gender" value="male"
-                                                       checked="checked"><span class="circle"></span><span class="check"></span>
-                                              Male</label>
-                                                </div>
-                                            <div class="radio radio-success">
-                                                <label>
+                                                       checked="checked">
+                                                <label for="male">Male</label>
                                                 <input id="female" type="radio" name="Gender"
-                                                       value="female"><span class="circle"></span><span class="check"></span>
-                                              Female</label>
-                                            </div>
+                                                       value="female">
+                                                <label for="female">Female</label>
                                             </div>
 
                                         </div>
                                     </div>
 
+                                </div>
                                 <div class="col-md-6">
 
                                     <h4>Postal Information</h4>
@@ -195,30 +191,30 @@
                                         </div>
 
                                     </div>
-                                    <div class="row form-row">
-                                        <div class="checkbox checkbox check-success col-md-12">
-                                            <label for="chkTerms"> <input type="checkbox" value="1" id="chkTerms">
-                                                <span class="ripple"></span><span class="check"></span>I Here by agree on the Term and
-                                                condition. </label>
-                                        </div>
-
-                                        </div>
-
-
+                                    <div class="row small-text" style="display: none;">
+                                        <p class="col-md-12">
+                                            NOTE - Facts to be considered, Simply remove or edit this as for
+                                            what you desire. Disabled font Color and size
+                                        </p>
+                                    </div>
 
                                 </div>
                             </div>
                             <div class="form-actions">
                                 <div class="pull-left">
-
-
-
+                                    <div class="pull-left">
+                                        <div class="checkbox checkbox check-success 	">
+                                            <input type="checkbox" value="1" id="chkTerms">
+                                            <label for="chkTerms">I Here by agree on the Term and
+                                                condition. </label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="pull-right">
                                     <button class="btn btn-danger btn-cons" type="submit"><i
-                                                class="icon-ok"></i> Sign Up
+                                                class="icon-ok"></i> Save
                                     </button>
-
+                                    <button class="btn btn-white btn-cons" type="button">Cancel</button>
                                 </div>
                             </div>
                         </form>

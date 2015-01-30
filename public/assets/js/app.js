@@ -112,6 +112,8 @@ $(function () {
         if (content > height)
         //then set sidebar height to the wrapper
             $(".left-side, html, body").css("min-height", content + "px");
+
+
         else {
             //Otherwise, set the sidebar to the height of the window
             $(".left-side, html, body").css("min-height", height + "px");

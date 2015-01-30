@@ -1,12 +1,8 @@
-
-html,body{
+body{
 
     background-image: url('bg.jpg') ;
 	background-size: cover;
 	overflow:hidden;
-}
-#login{
-	float:none;
 }
 
 
