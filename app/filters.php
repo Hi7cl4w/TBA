@@ -52,7 +52,6 @@ Route::filter('auth.basic', function()
 });
 Route::filter('auth.mobile', function()
 {
-
 	return Auth::basic("username");
 });
 
