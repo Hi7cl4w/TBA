@@ -36,6 +36,26 @@ class MobileController extends \BaseController {
 
 	}
 
+	public function logout()
+	{
+		Confide::logout();
+		return Response::json(array(
+
+				'message' => 'Logged out successfully'),
+			200
+		);
+	}
+	public function type()
+	{
+		$user = Auth::user();
+		$users = User::with('roles')->find($user->id);
+		return Response::json(array(
+				'error' => false,
+				'user_details' => $users),
+			200
+		);
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

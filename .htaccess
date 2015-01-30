@@ -1,6 +1,7 @@
+SetEnvIfNoCase Authorization "Basic ([a-z0-9=]+)" REMOTE_AUTHORIZATION=$1
 <IfModule mod_rewrite.c>
     RewriteEngine on
 
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
-SetEnvIfNoCase Authorization "Basic ([a-z0-9=]+)" REMOTE_AUTHORIZATION=$1
+
