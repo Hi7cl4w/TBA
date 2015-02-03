@@ -35,7 +35,7 @@
                     <span>Purchases</span><i id="sp" class="fa fa-shopping-cart side-icon pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu" >
                     <li id="ticketcreate" ><a href="{{{ URL::to('/profile/'.$user->username.'/purchases') }}}"><i class="fa fa-angle-double-right"></i>View all<i class="fa pull-right">V</i></a></li>
-                    <li id="view" ><a href="{{{ URL::to('/profile/'.$user->username.'/purchases/create') }}}"><i class="fa fa-angle-double-right"></i>Register a Purchase<i class="fa pull-right">R</i></a></li>
+                    <li id="view" ><a href="{{{ URL::to('/profile/'.$user->username.'/purchases/register') }}}"><i class="fa fa-angle-double-right"></i>Register a Purchase<i class="fa pull-right">R</i></a></li>
 
                 </ul>
             </li>

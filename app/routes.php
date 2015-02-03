@@ -28,7 +28,7 @@ Route::get('/test', function () {
     return View::make('pages.search');
 });
 Route::get('/test', function () {
-    return View::make('pages.search');
+    return View::make('test');
 });
 Route::get('foo', array('https', function()
 {
@@ -190,12 +190,15 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         /*product*/
         Route::get('/products/register', 'ProductsController@create');
         Route::post('/products/register', 'ProductsController@store');
-        Route::post('/products', 'ProductsController@view');
+        Route::get('/products', 'ProductsController@view');
+        Route::get('/products/table', 'ProductsController@table');
         Route::get('/products/list', 'ProductsController@getlist');
+        Route::get('/products/delete', 'ProductsController@delete');
+        Route::post('/products/delete', 'ProductsController@deleteperform');
         /*purchases*/
-        Route::get('/purchases/create', 'PurchasesController@create');
-        Route::post('/purchases/create', 'PurchasesController@store');
-        Route::post('/purchases', 'PurchasesController@view');
+        Route::get('/purchases/register', 'PurchasesController@create');
+        Route::post('/purchases/register', 'PurchasesController@store');
+        Route::get('/purchases/table', 'PurchasesController@table');
         Route::get('/purchases', 'PurchasesController@view');
         Route::get('/purchases/get', 'PurchasesController@get');
 

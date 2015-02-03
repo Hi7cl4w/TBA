@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('head')
+@section('head_last')
 
     <title>Product</title>
     <script>
@@ -75,7 +75,7 @@
                 {{ Form::close() }}
                             <div class="form-actions">
                                 <div class="pull-left">
-                                    <a href="/forgot">Trouble login in?</a>
+                                    <a href="/forgot">Trouble login in ?</a>
                                     </div>
 
                             </div>

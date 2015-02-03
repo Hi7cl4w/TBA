@@ -36,12 +36,17 @@ class TicketRespository
     }
     public function product_create($input)
     {
-        $t = new Product;
-        $t->product_id = array_get($input, 'Staff_id ');
-        $t->Name = array_get($input, 'Name');
-        $t->Catagory = array_get($input, 'Catagory');
-        $t->save();
-        return $t;
+        $check = Products::find(array_get($input, 'id'));
+        if($check==null) {
+
+            $t = new Products;
+            $t->id = array_get($input, 'id');
+            $t->Name = array_get($input, 'Name');
+            $t->Vendor = array_get($input, 'Vendor');
+            $t->save();
+            return $t;
+        }
+        return false;
     }
     public function purchase_register($input)
     {
@@ -49,8 +54,7 @@ class TicketRespository
         $t->Name=array_get($input, 'Name');;
         $t->email=array_get($input, 'email');
         $t->product_id = array_get($input, 'product_id');
-	    $t->Purchase_code = "UUID()";
-        $t->save();
+	    $t->save();
         return $t;
     }
     public function test($s)

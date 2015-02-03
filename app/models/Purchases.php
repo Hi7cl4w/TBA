@@ -34,5 +34,8 @@ class Purchases extends Eloquent {
     {
         return Uuid::generate(4);
     }
+    public function productdetails(){
+        return $this->belongsTo('Products','product_id','id');
+    }
 
 }

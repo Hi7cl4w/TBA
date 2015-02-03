@@ -16,7 +16,7 @@
         <li><a href="#" class="active">Support</a></li>
     </ul>
     <div class="pull-right actions">
-        <button class="btn btn-fab btn-raised btn-material-red" type="button" id="btn-new-ticket"><i class="fa fa-plus"></i> </button>
+        <h3>New Ticket</h3><button class="btn btn-fab btn-raised btn-material-red" type="button" id="btn-new-ticket"><i class="mdi-content-add"></i> </button>
     </div>
 
 
@@ -29,28 +29,13 @@
     <div class="page-title">
         <h1>Support</h1>
 
-        <div class="row form-row">
-            <div class="col-md-12">
-                @if (Session::get('error'))
 
-                    <div class="alert alert-error alert-danger">
-                        @if (is_array(Session::get('error')))
-                            {{ head(Session::get('error')) }}
-                        @endif
-                    </div>
-                @endif
-
-                @if (Session::get('notice'))
-                    <div class="alert">{{ Session::get('notice') }}</div>
-                @endif
-            </div>
-        </div>
         <div class="clearfix"></div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="box simple transparent" id="new-ticket-wrapper" style="display:none">
-                <div class="grid-title no-border">
+            <div class="box simple light animated" id="new-ticket-wrapper" style="display:none">
+                <div class="box-title no-border">
                     <h4 class="semi-bold">How can we help you?</h4>
                 </div>
                 <div class="box-body">
@@ -90,9 +75,9 @@
                         <div class="row form-row">
                             <div class="col-md-12 margin-top-10">
                                 <div class="pull-left">
-                                    <div class="checkbox checkbox check-success"> &nbsp;
-                                        <input type="checkbox" id="checkbox1" value="1" name="terms">
-                                        <label for="checkbox1">I Here by agree on the Term and
+                                    <div class="checkbox checkbox check-success col-md-12">
+                                        <label for="chkTerms"> <input type="checkbox" value="1" id="chkTerms">
+                                            <span class="ripple"></span><span class="check"></span>I Here by agree on the Term and
                                             condition. </label>
                                     </div>
                                 </div>

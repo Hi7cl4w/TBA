@@ -127,6 +127,7 @@ return array(
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
 		'SimpleSoftwareIO\SMS\SMSServiceProvider',
 		'Artistan\Nexmo\NexmoServiceProvider',
+		'Bllim\Datatables\DatatablesServiceProvider',
 
 	),
 
@@ -197,7 +198,8 @@ return array(
 		'Confide'           => 'Zizaco\Confide\Facade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
 		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
-		'SMS' => 'SimpleSoftwareIO\SMS\Facades\SMS'
+		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
+		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
 
 
 	),

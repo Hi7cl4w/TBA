@@ -50,11 +50,11 @@ function getOS()
 @section('page')
 
 
-    <div class="row" id="dashboar">
 
-
+<div class="col-md-12" >
             <!-- BEGIN ANIMATED TILE -->
-            <div class="col-md-6 col-sm-6 m-b-20 " >
+
+            <div class="col-md-6 col-sm-6 m-b-20 " data-aspect-ratio="true">
                 <div class="live-tile slide ha shadow-z-4" data-aspect-ratio="true" data-speed="750" data-delay="5000" data-mode="carousel">
                     <div class="slide-front ha tiles green ">
                         <div class="overlayer middle-left fullwidth">
@@ -94,7 +94,7 @@ function getOS()
 
 
             <!-- BEGIN ANIMATED TILE -->
-            <div class="col-lg-3 col-sm-6 m-b-20" >
+            <div class="col-lg-3 col-sm-6 m-b-20" data-aspect-ratio="true">
                 <div class="live-tile slide ha shadow-z-5" data-aspect-ratio="true" data-speed="750" data-delay="4700" data-mode="carousel">
                     <div class="slide-front ha tiles purple p-t-20 p-l-20 p-r-20 p-b-20">
                         <h1 class="semi-bold text-white">USER MANAGER <i class="icon-custom-up icon-custom-2x"></i>
@@ -134,7 +134,7 @@ function getOS()
             <!-- END ANIMATED TILE -->
 
                 <!-- BEGIN ANIMATED TILE -->
-                <div class="col-lg-3 col-sm-6 m-b-20" >
+                <div class="col-lg-3 col-sm-6 m-b-20" data-aspect-ratio="true">
                     <div class="live-tile tiles slide ha shadow-z-5" data-aspect-ratio="true" data-speed="750" data-delay="3000" data-mode="carousel">
                         <div class="slide-front ha tiles adjust-text red">
                             <div class="p-t-20 p-l-20 p-r-20 p-b-20"><i class="fa fa-map-marker fa-2x"></i>
@@ -170,7 +170,7 @@ function getOS()
                 <!-- END ANIMATED TILE -->
 
                 <!-- BEGIN ANIMATED TILE -->
-                <div class="col-lg-3 col-sm-6 m-b-20" >
+                <div class="col-lg-3 col-sm-6 m-b-20" data-aspect-ratio="true">
                     <div class="live-tile tiles slide ha shadow-z-5" data-aspect-ratio="true" data-speed="750" data-delay="1000" data-mode="carousel">
                         <div class="slide-front ha tiles adjust-text orange">
                             <div class="p-t-20 p-l-20 p-r-20 p-b-20"><i class="fa fa-map-marker fa-2x"></i>
@@ -204,7 +204,7 @@ function getOS()
                 <!-- END ANIMATED TILE -->
 
             <!-- BEGIN ANIMATED TILE -->
-            <div class="col-lg-3 col-sm-6 m-b-20" >
+            <div class="col-lg-3 col-sm-6 m-b-20" data-aspect-ratio="true">
 
 
                 <div class="live-tile slide ha shadow-z-5" data-aspect-ratio="true" data-speed="750" data-delay="6000" data-mode="carousel">
@@ -255,7 +255,7 @@ function getOS()
 
 
   <!-- END ROW -->
-
+</div>
 
 
 @stop

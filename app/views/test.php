@@ -1,25 +1,17 @@
-aqeDFShweiSFJBWIJEBF
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title custom_align" id="Heading">Delete </h4>
+    </div>
+    <div class="modal-body">
+
+        <div class="alert alert-warning"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete Account?</div>
 <?php
-//echo Uuid::generate(4)."\n";
-echo Uuid::generate(3,'test', Uuid::nsDNS);
-echo Uuid::import('d3d29d70-1d25-11e3-8591-034165a3a613');
-// Turn on output buffering
-ob_start();
-//Get the ipconfig details using system commond
-system('ipconfig /all');
-
-// Capture the output into a variable
-$mycom=ob_get_contents();
-// Clean (erase) the output buffer
-ob_clean();
-
-$findme = "Physical";
-//Search the "Physical" | Find the position of Physical text
-$pmac = strpos($mycom, $findme);
-echo "<br>";
-// Get Physical Address
-$mac=substr($mycom,($pmac+36),17);
-//Display Mac Address
-echo $mac;
-$t=new TicketRespository;
-$t->test("se3ed3");
+$user=Auth::user();
+echo $user->fname ?>
+    </div>
+    <div class="modal-footer ">
+        <button type="button" id="" name="yes" value="" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+    </div>
+</div>

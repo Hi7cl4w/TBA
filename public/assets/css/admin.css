@@ -10,14 +10,11 @@ height: 100%;
 
 body {
   min-height: 100%;
-  min-height: 100%;
+
   overflow-x: hidden!important;
- -webkit-font-smoothing: antialiased !important;
   overflow-y: auto;
   height: auto;
-
 background: #eeeeee;
-  height:auto;
   font-family: 'Open Sans', "Segoe UI";
 }
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
@@ -70,12 +67,6 @@ body > .header {
   width: 280px;
   height: 100%;
   box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
-
-
-
-
-
-  
 }
 @media screen and (min-width: 992px) {
   .right-side {
@@ -105,10 +96,9 @@ body > .header {
 /*Give content full width on xs screens*/
 @media screen and (max-width: 992px) {
   .right-side {
-    top:5px;
+    top:20px;
     margin-left: 15px;
     margin-right: 15px;
-    
   }
 
   .left-side.collapse-left {
@@ -151,7 +141,7 @@ body.fixed .navbar {
   background: #00bcd4;
 }
 body.fixed .wrapper {
-  margin-top: 50px;
+  margin-top: 70px;
 }
 /* Content */
 
@@ -542,6 +532,9 @@ body .logo {
 body > .header .logo .icon {
   margin-right: 10px;
 }
+.form-control .wysihtml5-editor{
+  border: dashed;
+}
 .right-side > .content-header {
   position: relative;
   padding: 15px 15px 10px 10px;
@@ -637,7 +630,9 @@ margin: 0 auto;
   }
   body.fixed > .wrapper,
   body.fixed .sidebar-offcanvas {
-    margin-top: 60px!important;
+    margin-top: 80px!important;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 /*
@@ -815,6 +810,9 @@ height:40px;
   body.fixed .row-offcanvas-left.active .sidebar-offcanvas {
     left: 0;
 
+  }
+  .row-offcanvas-left{
+    padding: 0;
   }
 }
 /* 
@@ -1220,6 +1218,7 @@ input {
   padding: 10px 12px !important;
   color:#576475;
   font-size:13px;
+  font-weight: 500;
 }
 
 .table td.no-border{
@@ -1331,7 +1330,7 @@ input {
 
 
 .form-row input, .form-row select, .form-row textarea, .form-row select2{
-  margin-bottom:10px;
+  margin-bottom:13px;
 }
 .form-row .radio {
   margin-bottom:7px;
@@ -2790,27 +2789,31 @@ input[type="checkbox"] {
   box-sizing: border-box;
 }
 
-select,
+
 input[type="file"] {
   height: 34px !important;
   line-height: 30px;
 }
 
-select {
-  width: 220px;
-  background-color: #ffffff;
-  background-image: none !important;
-  border: 1px solid #e5e5e5;
-  outline: none;
-  min-height:35px;
+select{
+
+  padding: 5px;
+  height: 44px;
+  background: #f4f4f4;
 }
+select.form-control{
+  height: 44px;
+}
+
+
+
 
 select[multiple],
 select[size] {
   height: auto !important;
 }
 
-select:focus,
+
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
@@ -3269,7 +3272,8 @@ form legend,.form-view legend {
   margin-bottom: 25px;
   padding: 5px;
   box-shadow: 1px 8px 17px 0 rgba(0, 0, 0, 0.2);
-
+  color: #323232;
+  background: #ffffff;
 
 }
 
@@ -3287,10 +3291,9 @@ form legend,.form-view legend {
 }
 
 .box-title {
-  padding-top: 20px;
+  padding-top: 25px;
   margin-bottom: 15px;
 
-  border-bottom: 1px solid #eee;
 }
 
 .box-title h4 {
@@ -3400,7 +3403,7 @@ form legend,.form-view legend {
 }
 .box .solid .box-title{
   color:#fff !important;
-  border-bottom:1px solid #fff;
+  border-bottom:0;
 }
 .box-body {
   clear: both;
@@ -3514,7 +3517,7 @@ form legend,.form-view legend {
   padding:14px 15px 7px 15px;
   border-bottom: 1px solid #eee;
   color: #282323 !important;
-  background-color:#fff;
+
 }
 
 .box.simple .box-title > .actions > .btn > i {
@@ -3527,7 +3530,7 @@ form legend,.form-view legend {
 }
 .box.simple .box-title .tools a,.box.solid .box-title .tools a{
   position:relative;
-  background: url('../img/icon/portlet-tray.png') no-repeat;
+
   transition: all 0.1s linear 0s;
 }
 .box.simple .box-title .tools > a.remove,
@@ -3575,14 +3578,23 @@ form legend,.form-view legend {
 
 /* grid buttons */
 
+
 .box.simple.transparent .box-body {
   background-color:transparent !important;
+  border:none;
+}
+.box.simple.light ,
+.box.simple.light input,
+.box.simple.light .form-control .wysihtml5-editor,
+.box.simple.light .box-body {
+  background-color: #fafafa !important;
   border:none;
 }
 .box.simple .box-body {
   background-color: #fff;
   padding: 26px;
   border:1px solid #dddddd;
+  border-top:1px solid #fff;
   color:#6f7b8a;
 }
 .box.simple .box-body.no-padding{
@@ -3605,7 +3617,8 @@ form legend,.form-view legend {
   color:#282323;
   margin-bottom: 0px;
   border:1px solid #dddddd;
-  border-bottom:0px;
+  border-top:1px solid #fff;
+
 }
 .box.simple .box-title.no-border{
   border:0px;
@@ -3674,7 +3687,8 @@ form legend,.form-view legend {
 
 .box.box .box-title {
   padding:8px 10px 2px 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 0;
+
   color: #fff !important;
 }
 
@@ -3686,7 +3700,7 @@ form legend,.form-view legend {
   margin-top: 3px;
 }
 .box.box .box-title .tools a{
-  background:url(../img/icon/portlet-tray.png) no-repeat;
+
   width:23px;
   height:23px
 }
@@ -3694,7 +3708,8 @@ form legend,.form-view legend {
 /* grid buttons */
 .box.box .box-body {
   background-color: #fff;
-  padding: 10px;
+  padding: 17px;
+
 }
 
 .box.box .box-title {
@@ -4092,14 +4107,9 @@ Component: timeline
 }
 
 /*** Data-table customization **/
-.dataTables_wrapper .pagination ul > li {
-  display:inline-block;
-  padding-left: 0px;
-}
 
-.dataTables_wrapper  .pagination ul > li:last-child > a, .dataTables_wrapper  .pagination ul > li:last-child > span{
-  margin-left:-8px;
-}
+
+
 .dataTables_wrapper .pagination ul > li > a, .pagination ul > li > span {
   border:none;
   box-shadow:none;
@@ -4111,6 +4121,13 @@ Component: timeline
   box-shadow:none;
   font-size: 12px;
   padding:0;
+}
+table.dataTable thead th, table.dataTable thead td {
+
+  border-bottom: 1px solid #e2e8eb;
+}
+table.dataTable.no-footer {
+  border-bottom: 1px solid #e2e8eb;
 }
 
 .dataTables_wrapper .pagination ul > .disabled > span, .pagination ul > .disabled > a, .pagination ul > .disabled > a:hover, .pagination ul > .disabled > a:focus{
@@ -4150,7 +4167,17 @@ Component: timeline
 }
 
 
+div.dataTables_filter label {
 
+  text-align: right;
+}
+div.dataTables_paginate {
+  position: relative;
+  right: 10px;
+}
+.pagination {
+  display: block;
+}
 
 
 /*

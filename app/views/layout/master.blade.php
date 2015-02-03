@@ -9,12 +9,13 @@
     {{ HTML::style('assets/css/animate.css') }}
     {{ HTML::style('assets/css/font-awesome-4.2.0/css/font-awesome.min.css') }}
     {{ HTML::style('assets/js/metro/MetroJs.css') }}
-
-
+    @yield('head')
 
     {{HTML::style('assets/css/material.min.css')}}
     {{HTML::style('assets/css/ripples.min.css')}}
     {{HTML::style('assets/css/admin.css')}}
+    {{HTML::style('assets/css/table.css')}}
+
 
     {{HTML::style('assets/css/component.css')}}
 
@@ -25,14 +26,84 @@
     {{HTML::script('assets/js/jquery.bootpag.min.js')}}
 
     <meta name="_token" content="{{ csrf_token() }}" />
+    @yield('head_last')
 
-    @yield('head')
 </head>
 <body id="bodyskin" class="skin-black fixed animated fade fadeIn" >
+@if (is_array(Session::get('error')))
+
+    <div id="popupmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h5>Error: Please read</h5>
+        </div>
+        <div class="modal-body">
+
+            <div class="alert alert-error alert-danger">    {{ head(Session::get('error')) }}      </div>
+
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+                </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //  $('#popupmodal').modal();
+            $('#popupmodal').modal('show');
+        });
+    </script>
+@endif
+@if (Session::get('notice'))
+
+    <div id="popupmodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4>Notification</h4>
+        </div>
+        <div class="modal-body">
+            <p>
+            <div class="alert alert-info">{{ Session::get('notice') }}</div>
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+    </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#popupmodal').modal('show');
+        });
+    </script>
+@endif
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria- labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-body">
+        </div><!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
 @yield('bodyfirst')
 
 <?php if(Auth::check()) { ?>
 <div class="clearfix"></div>
+<!-- Modal -->
+
+
 
 <div class="w" >
 
@@ -340,12 +411,8 @@ $('#Description').wysihtml5({
             }).data('smoothState');
     //.data('smoothState') makes public methods available
 })(jQuery);
-
-
-
-
-
-
 </script>
+
+
 </body>
 </html>

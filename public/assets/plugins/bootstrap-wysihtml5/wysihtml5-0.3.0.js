@@ -8251,7 +8251,7 @@ wysihtml5.views.View = Base.extend(
        * Styles to copy from textarea to the iframe
        */
       BOX_FORMATTING = [
-        "background-color",
+
         "border-collapse",
         "border-bottom-color", "border-bottom-style", "border-bottom-width",
         "border-left-color", "border-left-style", "border-left-width",
@@ -8280,7 +8280,7 @@ wysihtml5.views.View = Base.extend(
       ],
       ADDITIONAL_CSS_RULES = [
         "html             { height: 100%; }",
-        "body             { min-height: 100%; padding: 0; margin: 0; margin-top: -1px; padding-top: 1px; }",
+        "body             { min-height: 100%; padding: 0; margin: 0; margin-top: -1px; padding-top: 1px; background-color: #eee }",
         "._wysihtml5-temp { display: none; }",
         wysihtml5.browser.isGecko ?
           "body.placeholder { color: graytext !important; }" : 

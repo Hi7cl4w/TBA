@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('head')
+@section('head_last')
 
     <title>Sign Up</title>
 
