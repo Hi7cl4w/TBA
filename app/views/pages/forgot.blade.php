@@ -1,16 +1,18 @@
 @extends('layout.master')
-@section('head')
+@section('head_last')
 
     <title>Forgot Password</title>
 
     {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
-    <div class="content h-align-middle">
-        <div class="row">
-            <div class="panel col-sm-12">
+   <div class="wrapper row-offcanvas  row-offcanvas-left"  >
+        <div class="col-md-3 col-xs-11 col-sm-5 center-block" id="login" >
+            <div class="row">
+                <div class="panel col-xs-12 animated fadeInUp" >
 
-                    <div class="box-title no-border">
+
+                <div class="box-title no-border">
                         <h3>Forgot your <span class="semi-bold"> Password </span> ?</h3>
 
                         <p>Enter your email and proceed</p>
@@ -29,14 +31,14 @@
                                 {{ $errors->first('email') }}
                                 @if (Session::get('notice'))
                                     <div class="row form-row">
-                                        <div class="alert alert-info col-sm-11">{{{ Session::get('notice') }}}
+                                        <div class="alert alert-info col-sm-10">{{{ Session::get('notice') }}}
                                         </div>
                                     </div>
                                 @endif
 
                             <div class="row form-row">
 
-                                <div class="input-append col-md-11 col-sm-11 primary">
+                                <div class="input-append col-md-11 col-sm-10 primary">
 
                                     <input class="form-control" placeholder="{{{ Lang::get('confide::confide.e_mail') }}}" type="text" name="email" id="email" value="{{{ Input::old('email') }}}">
                                     <span class="add-on"><span class="arrow"></span><i class="fa fa-mail-forward"></i> </span>

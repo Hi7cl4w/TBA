@@ -157,7 +157,9 @@
 {{HTML::script('assets/js/metro/MetroJs.min.js')}}
 {{HTML::script('assets/js/jquery.smoothState.js')}}
 {{HTML::script('assets/js/app.js')}}
-<script src="/assets/js/classie.js"></script>
+{{HTML::script('assets/js/validator.min.js')}}
+{{HTML::script('assets/js/classie.js')}}
+
 
 
 <script type="text/javascript">

@@ -20,10 +20,8 @@
             <div class="col-md-3 col-xs-11 col-sm-5 center-block" id="login" >
                 <div class="row">
             <div class="panel col-xs-12 animated fadeInUp" >
-
                     <div class="box-title no-border">
                         <h3>Login <span class="semi-bold">Here</span></h3>
-
                         <p>Enter your username and password to login</p>
                         <br>
 
