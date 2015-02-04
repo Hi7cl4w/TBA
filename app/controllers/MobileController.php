@@ -195,9 +195,15 @@ class MobileController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function get($id)
 	{
-		//
+
+		$ticket = Ticket::find($id);
+		return Response::json(array(
+				'error' => false,
+				'ticket' => $ticket),
+			200
+		);
 	}
 	public function location(){
 		$input = Input::all();
