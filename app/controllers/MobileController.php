@@ -194,7 +194,7 @@ class MobileController extends \BaseController {
 	public function get($id)
 	{
 
-		$ticket = Ticket::find($id);
+		$ticket = Ticket::with('userstaff')->find($id);
 		return Response::json(array(
 				'error' => false,
 				'ticket' => $ticket),
