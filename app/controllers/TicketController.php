@@ -153,6 +153,8 @@ class TicketController extends \BaseController
                 return Redirect::action('TicketController@paging')
                     ->with('notice', "ticket created");
             }
+            return Redirect::action('TicketController@paging')
+                ->with('error', "ticket not created");
         }
 
     }
@@ -166,14 +168,14 @@ class TicketController extends \BaseController
      */
     public function rating()
     {
-  if(Request::ajax()) {
+            if(Request::ajax()) {
             $input = Input::all();
             $user = Auth::user();
             $id = array_get($input, 'id');
             $rate = array_get($input, 'value');
-        $ticket = Ticket::find($id);
-        $ticket->Rating = $rate;
-        $ticket->update();
+            $ticket = Ticket::find($id);
+            $ticket->Rating = $rate;
+            $ticket->update();
 
              return Response::json($ticket);
          }

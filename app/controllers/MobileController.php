@@ -64,7 +64,7 @@ class MobileController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+
 	}
 
 
@@ -75,7 +75,66 @@ class MobileController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = array(
+
+			'Subject' => 'required|min:3',
+			'Description' => 'required',
+			'Purchase_id' => 'required',
+			'g-recaptcha-response' => 'required',
+			'terms' => 'required'
+
+		);
+
+		// run the validation rules on the inputs from the form
+		$validator = Validator::make(Input::all(), $rules);
+
+		// if the validator fails, redirect back to the form
+		if ($validator->fails()) {
+			$error = $validator->errors()->all(':message');
+			$user = Auth::user();
+			return Response::json(array(
+					'error' => true,
+					'message' => 'Failed to create',
+					'validator'=> $validator
+				),
+				200
+			);// send back the input (not the password) so that we can repopulate the form
+		} else {
+			$repo = App::make('TicketRespository');
+			$ticket = $repo->ticket_create(Input::all());
+			if ($ticket->id) {
+
+
+				Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
+					$customer = User::find($ticket->Customer_id);
+					$e = $customer->email;
+					if ($ticket->Staff_id)
+						$staff = User::find($ticket->Staff_id);
+					$message->to($e, 'no-replay')->subject('Welcome!');
+				});
+				Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
+					$customer = User::find($ticket->Customer_id);
+					$e = $customer->email;
+					if ($ticket->Staff_id)
+						$staff = User::find($ticket->Staff_id);
+					$message->to($e, 'no-replay2')->subject('Welcome!');
+				});
+
+				return Response::json(array(
+						'error' => false,
+						'message' => 'Ticket Successfully Created TICKET ID: '.$ticket->id),
+					200
+				);
+
+			}
+			return Response::json(array(
+					'error' => true,
+					'message' => 'Failed to create',
+					'validator'=> $validator,
+				),
+				200
+			);
+		}
 	}
 
 
@@ -110,20 +169,11 @@ class MobileController extends \BaseController {
 					'message' => "invalid purchase id"),
 				200
 			);
-
-
 	}
 
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function edit($id)
 	{
-		//
+
 	}
 
 
