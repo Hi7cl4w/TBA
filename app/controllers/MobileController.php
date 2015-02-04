@@ -201,7 +201,6 @@ class MobileController extends \BaseController {
 	}
 	public function location(){
 		$input = Input::all();
-		$user = Auth::user();
 		$id=array_get($input,'id');
 		$long = array_get($input, 'long');
 		$lat = array_get($input, 'lat');
@@ -209,6 +208,11 @@ class MobileController extends \BaseController {
 		$ticket->Latitude = $lat;
 		$ticket->Longitude = $long;
 		$ticket->update();
+		return Response::json(array(
+				'error' => false,
+				'message' => "Updated"),
+			200
+		);
 
 	}
 
