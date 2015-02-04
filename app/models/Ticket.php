@@ -8,5 +8,8 @@ class Ticket extends Eloquent {
     public function userstaff(){
         return $this->belongsTo('User','Staff_id','id');
     }
+    public function comments(){
+        return $this->hasMany('Comments','id','ticket_id');
+    }
 
 }

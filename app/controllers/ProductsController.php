@@ -14,11 +14,14 @@ class ProductsController extends \BaseController {
 	}
 	public function table()
 	{
-		$user=Auth::user();
-		$d=Products::select(array('id','Name','Vendor'));;
-		return Datatables::of($d)->add_column('operations', ' <button id="{{ $id }}" class="btn btn-danger btn-xs delete" >DELETE</i></button>')
-			->make();
-		//return View::make('pages.Products')->with('user', $user);
+		if(Request::ajax()) {
+			$user = Auth::user();
+			$d = Products::select(array('id', 'Name', 'Vendor'));;
+			return Datatables::of($d)->add_column('operations', ' <button id="{{ $id }}" class="btn btn-danger btn-xs delete" >DELETE</i></button>')
+				->make();
+			//return View::make('pages.Products')->with('user', $user);
+		}
+		App::abort(404);
 	}
 	public function getlist()
 	{

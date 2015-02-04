@@ -28,7 +28,7 @@ class TicketRespository
         $t->Coordinates = null;
         $t->Product_id = array_get($input, 'Product_id');
         $t->Purchase_id = array_get($input, 'Purchase_id');
-        $t->Rating = null;
+        $t->Rating = 0;
         $t->Feedback = null;
         $t->save();
         return $t;

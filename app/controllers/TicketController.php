@@ -113,7 +113,7 @@ class TicketController extends \BaseController
             'Subject' => 'required|min:3',
             'Description' => 'required',
             'Purchase_id' => 'required',
-            'g-recaptcha-response' => 'required|recaptcha',
+            'g-recaptcha-response' => 'required',
             'terms' => 'required'
 
         );
@@ -164,9 +164,20 @@ class TicketController extends \BaseController
      * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function rating()
     {
-        //
+  if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $id = array_get($input, 'id');
+            $rate = array_get($input, 'value');
+        $ticket = Ticket::find($id);
+        $ticket->Rating = $rate;
+        $ticket->update();
+
+             return Response::json($ticket);
+         }
+        App::abort('404');
     }
 
 
@@ -176,9 +187,26 @@ class TicketController extends \BaseController
      * @param  int $id
      * @return Response
      */
-    public function edit($id)
+    public function comments()
     {
-        //
+      //  if(Request::ajax()) {
+       //     $input = Input::all();
+           $user = Auth::user();
+     //       $id = array_get($input, 'id');
+        $id=2;
+            // $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"></div></div><div class=\"info\"> Hi,<br><br> Thank you for reaching us, We are looking into this issue and will updateyou.<br><br>Manu K<br><p>Posted on 10/29/13 at 07:21</p><hr> </div>";
+            $c = Comments::where('ticket_id', '=', $id)->with('user')->paginate(2);
+            $data = [
+                'comments' => $c->getItems(),
+                'pagination' => [
+                    'total' => $c->getTotal(),
+                    'last_page' => $c->getLastPage(),
+                ]
+            ];
+
+            return Response::json($data);
+       // }
+
     }
 
 
@@ -188,9 +216,22 @@ class TicketController extends \BaseController
      * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function post()
     {
-        //
+        if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $id = array_get($input, 'id');
+            $c = array_get($input, 'comment');
+            $comment=new Comments;
+            $comment->user_id=$user->id;
+            $comment->ticket_id=$id;
+            $comment->comment=$c;
+            $comment->save();
+            $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"> ".$user->fname." ".$user->lname."</div></div><div class=\"info\"> <br><br> ".$comment->comment."<br><p>Posted on ".$comment->updated_at."</p><hr> </div>";
+            return Response::json($data);
+
+        }
     }
 
 

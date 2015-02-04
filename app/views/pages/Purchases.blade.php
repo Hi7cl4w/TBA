@@ -111,11 +111,15 @@
 
         } );
         $(document).ready(function () {
-            $("#b").click(function () {
-
-                $('#myModal .modal-body').load("/test");
-                  $('#myModal').modal('show');
+            $(document).on('click', '.delete', function() {
+                $(this).removeData('#myModel');
+                var id= $(this).attr('id');
+                var value="{{{ URL::to('/profile/'.$user->username."/purchases/delete?id=") }}}";
+                //alert(value+id);
+                $('#myModal .modal-body').load(value+id);
+                $('#myModal').modal('show');
             });
+
         });
 
 

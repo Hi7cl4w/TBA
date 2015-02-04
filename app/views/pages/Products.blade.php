@@ -11,13 +11,7 @@
 
 
 @section('page')
-    <button type="button" id="b" class="btn btn-primary btn-lg" >
-        Launch demo modal
-    </button>
-
-    <a href="javascript:$('#modal .modal-body').load('remote.html',function(e){$('#myModal').modal('show');});">Click me</a>
-
-    <ul class="breadcrumb">
+      <ul class="breadcrumb">
         <li>
             <p>HOME</p>
         </li>

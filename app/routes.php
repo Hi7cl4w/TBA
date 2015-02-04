@@ -181,12 +181,17 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         });
         /*ticket*/
 
-        Route::get('/staff/create', 'UsersController@create_staff')->before('auth');
-        Route::post('/staff/create', 'UsersController@staff_store')->before('auth');
-        Route::post('/ticket/create', 'TicketController@store')->before('auth');
-        Route::post('/ticket', 'TicketController@store')->before('auth');
-        Route::get('/ticket', 'TicketController@paging')->before('auth');
-        Route::get('/ticket/{id}', 'TicketController@index')->before('auth');
+        Route::get('/ticket/rating', 'TicketController@rating');
+        Route::get('/staff/create', 'UsersController@create_staff');
+        Route::post('/staff/create', 'UsersController@staff_store');
+        Route::post('/ticket/create', 'TicketController@store');
+        Route::post('/ticket', 'TicketController@store');
+        Route::get('/ticket', 'TicketController@paging');
+        Route::get('/ticket/{id}', 'TicketController@index');
+        Route::get('/ticket/{id}', 'TicketController@index');
+        Route::get('/comments', 'TicketController@comments');
+        Route::post('/comments/post', 'TicketController@post');
+
         /*product*/
         Route::get('/products/register', 'ProductsController@create');
         Route::post('/products/register', 'ProductsController@store');
@@ -201,7 +206,8 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         Route::get('/purchases/table', 'PurchasesController@table');
         Route::get('/purchases', 'PurchasesController@view');
         Route::get('/purchases/get', 'PurchasesController@get');
-
+        Route::get('/purchases/delete', 'PurchasesController@delete');
+        Route::post('/purchases/delete', 'PurchasesController@deleteperform');
 
     });
 });

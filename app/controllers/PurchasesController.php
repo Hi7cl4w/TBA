@@ -7,7 +7,6 @@ class PurchasesController extends \BaseController {
 		$product=null;
 		if($p= Purchases::find($id))
 		$product = Products::find($p->product_id);
-
 		return Response::json($product);
 	}
 
@@ -68,6 +67,35 @@ class PurchasesController extends \BaseController {
 		return Datatables::of($d)->add_column('operations', ' <button id="{{ $id }}" class="btn btn-danger btn-xs delete" >DELETE</i></button>
                 ')->make();
 
+	}
+	public function delete()
+	{
+		if(Request::ajax()) {
+			$input = Input::all();
+			$user = Auth::user();
+			$id = array_get($input, 'id');
+			$head = "Delete";
+			$url =  URL::to('/profile/'.$user->username."/purchases/delete");
+			$body = "WARNING: ALL TICKETS BELONG TO THIS WILL BE DELETED <br>Do you want to delete " . $id . " ?";
+			$message = array(
+				'head' => $head,
+				'url' => $url,
+				'body' => $body,
+				'id'   => $id,
+			);
+
+			return View::make('pages.delete')->with('message', $message);
+		}
+		App::abort('404');
+	}
+	public function deleteperform()
+	{
+		$input = Input::all();
+		$user = Auth::user();
+		$id = array_get($input, 'id');
+		Purchases::destroy($id);
+		return Redirect::action('PurchasesController@view')
+			->with('notice', "Purchase ".$id." successfully deleted");
 	}
 
 }
