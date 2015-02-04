@@ -12,7 +12,7 @@ class MobileController extends \BaseController {
 		$user = Auth::user();
 		if ($user->hasRole('Customer')) {
 			$tickets = Ticket::where('Customer_id', '=', $user->id)->get();
-			return response()->json(array(
+			return Response::json(array(
 					'error' => false,
 					'tickets' => $tickets->toArray()),
 				200
@@ -20,14 +20,14 @@ class MobileController extends \BaseController {
 		}
 		elseif ($user->hasRole('Staff')){
 			$tickets = Ticket::where('Staff_id', '=', $user->id)->get();
-			return response()->json(array(
+			return Response::json(array(
 					'error' => false,
 					'tickets' => $tickets->toArray()),
 				200
 			);
 		}
 		else
-			return response()->json(array(
+			return Response::json(array(
 					'error' => true,
 					'message' => 'Sorry, This user is unauthorised to access API'),
 				200
