@@ -227,7 +227,9 @@ Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
 {
     Route::get('/logout', 'MobileController@logout');
     Route::get('/type', 'MobileController@type');
+    Route::get('/verify', 'MobileController@verify');
     Route::resource('ticket', 'MobileController');
+
 });
 
 //

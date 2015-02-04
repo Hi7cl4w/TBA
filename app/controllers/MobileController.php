@@ -89,6 +89,30 @@ class MobileController extends \BaseController {
 	{
 		//
 	}
+	public function verify()
+	{
+		$input=Input::all();
+		$pid=array_get($input,'pid');
+		$pids=Purchases::find(pid);
+		if($pids)
+		{
+			$product=Products::where('id','=',$pids->product_id);
+			return Response::json(array(
+					'error' => false,
+					'message' => $product),
+				200
+			);
+
+		}
+		else
+			return Response::json(array(
+					'error' => true,
+					'message' => "invalid purchase id"),
+				200
+			);
+
+
+	}
 
 
 	/**
