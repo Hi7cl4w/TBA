@@ -79,9 +79,7 @@ class MobileController extends \BaseController {
 
 			'Subject' => 'required|min:3',
 			'Description' => 'required',
-			'Purchase_id' => 'required',
-			'g-recaptcha-response' => 'required',
-			'terms' => 'required'
+			'Purchase_id' => 'required'
 
 		);
 
