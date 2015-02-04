@@ -96,7 +96,7 @@ class MobileController extends \BaseController {
 		$pids=Purchases::find($pid);
 		if($pids)
 		{
-			$product=Products::where('id','=',$pids->product_id);
+			$product=Products::where('id','=',$pids->Product_id);
 			return Response::json(array(
 					'error' => false,
 					'product' => $product),
