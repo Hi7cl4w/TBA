@@ -229,7 +229,7 @@ Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
     Route::get('/type', 'MobileController@type');
     Route::get('/verify', 'MobileController@verify');
     Route::get('/location', 'MobileController@location');
-    Route::get('/ticket/create', 'MobileController@store');
+    Route::get('/ticket/new', 'MobileController@insert');
     Route::get('/ticket/get/{id}', 'MobileController@get');
     Route::resource('ticket', 'MobileController');
 

@@ -73,19 +73,15 @@ class MobileController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function insert()
 	{
 		$rules = array(
-
 			'Subject' => 'required|min:3',
 			'Description' => 'required',
 			'Purchase_id' => 'required'
-
 		);
-
 		// run the validation rules on the inputs from the form
 		$validator = Validator::make(Input::all(), $rules);
-
 		// if the validator fails, redirect back to the form
 		if ($validator->fails()) {
 			$error = $validator->errors()->all(':message');
@@ -93,7 +89,7 @@ class MobileController extends \BaseController {
 			return Response::json(array(
 					'error' => true,
 					'message' => 'Failed to create',
-					'validator'=> $validator
+					'validator'=> $error
 				),
 				200
 			);// send back the input (not the password) so that we can repopulate the form
