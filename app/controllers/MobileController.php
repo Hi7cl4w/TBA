@@ -107,10 +107,11 @@ class MobileController extends \BaseController {
 					$message->to($e, 'no-replay')->subject('Welcome!');
 				});
 				Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
-					$customer = User::find($ticket->Customer_id);
-					$e = $customer->email;
+					//$customer = User::find($ticket->Customer_id);
+
 					if ($ticket->Staff_id)
-						$staff = User::find($ticket->Staff_id);
+					$staff = User::find($ticket->Staff_id);
+					$e = $staff->email;
 					$message->to($e, 'no-replay2')->subject('Welcome!');
 				});
 
