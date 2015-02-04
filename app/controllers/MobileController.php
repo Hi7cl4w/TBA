@@ -120,7 +120,9 @@ class MobileController extends \BaseController {
 
 				return Response::json(array(
 						'error' => false,
-						'message' => 'Ticket Successfully Created TICKET ID: '.$ticket->id),
+						'message' => 'Ticket Successfully Created TICKET ID: '.$ticket->id,
+						'validator'=> null,
+				),
 					200
 				);
 
@@ -128,7 +130,7 @@ class MobileController extends \BaseController {
 			return Response::json(array(
 					'error' => true,
 					'message' => 'Failed to create',
-					'validator'=> $validator,
+					'validator'=> null,
 				),
 				200
 			);
@@ -196,6 +198,18 @@ class MobileController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+	}
+	public function location(){
+		$input = Input::all();
+		$user = Auth::user();
+		$id=array_get($input,'id');
+		$long = array_get($input, 'long');
+		$lat = array_get($input, 'lat');
+		$ticket = Ticket::find($id);
+		$ticket->Latitude = $lat;
+		$ticket->Longitude = $long;
+		$ticket->update();
+
 	}
 
 
