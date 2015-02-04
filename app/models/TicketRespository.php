@@ -24,8 +24,6 @@ class TicketRespository
         $t->Closing_date = null;
         $t->Remark = null;
         $t->Priority = 1;
-        $t->GeoLocation = null;
-        $t->Coordinates = null;
         $t->Product_id = array_get($input, 'Product_id');
         $t->Purchase_id = array_get($input, 'Purchase_id');
         $t->Rating = 0;
