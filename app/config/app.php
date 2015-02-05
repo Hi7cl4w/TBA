@@ -128,6 +128,7 @@ return array(
 		'SimpleSoftwareIO\SMS\SMSServiceProvider',
 		'Artistan\Nexmo\NexmoServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
+		'D3Catalyst\GeoIP\Laravel4\ServiceProviders\GeoIPServiceProvider',
 
 	),
 

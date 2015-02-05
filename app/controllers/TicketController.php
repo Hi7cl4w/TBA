@@ -243,7 +243,7 @@ class TicketController extends \BaseController
        $id = array_get($input, 'id');
 
             // $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"></div></div><div class=\"info\"> Hi,<br><br> Thank you for reaching us, We are looking into this issue and will updateyou.<br><br>Manu K<br><p>Posted on 10/29/13 at 07:21</p><hr> </div>";
-            $c = Comments::where('ticket_id', '=', $id)->with('user')->paginate(2);
+            $c = Comments::where('ticket_id', '=', $id)->orderBy('created_at', 'DESC')->with('user')->paginate(2);
             $data = [
                 'comments' => $c->getItems(),
                 'pagination' => [
