@@ -128,7 +128,7 @@ return array(
 		'SimpleSoftwareIO\SMS\SMSServiceProvider',
 		'Artistan\Nexmo\NexmoServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
-		'Torann\GeoIP\GeoIPServiceProvider',
+
 
 
 	),
@@ -202,7 +202,7 @@ return array(
 		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
 		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
 		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
-		'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
+		
 	),
 
 );
