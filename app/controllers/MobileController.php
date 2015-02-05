@@ -244,7 +244,7 @@ class MobileController extends \BaseController {
 		$user = Auth::user();
 		$remark = array_get($input, 'remark');
 		$ticket = Ticket::find($id);
-		$ticket->Remark = $remark;
+		$ticket->Rating = $remark;
 		$ticket->update();
 
 		return Response::json(array(
