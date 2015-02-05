@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6ae599dcf4b05502fedbe5ed6caf3fe9",
+    "hash": "9f9f4a195bdcc4edaeed9bcbab60fe8e",
     "packages": [
         {
             "name": "artistan/nexmo",
@@ -300,61 +300,6 @@
             "time": "2014-01-17 12:21:18"
         },
         {
-            "name": "d3catalyst/l4-geoip",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/D3Catalyst/laravel-4-geoip.git",
-                "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/D3Catalyst/laravel-4-geoip/zipball/2a20abfddc354032d9d4dc243543bffd7b7f70a0",
-                "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "lib-curl": "*",
-                "php": ">=5.3.7"
-            },
-            "require-dev": {
-                "phpdocumentor/phpdocumentor": "2.*",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "D3Catalyst\\GeoIP\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darwin Biler",
-                    "email": "buonzz@gmail.com"
-                },
-                {
-                    "name": "Ricardo Madrigal",
-                    "email": "soporte@d3catalyst.com"
-                }
-            ],
-            "description": "Laravel 4 Library for detecting geogpraphical location info.",
-            "homepage": "http://laravel.d3catalyst.com/l4-geoip/",
-            "keywords": [
-                "Ip information",
-                "d3catalyst.com",
-                "geoip",
-                "ip to location",
-                "no local geodatabase required",
-                "retrieve location"
-            ],
-            "time": "2014-07-31 10:00:36"
-        },
-        {
             "name": "filp/whoops",
             "version": "1.1.3",
             "source": {
@@ -413,6 +358,58 @@
             "time": "2014-10-26 09:05:09"
         },
         {
+            "name": "geoip2/geoip2",
+            "version": "v0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/GeoIP2-php.git",
+                "reference": "9f0c743afdd637f92db97c76defb96c3faeb2ae9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/9f0c743afdd637f92db97c76defb96c3faeb2ae9",
+                "reference": "9f0c743afdd637f92db97c76defb96c3faeb2ae9",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "3.*",
+                "maxmind-db/reader": "~0.3.1",
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GeoIp2": "src/",
+                    "JsonSerializable": "compat/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind GeoIP2 PHP API",
+            "homepage": "https://github.com/maxmind/GeoIP2-php",
+            "keywords": [
+                "IP",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2014-05-12 17:53:20"
+        },
+        {
             "name": "greggilbert/recaptcha",
             "version": "dev-master",
             "source": {
@@ -463,6 +460,98 @@
                 "recaptcha"
             ],
             "time": "2014-12-15 04:23:23"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/54991459675c1a2924122afbb0e5609ade581155",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-08-11 04:32:36"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -918,6 +1007,55 @@
                 "geotools"
             ],
             "time": "2014-07-30 20:22:41"
+        },
+        {
+            "name": "maxmind-db/reader",
+            "version": "v0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+                "reference": "a3beedfca5760fce03deb312c61491f612a51c17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/a3beedfca5760fce03deb312c61491f612a51c17",
+                "reference": "a3beedfca5760fce03deb312c61491f612a51c17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "MaxMind": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gregory J. Oschwald",
+                    "email": "goschwald@maxmind.com",
+                    "homepage": "http://www.maxmind.com/"
+                }
+            ],
+            "description": "MaxMind DB Reader API",
+            "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+            "keywords": [
+                "database",
+                "geoip",
+                "geoip2",
+                "geolocation",
+                "maxmind"
+            ],
+            "time": "2014-09-15 17:25:43"
         },
         {
             "name": "monolog/monolog",
@@ -2637,6 +2775,56 @@
             "time": "2013-07-19 21:40:40"
         },
         {
+            "name": "torann/geoip",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Torann/laravel-4-geoip.git",
+                "reference": "728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da",
+                "reference": "728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da",
+                "shasum": ""
+            },
+            "require": {
+                "geoip2/geoip2": "0.6.*",
+                "illuminate/support": "~4.1",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Torann\\GeoIP": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Stainback",
+                    "email": "daniel@lyften.com"
+                }
+            ],
+            "description": "Supports the two main GeoIP services (infoDB and Maxmind).",
+            "keywords": [
+                "geoip",
+                "geolocation",
+                "laravel",
+                "laravel4",
+                "location"
+            ],
+            "time": "2015-02-02 21:46:20"
+        },
+        {
             "name": "twilio/sdk",
             "version": "3.12.8",
             "source": {
@@ -2928,7 +3116,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "greggilbert/recaptcha": 20,
-        "d3catalyst/l4-geoip": 20
+        "torann/geoip": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
