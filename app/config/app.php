@@ -202,7 +202,7 @@ return array(
 		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
 		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
 		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
-		
+
 	),
 
 );
