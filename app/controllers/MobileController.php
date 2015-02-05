@@ -168,9 +168,20 @@ class MobileController extends \BaseController {
 			);
 	}
 
-	public function edit($id)
+	public function rating($id)
 	{
+		$input = Input::all();
+		$user = Auth::user();
+		$rate = array_get($input, 'rate');
+		$ticket = Ticket::find($id);
+		$ticket->Rating = $rate;
+		$ticket->update();
 
+		return Response::json(array(
+				'error' => false,
+				'message' => "Rating is successful for Ticket id:".$ticket->id),
+			200
+		);
 	}
 
 
@@ -180,9 +191,19 @@ class MobileController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function feedback($id)
 	{
-		//
+		$input = Input::all();
+		$user = Auth::user();
+		$feed = array_get($input, 'value');
+		$ticket = Ticket::find($id);
+		$ticket->Feedback = $feed;
+		$ticket->update();
+		return Response::json(array(
+			'error' => false,
+			'message' => "Feedback is received for Ticket id:".$ticket->id),
+		200
+	);
 	}
 
 
@@ -202,9 +223,8 @@ class MobileController extends \BaseController {
 			200
 		);
 	}
-	public function location(){
+	public function location($id){
 		$input = Input::all();
-		$id=array_get($input,'id');
 		$long = array_get($input, 'long');
 		$lat = array_get($input, 'lat');
 		$ticket = Ticket::find($id);
@@ -213,10 +233,40 @@ class MobileController extends \BaseController {
 		$ticket->update();
 		return Response::json(array(
 				'error' => false,
-				'message' => "Updated"),
+				'message' => "Updated Ticket ID".$ticket->id),
 			200
 		);
 
+	}
+	public function remark($id)
+	{
+		$input = Input::all();
+		$user = Auth::user();
+		$remark = array_get($input, 'remark');
+		$ticket = Ticket::find($id);
+		$ticket->Remark = $remark;
+		$ticket->update();
+
+		return Response::json(array(
+				'error' => false,
+				'message' => "Remark is successful for Ticket id:".$ticket->id),
+			200
+		);
+	}
+	public function changestatus($id)
+	{
+		$input = Input::all();
+		$user = Auth::user();
+		$status = array_get($input, 'status');
+		$ticket = Ticket::find($id);
+		$ticket->Status = $status;
+		$ticket->update();
+
+		return Response::json(array(
+				'error' => false,
+				'message' => "Remark is successful for Ticket id:".$ticket->id),
+			200
+		);
 	}
 
 

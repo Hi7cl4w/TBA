@@ -829,71 +829,6 @@
         ]
     },
     {
-        "name": "barryvdh/laravel-ide-helper",
-        "version": "v1.11.3",
-        "version_normalized": "1.11.3.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-            "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
-            "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
-            "shasum": ""
-        },
-        "require": {
-            "illuminate/console": "4.x",
-            "illuminate/filesystem": "4.x",
-            "illuminate/support": "4.x",
-            "php": ">=5.3.0",
-            "phpdocumentor/reflection-docblock": "2.0.x",
-            "symfony/class-loader": "~2.3"
-        },
-        "require-dev": {
-            "doctrine/dbal": "~2.3"
-        },
-        "suggest": {
-            "doctrine/dbal": "Load information from the database about models for phpdocs (~2.3)"
-        },
-        "time": "2014-08-26 08:54:34",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.11-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Barryvdh\\LaravelIdeHelper\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Barry vd. Heuvel",
-                "email": "barryvdh@gmail.com"
-            }
-        ],
-        "description": "Laravel IDE Helper, generates correct PHPDocs for all Facade classes, to improve auto-completion.",
-        "keywords": [
-            "autocomplete",
-            "codeintel",
-            "helper",
-            "ide",
-            "laravel",
-            "netbeans",
-            "phpdoc",
-            "phpstorm",
-            "sublime"
-        ]
-    },
-    {
         "name": "barryvdh/laravel-vendor-cleanup",
         "version": "v1.2.4",
         "version_normalized": "1.2.4.0",
@@ -2960,6 +2895,128 @@
             "geometry",
             "geotools",
             "laravel"
+        ]
+    },
+    {
+        "name": "barryvdh/laravel-ide-helper",
+        "version": "v1.11.4",
+        "version_normalized": "1.11.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barryvdh/laravel-ide-helper.git",
+            "reference": "3f9831c5cf886c142c92e7038bc0340b78614481"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/3f9831c5cf886c142c92e7038bc0340b78614481",
+            "reference": "3f9831c5cf886c142c92e7038bc0340b78614481",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/console": "4.x",
+            "illuminate/filesystem": "4.x",
+            "illuminate/support": "4.x",
+            "php": ">=5.3.0",
+            "phpdocumentor/reflection-docblock": "2.0.x",
+            "symfony/class-loader": "~2.3"
+        },
+        "require-dev": {
+            "doctrine/dbal": "~2.3"
+        },
+        "suggest": {
+            "doctrine/dbal": "Load information from the database about models for phpdocs (~2.3)"
+        },
+        "time": "2015-02-04 08:14:36",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.11-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Barryvdh\\LaravelIdeHelper\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Barry vd. Heuvel",
+                "email": "barryvdh@gmail.com"
+            }
+        ],
+        "description": "Laravel IDE Helper, generates correct PHPDocs for all Facade classes, to improve auto-completion.",
+        "keywords": [
+            "autocomplete",
+            "codeintel",
+            "helper",
+            "ide",
+            "laravel",
+            "netbeans",
+            "phpdoc",
+            "phpstorm",
+            "sublime"
+        ]
+    },
+    {
+        "name": "d3catalyst/l4-geoip",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/D3Catalyst/laravel-4-geoip.git",
+            "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/D3Catalyst/laravel-4-geoip/zipball/2a20abfddc354032d9d4dc243543bffd7b7f70a0",
+            "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "lib-curl": "*",
+            "php": ">=5.3.7"
+        },
+        "require-dev": {
+            "phpdocumentor/phpdocumentor": "2.*",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2014-07-31 10:00:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "D3Catalyst\\GeoIP\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Darwin Biler",
+                "email": "buonzz@gmail.com"
+            },
+            {
+                "name": "Ricardo Madrigal",
+                "email": "soporte@d3catalyst.com"
+            }
+        ],
+        "description": "Laravel 4 Library for detecting geogpraphical location info.",
+        "homepage": "http://laravel.d3catalyst.com/l4-geoip/",
+        "keywords": [
+            "Ip information",
+            "d3catalyst.com",
+            "geoip",
+            "ip to location",
+            "no local geodatabase required",
+            "retrieve location"
         ]
     }
 ]

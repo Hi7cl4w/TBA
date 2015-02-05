@@ -17,6 +17,7 @@ class TicketRespository
         $t->prefix = "TI";
         $user=Auth::user();
         $t->Customer_id = $user->id;
+        
         $t->Staff_id = "2";
         $t->Subject = array_get($input, 'Subject');
         $t->Description = array_get($input, 'Description');

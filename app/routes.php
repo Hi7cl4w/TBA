@@ -230,9 +230,13 @@ Route::group(array('prefix' => 'api/v1', 'before' => 'auth.mobile'), function()
     Route::get('/logout', 'MobileController@logout');
     Route::get('/type', 'MobileController@type');
     Route::get('/verify', 'MobileController@verify');
-    Route::get('/location', 'MobileController@location');
+    Route::get('/ticket/location/{id}', 'MobileController@location');
     Route::get('/ticket/new', 'MobileController@insert');
     Route::get('/ticket/get/{id}', 'MobileController@get');
+    Route::get('/ticket/remark/{id}', 'MobileController@remark');
+    Route::get('/ticket/changestatus/{id}', 'MobileController@changestatus');
+    Route::get('/ticket/feedback/{id}', 'MobileController@feedback');
+    Route::get('/ticket/rating/{id}', 'MobileController@rating');
     Route::resource('ticket', 'MobileController');
 
 });

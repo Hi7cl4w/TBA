@@ -45,6 +45,7 @@ return array(
     'Greggilbert\\Recaptcha' => array($vendorDir . '/greggilbert/recaptcha/src'),
     'Geocoder' => array($vendorDir . '/willdurand/geocoder/src'),
     'File' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
+    'D3Catalyst\\GeoIP\\' => array($vendorDir . '/d3catalyst/l4-geoip/src'),
     'Crypt' => array($vendorDir . '/phpseclib/phpseclib/phpseclib'),
     'ClassPreloader' => array($vendorDir . '/classpreloader/classpreloader/src'),
     'Carbon' => array($vendorDir . '/nesbot/carbon/src'),

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d5a394587dd71a1e8691eda3d9c74eca",
+    "hash": "6ae599dcf4b05502fedbe5ed6caf3fe9",
     "packages": [
         {
             "name": "artistan/nexmo",
@@ -57,16 +57,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v1.11.3",
+            "version": "v1.11.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49"
+                "reference": "3f9831c5cf886c142c92e7038bc0340b78614481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
-                "reference": "9a67d9132f0e2b9ed5d668aaa8a2ebc7d4dd6d49",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/3f9831c5cf886c142c92e7038bc0340b78614481",
+                "reference": "3f9831c5cf886c142c92e7038bc0340b78614481",
                 "shasum": ""
             },
             "require": {
@@ -116,7 +116,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2014-08-26 08:54:34"
+            "time": "2015-02-04 08:14:36"
         },
         {
             "name": "barryvdh/laravel-vendor-cleanup",
@@ -298,6 +298,61 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "time": "2014-01-17 12:21:18"
+        },
+        {
+            "name": "d3catalyst/l4-geoip",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/D3Catalyst/laravel-4-geoip.git",
+                "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/D3Catalyst/laravel-4-geoip/zipball/2a20abfddc354032d9d4dc243543bffd7b7f70a0",
+                "reference": "2a20abfddc354032d9d4dc243543bffd7b7f70a0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "lib-curl": "*",
+                "php": ">=5.3.7"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "D3Catalyst\\GeoIP\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darwin Biler",
+                    "email": "buonzz@gmail.com"
+                },
+                {
+                    "name": "Ricardo Madrigal",
+                    "email": "soporte@d3catalyst.com"
+                }
+            ],
+            "description": "Laravel 4 Library for detecting geogpraphical location info.",
+            "homepage": "http://laravel.d3catalyst.com/l4-geoip/",
+            "keywords": [
+                "Ip information",
+                "d3catalyst.com",
+                "geoip",
+                "ip to location",
+                "no local geodatabase required",
+                "retrieve location"
+            ],
+            "time": "2014-07-31 10:00:36"
         },
         {
             "name": "filp/whoops",
@@ -2872,7 +2927,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "greggilbert/recaptcha": 20
+        "greggilbert/recaptcha": 20,
+        "d3catalyst/l4-geoip": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
