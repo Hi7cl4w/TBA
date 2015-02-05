@@ -7,13 +7,14 @@
         <!-- sidebar vhvjh -->
         <ul class="sidebar-menu">
 
-
+<?php $user=Auth::user(); ?>
 
             <li id="dash" >
                 <a href="{{{ URL::to('/profile/'.$user->username) }}}">
                     <span>Home</span><i id="sp" class="fa fa-home side-icon pull-right"></i>
                 </a>
             </li>
+
             <li id="tickettree" >
                <a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}">
                    <span>Tickets</span>
@@ -21,6 +22,8 @@
                </a>
 
             </li>
+
+    @if ($user->hasRole('Administrator'))
             <li id="producttree" class="treeview">
                 <a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}">
                      <span>Products</span><i id="sp" class="mdi-action-perm-identity side-icon pull-right"></i> <i class="fa fa-angle-left pull-right"></i></a>
@@ -30,6 +33,8 @@
 
                 </ul>
             </li>
+
+
             <li id="purchasetree" class="treeview">
                 <a href="">
                     <span>Purchases</span><i id="sp" class="fa fa-shopping-cart side-icon pull-right"> </i><i class="fa fa-angle-left pull-right"></i></a>
@@ -44,7 +49,7 @@
                     <span>Register a Staff</span><i id="sp" class="fa fa-user side-icon pull-right"></i>
                 </a>
             </li>
-
+    @endif
 
         </ul>
     </section>

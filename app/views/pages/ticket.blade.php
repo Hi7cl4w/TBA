@@ -107,13 +107,18 @@
 
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;
-
+                            <?php $user = Auth::user();?>
+                            @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
                             <input id="{{$ticket->id}}" type="number" class="rating" min=1 max=5 step=.5 data-size="xs" data-rtl="false"  >
-
+                            @endif
+                            @if ($ticket->Status=="Completed"&&$user->hasRole('Administrator'))
+                                <input id="{{$ticket->id}}" type="number" class="rating" min=1 max=5 step=.5 data-size="xs" data-rtl="false" readonly="true"  >
+                            @endif
                             <script type="text/javascript">
 
                                 $("#{{$ticket->id}}").rating();
                                 $('#{{$ticket->id}}').rating('update',{{$ticket->Rating}});
+                                @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
                                 $("#{{$ticket->id}}").on('rating.change', function(event, value, caption) {
 
                                     $.ajax({
@@ -151,6 +156,7 @@
                                     $('#myModal .modal-body').load(value+id);
                                     $('#myModal').modal('show');
                                 });
+                                @endif
                                 </script>
                                 <span
                                     class="label {{$ticket->Status}}">{{$ticket->Status}}</span></p>
@@ -206,6 +212,7 @@
                                                      $.ajax({
                                                           type: "GET",
                                                           url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click,
+                                                         data: {id: "{{$ticket->id}}" },
                                                           success: function (data) {
                                                               // Parse the returned json data
                                                               $(".load_more").show();
@@ -241,6 +248,7 @@
                                                               $.ajax({
                                                                   type: "GET",
                                                                   url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click,
+                                                                  data: {id: "{{$ticket->id}}" },
                                                                   success: function (data) {
                                                                       // Parse the returned json data
 
@@ -249,7 +257,7 @@
                                                                       $( "#page-selection" ).show();
                                                                       if (data.comments != '') {
                                                                           $.each(data.comments, function (key, value) {
-                                                                              r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
+                                                                              r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
 
                                                                               $("#results{{$ticket->id}}").append(r); // some ajax content loading...
 
@@ -403,8 +411,6 @@
                         else {
                             $('#Product_id').html("<option value='' > --invalid purchase id-- </option>");
                         }
-
-
                     }
                 });
 

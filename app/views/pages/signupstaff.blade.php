@@ -113,13 +113,23 @@
                                     </div>
                                     <div class="row form-row">
                                         <div class="col-md-8">
-                                            <div class="radio">
-                                                <input id="male" type="radio" name="Gender" value="male"
-                                                       checked="checked">
-                                                <label for="male">Male</label>
-                                                <input id="female" type="radio" name="Gender"
-                                                       value="female">
-                                                <label for="female">Female</label>
+                                            <div class="row form-row">
+
+                                                <div class="col-md-8">
+                                                    <div class="radio radio-success">
+                                                        <label>
+                                                            <input id="male" type="radio" name="Gender" value="male"
+                                                                   checked="checked"><span class="circle"></span><span class="check"></span>
+                                                            Male</label>
+                                                    </div>
+                                                    <div class="radio radio-success">
+                                                        <label>
+                                                            <input id="female" type="radio" name="Gender"
+                                                                   value="female"><span class="circle"></span><span class="check"></span>
+                                                            Female</label>
+                                                    </div>
+                                                </div>
+
                                             </div>
 
                                         </div>
@@ -186,32 +196,10 @@
                                         </div>
 
                                     </div>
-                                    <div class="row small-text" style="display: none;">
-                                        <p class="col-md-12">
-                                            NOTE - Facts to be considered, Simply remove or edit this as for
-                                            what you desire. Disabled font Color and size
-                                        </p>
-                                    </div>
 
                                 </div>
                             </div>
-                            <div class="form-actions">
-                                <div class="pull-left">
-                                    <div class="pull-left">
-                                        <div class="checkbox checkbox check-success 	">
-                                            <input type="checkbox" value="1" id="chkTerms">
-                                            <label for="chkTerms">I Here by agree on the Term and
-                                                condition. </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pull-right">
-                                    <button class="btn btn-danger btn-cons" type="submit"><i
-                                                class="icon-ok"></i> Save
-                                    </button>
-                                    <button class="btn btn-white btn-cons" type="button">Cancel</button>
-                                </div>
-                            </div>
+
                         </form>
                 </div>
             </div>

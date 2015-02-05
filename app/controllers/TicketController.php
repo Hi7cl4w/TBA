@@ -11,8 +11,22 @@ class TicketController extends \BaseController
     //pagination
     public function paging()
     {
-        $tickets = Ticket::paginate(10);
         $user = Auth::user();
+        if ($user->hasRole('Customer')) {
+            $tickets = Ticket::where('Customer_id','=',$user->id)->paginate(10);
+
+
+        }
+        else if ($user->hasRole('Staff')) {
+            $tickets = Ticket::where('Staff_id','=',$user->id)->paginate(10);
+
+
+        }
+        else if ($user->hasRole('Administrator')) {
+            $tickets = Ticket::paginate(10);
+
+
+        }
         return View::make('pages.ticket', compact('tickets'))->with('user', $user);
     }
 
@@ -223,11 +237,11 @@ class TicketController extends \BaseController
      */
     public function comments()
     {
-      //  if(Request::ajax()) {
-       //     $input = Input::all();
+ if(Request::ajax()) {
+     $input = Input::all();
            $user = Auth::user();
-     //       $id = array_get($input, 'id');
-        $id=2;
+       $id = array_get($input, 'id');
+
             // $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"></div></div><div class=\"info\"> Hi,<br><br> Thank you for reaching us, We are looking into this issue and will updateyou.<br><br>Manu K<br><p>Posted on 10/29/13 at 07:21</p><hr> </div>";
             $c = Comments::where('ticket_id', '=', $id)->with('user')->paginate(2);
             $data = [
@@ -239,7 +253,7 @@ class TicketController extends \BaseController
             ];
 
             return Response::json($data);
-       // }
+       }
 
     }
 
