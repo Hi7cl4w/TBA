@@ -89,7 +89,7 @@
 
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria- labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-di">
+    <div class="modal-dialog">
         <div class="modal-body">
         </div><!-- /.modal-content -->
     </div>
@@ -377,12 +377,19 @@
 
 
 $('#Description').wysihtml5({
-    "image": false,
-    "color": false,
-    "font-styles": false,
-    "lists": false,
-    "link": false
-});
+        "image": false,
+        "color": false,
+        "font-styles": false,
+        "lists": false,
+        "link": false
+    });
+$('#Feedback').wysihtml5({
+        "image": false,
+        "color": false,
+        "font-styles": false,
+        "lists": false,
+        "link": false
+    });
 //$('.left-side').addClass('animated bounceInLeft');
     //$('.left-side').smoothState();
     $(function() {

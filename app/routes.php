@@ -182,6 +182,8 @@ Route::group(array('prefix' => 'profile','before' => 'auth'), function() {
         /*ticket*/
 
         Route::get('/ticket/rating', 'TicketController@rating');
+        Route::get('/ticket/feedback', 'TicketController@feedback');
+        Route::get('/ticket/feedback/post', 'TicketController@feedbackpost');
         Route::get('/staff/create', 'UsersController@create_staff');
         Route::post('/staff/create', 'UsersController@staff_store');
         Route::post('/ticket/create', 'TicketController@store');

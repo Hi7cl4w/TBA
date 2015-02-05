@@ -99,22 +99,22 @@ class MobileController extends \BaseController {
 			if ($ticket->id) {
 
 
-			/*	Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
-					$customer = User::find($ticket->Customer_id);
-					$e = $customer->email;
-					if ($ticket->Staff_id)
-						$staff = User::find($ticket->Staff_id);
-					$message->to($e, 'no-replay')->subject('Welcome!');
-				});
-				Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
-					//$customer = User::find($ticket->Customer_id);
+				/*	Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
+                        $customer = User::find($ticket->Customer_id);
+                        $e = $customer->email;
+                        if ($ticket->Staff_id)
+                            $staff = User::find($ticket->Staff_id);
+                        $message->to($e, 'no-replay')->subject('Welcome!');
+                    });
+                    Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
+                        //$customer = User::find($ticket->Customer_id);
 
-					if ($ticket->Staff_id)
-					$staff = User::find($ticket->Staff_id);
-					$e = $staff->email;
-					$message->to($e, 'no-replay2')->subject('Welcome!');
-				});//http://mainproject.manuknarayanan.in/api/v1/ticket/new?Subject=sjdakbsjbc&Description=desdesdesd&Purchase_id=4870940a-df7b-446c-8b0b-9063a83a5bf2&Product_id=pr1135
-*/
+                        if ($ticket->Staff_id)
+                        $staff = User::find($ticket->Staff_id);
+                        $e = $staff->email;
+                        $message->to($e, 'no-replay2')->subject('Welcome!');
+                    });//http://mainproject.manuknarayanan.in/api/v1/ticket/new?Subject=sjdakbsjbc&Description=desdesdesd&Purchase_id=4870940a-df7b-446c-8b0b-9063a83a5bf2&Product_id=pr1135
+    */
 				return Response::json(array(
 						'error' => false,
 						'message' => 'Ticket Successfully Created TICKET ID: '.$ticket->id,

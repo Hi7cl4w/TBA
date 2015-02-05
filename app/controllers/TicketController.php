@@ -181,6 +181,38 @@ class TicketController extends \BaseController
          }
         App::abort('404');
     }
+    public function feedback(){
+        if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $id = array_get($input, 'id');
+            $head = "Feedback";
+            $body = "Enter your feedback for ticket" . $id . " ?";
+            $message = array(
+                'head' => $head,
+                'body' => $body,
+                'id'   => $id,
+            );
+
+            return View::make('pages.feedback')->with('message', $message);
+        }
+        App::abort('404');
+    }
+    public function feedbackpost()
+    {
+        if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $id = array_get($input, 'id');
+            $feed = array_get($input, 'value');
+            $ticket = Ticket::find($id);
+            $ticket->Feedback = $feed;
+            $ticket->update();
+
+            return Response::json($ticket);
+        }
+        App::abort('404');
+    }
 
 
     /**
@@ -230,7 +262,7 @@ class TicketController extends \BaseController
             $comment->ticket_id=$id;
             $comment->comment=$c;
             $comment->save();
-            $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"> ".$user->fname." ".$user->lname."</div></div><div class=\"info\"> <br><br> ".$comment->comment."<br><p>Posted on ".$comment->updated_at."</p><hr> </div>";
+            $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> ".$user->fname." ".$user->lname."</div></div><div class=\"info\"> <br><br> ".$comment->comment."<br><p>Posted on ".$comment->updated_at."</p><hr> </div>";
             return Response::json($data);
 
         }

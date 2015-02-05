@@ -8,6 +8,7 @@ height: 100%;
 }
 
 
+
 body {
   min-height: 100%;
 
@@ -6454,6 +6455,18 @@ nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-cont
   font-size: 14px;
   font-weight: bold;
   margin-right: 5px;
+}
+.Pending{
+  background-color: orangered;
+}
+.Processed{
+  background-color: #ffe72e;
+}
+.Completed{
+  background-color: #65ffee;
+}
+.Closed{
+  background-color: #5bff35;
 }
 
 
