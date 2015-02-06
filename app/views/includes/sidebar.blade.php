@@ -18,7 +18,7 @@
             <li id="tickettree" >
                <a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}">
                    <span>Tickets</span>
-                  <i class="fa pull-right side-icon">V</i>
+                   <i id="sp" class="mdi-action-perm-phone-msg side-icon pull-right"></i>
                </a>
 
             </li>
@@ -26,7 +26,7 @@
     @if ($user->hasRole('Administrator'))
             <li id="producttree" class="treeview">
                 <a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}">
-                     <span>Products</span><i id="sp" class="mdi-action-perm-identity side-icon pull-right"></i> <i class="fa fa-angle-left pull-right"></i></a>
+                     <span>Products</span><i id="sp" class="mdi-action-shopping-basket side-icon pull-right"></i> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu" >
                     <li id="productreg" ><a href="{{{ URL::to('/profile/'.$user->username.'/products/register') }}}"><i class="fa fa-angle-double-right"></i>Create<i class="fa pull-right">C</i></a></li>
                     <li id="productview" ><a href="{{{ URL::to('/profile/'.$user->username.'/products') }}}"><i class="fa fa-angle-double-right"></i>View<i class="fa pull-right">V</i></a></li>

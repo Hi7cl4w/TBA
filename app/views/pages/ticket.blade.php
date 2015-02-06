@@ -15,10 +15,11 @@
         </li>
         <li><a href="#" class="active">Support</a></li>
     </ul>
+    @if ($user->hasRole('Customer'))
     <div class="pull-right actions">
         <h3>New Ticket</h3><button class="btn btn-fab btn-raised btn-material-red" type="button" id="btn-new-ticket"><i class="mdi-content-add"></i> </button>
     </div>
-
+@endif
 
     <div class="pull-right actions">
 
@@ -39,6 +40,7 @@
                     <h4 class="semi-bold">How can we help you?</h4>
                 </div>
                 <div class="box-body">
+                    @if ($user->hasRole('Customer'))
                     <form class="" method="POST" id="new-ticket-form"
                           action="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}">
                         <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
@@ -89,6 +91,7 @@
                             </div>
                         </div>
                     </form>
+                        @endif
                 </div>
             </div>
         </div>
@@ -102,20 +105,21 @@
                 @foreach($tickets as $ticket)
                 <div class="box simple no-border">
                     <div class="box-title no-border descriptive clickable">
-                        <h4 class="semi-bold">{{ $ticket->Subject }}</h4>
+                        <h4 class="semi-bold"><b>Subject: </b> {{ $ticket->Subject }}</h4>
 
 
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;
+                             <span
+                                     class="label {{$ticket->Status}}">{{$ticket->Status}}</span>
                             <?php $user = Auth::user();?>
                             @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
-                            <input id="{{$ticket->id}}" type="number" class="rating" min=1 max=5 step=.5 data-size="xs" data-rtl="false"  >
+                            <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false"  >
                             @endif
-                            @if ($ticket->Status=="Completed"&&$user->hasRole('Administrator'))
-                                <input id="{{$ticket->id}}" type="number" class="rating" min=1 max=5 step=.5 data-size="xs" data-rtl="false" readonly="true"  >
+                            @if ($ticket->Status=="Completed"&&$user->hasRole('Administrator') or $ticket->Status=="Completed"&&$user->hasRole('Staff') )
+                                <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false" readonly="true"  >
                             @endif
                             <script type="text/javascript">
-
                                 $("#{{$ticket->id}}").rating();
                                 $('#{{$ticket->id}}').rating('update',{{$ticket->Rating}});
                                 @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
@@ -158,8 +162,7 @@
                                 });
                                 @endif
                                 </script>
-                                <span
-                                    class="label {{$ticket->Status}}">{{$ticket->Status}}</span></p>
+                               </p>
 
                         <div class="actions"><a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a>
                         </div>
@@ -333,24 +336,6 @@
         <script type="text/javascript">
 
 
-            $('#btn-new-ticket').on('click', function (e) {
-
-
-                $("#Product_id option[value='']").remove();
-                $.ajax({
-                    type: "GET",
-                    url: "{{{ URL::to('/profile/'.$user->username.'/products/list') }}}",
-                    success: function (data) {
-                        // Parse the returned json data
-
-                        // Use jQuery's each to iterate over the opts value
-                        $.each(data, function (i, d) {
-                            // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
-                            $('#Product_id').append('<option value="' + d.id + '">' + d.Vendor + " : " + d.Name + '</option>');
-                        });
-                    }
-                });
-            });
 
 
 

@@ -76,6 +76,10 @@ class TicketController extends \BaseController
             App::abort('404');
         }
     }
+
+    /**
+     * @return mixed
+     */
     public function search()
     {
 
@@ -83,22 +87,59 @@ class TicketController extends \BaseController
         $search = Input::get('query');
 
         $q = "%" . $search . "%";
+        $user=Auth::user();
+        if ($user->hasRole('Administrator')) {
+            $tickets = Ticket::where('id', 'like', $q)->orWhere('subject', 'like', $q)->orderBy('id', 'asc')->with('usercustomer')->with('userstaff')->paginate(8);
 
-        $tickets = Ticket::where('id', 'like', $q)->orWhere('subject', 'like', $q)->orderBy('id', 'asc')->with('usercustomer')->with('userstaff')->paginate(8);
+
+            //$tickets= Ticket::paginate(10);
+            $ticket = [
+                'tickets' => $tickets->getItems(),
+                'pagination' => [
+                    'total' => $tickets->getTotal(),
+                    'per_page' => $tickets->getPerPage(),
+                    'current_page' => $tickets->getCurrentPage(),
+                    'last_page' => $tickets->getLastPage(),
+                    'from' => $tickets->getFrom(),
+                    'to' => $tickets->getTo()
+                ]
+            ];
+        }
+        elseif ($user->hasRole('Staff')) {
+            $tickets = Ticket::where('id', 'like', $q)->orWhere('subject', 'like', $q)->orWhere('Status', 'like', $q)->orderBy('id', 'asc')->orderBy('id', 'asc')->where('Staff_id', '=', $user->id)->with('usercustomer')->with('userstaff')->paginate(8);
 
 
-        //$tickets= Ticket::paginate(10);
-        $ticket = [
-            'tickets' => $tickets->getItems(),
-            'pagination' => [
-                'total' => $tickets->getTotal(),
-                'per_page' => $tickets->getPerPage(),
-                'current_page' => $tickets->getCurrentPage(),
-                'last_page' => $tickets->getLastPage(),
-                'from' => $tickets->getFrom(),
-                'to' => $tickets->getTo()
-            ]
-        ];
+            //$tickets= Ticket::paginate(10);
+            $ticket = [
+                'tickets' => $tickets->getItems(),
+                'pagination' => [
+                    'total' => $tickets->getTotal(),
+                    'per_page' => $tickets->getPerPage(),
+                    'current_page' => $tickets->getCurrentPage(),
+                    'last_page' => $tickets->getLastPage(),
+                    'from' => $tickets->getFrom(),
+                    'to' => $tickets->getTo()
+                ]
+            ];
+        }
+        elseif ($user->hasRole('Customer')) {
+            $tickets = Ticket::where('id', 'like', $q)->orWhere('subject', 'like', $q)->orderBy('id', 'asc')->where('Customer_id', '=', $user->id)->with('usercustomer')->with('userstaff')->paginate(8);
+
+
+            //$tickets= Ticket::paginate(10);
+            $ticket = [
+                'tickets' => $tickets->getItems(),
+                'pagination' => [
+                    'total' => $tickets->getTotal(),
+                    'per_page' => $tickets->getPerPage(),
+                    'current_page' => $tickets->getCurrentPage(),
+                    'last_page' => $tickets->getLastPage(),
+                    'from' => $tickets->getFrom(),
+                    'to' => $tickets->getTo()
+                ]
+            ];
+        }
+
         return Response::json($ticket);
     }
 

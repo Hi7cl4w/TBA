@@ -14,6 +14,8 @@
     {{HTML::style('assets/css/material.min.css')}}
     {{HTML::style('assets/css/ripples.min.css')}}
     {{HTML::style('assets/css/admin.css')}}
+    @yield('headlogin')
+
     {{HTML::style('assets/css/table.css')}}
 
 
@@ -233,7 +235,7 @@
         /***** for demo purposes only: don't allow to submit the form *****/
         morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
     })();
-
+    @if (Auth::check())
     $('.morphsearch-input').keyup( function(){
         //alert($(this).val());
         // Set Search String
@@ -245,6 +247,7 @@
 
 
     });
+
     function ajaxpaginate(search_string, num, url, method, firstcall) {
         if (search_string !== '') {
             if (firstcall) {
@@ -364,7 +367,7 @@
     };
 
 
-
+@endif
 
 
 

@@ -1,17 +1,8 @@
 @extends('layout.master')
-@section('head_last')
+@section('headlogin')
 
     <title>Product</title>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-59072123-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
 
     {{HTML::style('assets/css/login.css')}}
 @stop
@@ -37,25 +28,30 @@
                             </div>
                         @endif
                     </div>
-                    <div class="box-body col-sm-12">
+                    <div class="box-body col-sm-10 center-block" id="login">
 
                             {{ Form::open(array('url' => 'login' )) }}
                             <!-- if there are login errors, show them here -->
-                            <div class="form-group">
-                                <div class="input-append col-md-10 col-xs-10 primary">
-                                    {{ Form::text('username', Input::old('email'), array('placeholder' => 'Email or username' ,'class' => 'form-control')) }}
-                                    <span class="add-on"><span class="arrow"></span><i
-                                                class="fa fa-user"></i> </span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-append col-md-10 col-xs-10 success">
-                                    {{ Form::password('password',array('placeholder' => 'Password', 'class' => 'form-control')) }}
-                                    <span class="add-on"><span class="arrow"></span><i
-                                                class="fa fa-lock"></i> </span>
-                                </div>
-                            </div>
 
+                            <div class="form-group">
+
+                                <div class="input-group col-xs-10">
+                                    <span class="input-group-addon primary" id="basic-addon1"><span class="add-on">
+                                        <i class="mdi-action-account-box"></i> </span></span>
+                                    {{ Form::text('username', Input::old('email'), array('placeholder' => 'Email or username' ,'class' => 'form-control')) }}
+
+                                </div>
+                                    </div>
+
+
+                            <div class="form-group">
+                                <div class="input-group col-xs-10">
+                                      <span class="input-group-addon success" id="basic-addon1"><span class="add-on">
+                                        <i class="mdi-action-lock"></i> </span></span>
+                                            {{ Form::password('password',array('placeholder' => 'Password', 'class' => 'form-control')) }}
+
+                            </div>
+                            </div>
                     <div class="form-group">
                         <div class="checkbox input-append">
                             <label>
