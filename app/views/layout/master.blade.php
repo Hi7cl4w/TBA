@@ -278,8 +278,8 @@
                                 {
                                     Staff="not assigned";
                                 }
-
-                                r = "<div class='panel simple no-border shadow-z-5 animated flipInX'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                var url="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}/"+value.id;
+                                r = "<div class='panel simple no-border shadow-z-5 animated flipInX'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'><a href='"+url+"' > Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").append(r); // some ajax content loading...
                             });
                             search(search_string, a.pagination.last_page, url, method);
@@ -324,7 +324,7 @@
                                     var cfname=value.userstaff.fname;
                                     var clname=value.userstaff.lname;
                                 }
-                                r = "<div class='panel simple no-border shadow-z-4'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'>Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
+                                r = "<div class='panel simple no-border shadow-z-4'><div class='box-title no-border descriptive clickable'><h4 class='semi-bold'>" + value.Subject + "</h4><span><h6> Created by " + cfname+" "+clname + " Assigned Staff: " + fname+" "+lname + "</h6></span> <p><span class='text-success bold'><a href='{{{ URL::to('/profile/'.$user->username.'/ticket/') }}}+value.id' >Ticket " + value.prefix + value.id + "</span>&nbsp Created on -0001-11-30 00:00:00&nbsp;&nbsp;<span class='label label-important'>" + value.Status + "</span></p></div></div>";
                                 $("#products").append(r); // some ajax content loading...
                             });
                             //search( search_string, a.pagination.total);

@@ -164,7 +164,7 @@
                         <div class="actions"><a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a>
                         </div>
                     </div>
-                    <div class="box-body  no-border" style="display:none">
+                    <div class="box-body no-border" style="display:none">
                         <div class="post">
                             <div class="user-profile-pic-wrapper">
                                 <div class="user-profile-pic-normal"><img width="35" height="35"
