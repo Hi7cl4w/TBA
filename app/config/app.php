@@ -129,7 +129,7 @@ return array(
 		'Artistan\Nexmo\NexmoServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
 		'Toin0u\Geocoder\GeocoderServiceProvider',
-		'Torann\GeoIP\GeoIPServiceProvider',
+		
 
 
 	),
@@ -204,7 +204,7 @@ return array(
 		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
 		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
 		'Geocoder' => 'Toin0u\Geocoder\GeocoderFacade',
-		
+
 
 
 
