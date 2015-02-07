@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f9f4a195bdcc4edaeed9bcbab60fe8e",
+    "hash": "a41b4b59ef143c7616b37001635070f3",
     "packages": [
         {
             "name": "artistan/nexmo",
@@ -936,79 +936,6 @@
             "time": "2014-02-25 20:39:04"
         },
         {
-            "name": "league/geotools",
-            "version": "0.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/geotools.git",
-                "reference": "cd42b83b03ee01867a2c3c481ea8ea8a68fdb4dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/geotools/zipball/cd42b83b03ee01867a2c3c481ea8ea8a68fdb4dc",
-                "reference": "cd42b83b03ee01867a2c3c481ea8ea8a68fdb4dc",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3",
-                "react/async": "~1.0",
-                "symfony/console": "~2.4",
-                "symfony/serializer": "~2.4",
-                "willdurand/geocoder": "~2.4"
-            },
-            "replace": {
-                "toin0u/geotools": "*"
-            },
-            "require-dev": {
-                "guzzle/guzzle": "~3.7",
-                "kriswallsmith/buzz": "~0.10",
-                "predis/predis": "~0.8",
-                "satooshi/php-coveralls": "~0.6",
-                "zendframework/zend-http": "~2.2"
-            },
-            "bin": [
-                "bin/geotools"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Geotools\\": "src",
-                    "League\\Geotools\\Tests\\": "tests"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Antoine Corcy",
-                    "email": "contact@sbin.dk",
-                    "homepage": "http://sbin.dk",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Geo-related tools PHP 5.3 library",
-            "homepage": "http://geotools-php.org/",
-            "keywords": [
-                "async",
-                "batch",
-                "bounds",
-                "distance",
-                "geocoder",
-                "geocoding",
-                "geoip",
-                "geometry",
-                "geotools"
-            ],
-            "time": "2014-07-30 20:22:41"
-        },
-        {
             "name": "maxmind-db/reader",
             "version": "v0.3.3",
             "source": {
@@ -1131,16 +1058,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "5cb6e71055f7b0b57956b73d324cc4de31278f42"
+                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/5cb6e71055f7b0b57956b73d324cc4de31278f42",
-                "reference": "5cb6e71055f7b0b57956b73d324cc4de31278f42",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
+                "reference": "bb87460c995d97fe55b39e65f6ffb7f64b0a941e",
                 "shasum": ""
             },
             "require": {
@@ -1173,7 +1100,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2014-09-26 02:52:02"
+            "time": "2015-02-06 05:07:29"
         },
         {
             "name": "nikic/php-parser",
@@ -1561,47 +1488,6 @@
                 "uuid"
             ],
             "time": "2014-09-03 23:18:24"
-        },
-        {
-            "name": "react/async",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/async.git",
-                "reference": "568a29207cfc00b3270c9d0158b0ec0a65a2194f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/async/zipball/568a29207cfc00b3270c9d0158b0ec0a65a2194f",
-                "reference": "568a29207cfc00b3270c9d0158b0ec0a65a2194f",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "react/event-loop": "0.2.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "React\\Async": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Async utilities for React.",
-            "keywords": [
-                "async"
-            ],
-            "time": "2013-02-06 23:27:19"
         },
         {
             "name": "rhumsaa/uuid",
@@ -2614,53 +2500,6 @@
             "time": "2015-01-25 04:37:39"
         },
         {
-            "name": "symfony/serializer",
-            "version": "v2.6.4",
-            "target-dir": "Symfony/Component/Serializer",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Serializer.git",
-                "reference": "43fbb762fbdb2bcfce86205ffef2094a3995c801"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Serializer/zipball/43fbb762fbdb2bcfce86205ffef2094a3995c801",
-                "reference": "43fbb762fbdb2bcfce86205ffef2094a3995c801",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Serializer\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Serializer Component",
-            "homepage": "http://symfony.com",
-            "time": "2015-02-01 16:10:57"
-        },
-        {
             "name": "symfony/translation",
             "version": "v2.5.10",
             "target-dir": "Symfony/Component/Translation",
@@ -2717,33 +2556,37 @@
             "time": "2015-01-03 15:23:51"
         },
         {
-            "name": "toin0u/geotools-laravel",
-            "version": "0.2.0",
+            "name": "toin0u/geocoder-laravel",
+            "version": "0.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/toin0u/Geotools-laravel.git",
-                "reference": "953b5c8dbeb9fb063f35c9d69b04c4e6e9b02d79"
+                "url": "https://github.com/geocoder-php/GeocoderLaravel.git",
+                "reference": "38bd378dc68865d1695d7ce02172e950705601dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toin0u/Geotools-laravel/zipball/953b5c8dbeb9fb063f35c9d69b04c4e6e9b02d79",
-                "reference": "953b5c8dbeb9fb063f35c9d69b04c4e6e9b02d79",
+                "url": "https://api.github.com/repos/geocoder-php/GeocoderLaravel/zipball/38bd378dc68865d1695d7ce02172e950705601dd",
+                "reference": "38bd378dc68865d1695d7ce02172e950705601dd",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "~4.0",
-                "league/geotools": "~0.3",
-                "php": ">=5.3.3"
+                "php": ">=5.3.0",
+                "willdurand/geocoder": "~2.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~2.0",
+                "satooshi/php-coveralls": "~0.6"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2-dev"
+                    "dev-master": "0.4-dev"
                 }
             },
             "autoload": {
                 "psr-0": {
-                    "Toin0u\\Geotools": "src/"
+                    "Toin0u\\Geocoder": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2758,34 +2601,27 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Geo-related tools PHP 5.3 library for Laravel 4",
-            "homepage": "http://geotools-php.org/",
+            "description": "Geocoder Service provider for Laravel 4",
+            "homepage": "http://geocoder-php.org/",
             "keywords": [
-                "async",
-                "batch",
-                "bounds",
-                "distance",
                 "geocoder",
                 "geocoding",
-                "geoip",
-                "geometry",
-                "geotools",
                 "laravel"
             ],
-            "time": "2013-07-19 21:40:40"
+            "time": "2014-06-23 16:51:25"
         },
         {
             "name": "torann/geoip",
-            "version": "dev-master",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Torann/laravel-4-geoip.git",
-                "reference": "728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da"
+                "reference": "d8c6f8d2c548f35105770c3bd038b22f98b4b1e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da",
-                "reference": "728bbe3ec4ad2b78bf2f10f3d8d94c34cadf14da",
+                "url": "https://api.github.com/repos/Torann/laravel-4-geoip/zipball/d8c6f8d2c548f35105770c3bd038b22f98b4b1e8",
+                "reference": "d8c6f8d2c548f35105770c3bd038b22f98b4b1e8",
                 "shasum": ""
             },
             "require": {
@@ -2822,7 +2658,7 @@
                 "laravel4",
                 "location"
             ],
-            "time": "2015-02-02 21:46:20"
+            "time": "2014-06-02 17:45:24"
         },
         {
             "name": "twilio/sdk",
@@ -3116,7 +2952,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "greggilbert/recaptcha": 20,
-        "torann/geoip": 20
+        "toin0u/geocoder-laravel": 0,
+        "torann/geoip": 0
     },
     "prefer-stable": false,
     "prefer-lowest": false,

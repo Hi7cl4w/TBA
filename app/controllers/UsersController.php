@@ -254,6 +254,10 @@ class UsersController extends Controller
 
         if ($repo->login($input)) {
             $user = Auth::user();
+            $userTimezone = Auth::user()->timezone;
+           // date_default_timezone_set($userTimezone);
+// and change the configuration so they match
+            Config::set('app.timezone', Auth::user()->timezone);
             return Redirect::intended('/profile/' . $user->username);
         } else {
             if ($repo->isThrottled($input)) {

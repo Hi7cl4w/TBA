@@ -278,9 +278,8 @@ class TicketController extends \BaseController
      */
     public function comments()
     {
- if(Request::ajax()) {
+ //if(Request::ajax()) {
      $input = Input::all();
-           $user = Auth::user();
        $id = array_get($input, 'id');
 
             // $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"></div></div><div class=\"info\"> Hi,<br><br> Thank you for reaching us, We are looking into this issue and will updateyou.<br><br>Manu K<br><p>Posted on 10/29/13 at 07:21</p><hr> </div>";
@@ -290,11 +289,13 @@ class TicketController extends \BaseController
                 'pagination' => [
                     'total' => $c->getTotal(),
                     'last_page' => $c->getLastPage(),
+                    'per_page' => $c->getPerPage(),
+                    'current_page' => $c->getCurrentPage(),
                 ]
             ];
 
             return Response::json($data);
-       }
+     //  }
 
     }
 

@@ -128,7 +128,8 @@ return array(
 		'SimpleSoftwareIO\SMS\SMSServiceProvider',
 		'Artistan\Nexmo\NexmoServiceProvider',
 		'Bllim\Datatables\DatatablesServiceProvider',
-
+		'Toin0u\Geocoder\GeocoderServiceProvider',
+		'Torann\GeoIP\GeoIPServiceProvider',
 
 
 	),
@@ -202,6 +203,11 @@ return array(
 		'Uuid' 				=> 'Webpatser\Uuid\Uuid',
 		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
 		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
+		'Geocoder' => 'Toin0u\Geocoder\GeocoderFacade',
+		'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
+
+
+
 
 	),
 

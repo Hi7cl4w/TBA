@@ -112,16 +112,25 @@
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;
                              <span
                                      class="label {{$ticket->Status}}">{{$ticket->Status}}</span>
+
+                        <div class="actions"><a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a>
+                        </div>
                             <?php $user = Auth::user();?>
+                        <div class="actions">
+                        <div class="form-group">
                             @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
+                                <label >Rating</label>
                             <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false"  >
                             @endif
                             @if ($ticket->Status=="Completed"&&$user->hasRole('Administrator') or $ticket->Status=="Completed"&&$user->hasRole('Staff') )
+                                    <label >Rating</label>
                                 <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false" readonly="true"  >
                             @endif
+                            </div>
+                                </div>
                             <script type="text/javascript">
                                 $("#{{$ticket->id}}").rating();
-                                $('#{{$ticket->id}}').rating('update',{{$ticket->Rating}});
+                                $('#{{$ticket->id}}').rating('update',"{{$ticket->Rating}}");
                                 @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
                                 $("#{{$ticket->id}}").on('rating.change', function(event, value, caption) {
 
@@ -164,8 +173,6 @@
                                 </script>
                                </p>
 
-                        <div class="actions"><a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a>
-                        </div>
                     </div>
                     <div class="box-body no-border" style="display:none">
                         <div class="post">
@@ -180,25 +187,36 @@
                             <div class="clearfix"></div>
                         </div>
                         <br>
-                        <hr>
+
                         <div class="form-actions">
                             <div class="post col-md-12">
 
+                                    <div class="form-row">
+                                        <div class="col-xs-10">
+                                        <input  type="text" id="replaybox{{$ticket->id}}" >
+                                        </div>
+                                        <div class="col-xs-2">
+
+                                        <button id="replay{{$ticket->id}}"  class="form-group btn btn-primary btn-xs"></i>Comment</button>
+                                            </div>
+                                    </div>
+
                                 <div class="row col-xs-12">
+                                    <div class="comments" >
+                                        <hr>
                                 <div id="results{{$ticket->id}}"></div>
                                 <div align="center">
-                                    <button class="load_more{{$ticket->id}}" id="load_more_button">load More</button>
-
+                                    <p>
+                                    <button class="paginate_button load_more{{$ticket->id}}" id="load_more_button">load More</button>
                                     <div class="animation_image" style="display:none;"><img src="/assets/img/load.gif"> Loading...</div>
-                                </div>  <hr>
+                                    </p>
+
                                 </div>
 
-                                <div class="info-wrapper">
-                                    <div class="form-row-stripped">
+                                </div>
+                                    </div>
 
 
-                                         <span><div class="input-with-icon  right"><i class=""></i>
-                                            <input type="text" id="replaybox{{$ticket->id}}"> <label ><button id="replay{{$ticket->id}}" class="btn btn-primary btn-xs fa fa-reply"></i>&nbsp;Comment</button>
                                                      <script>
                                                         $("#replaybox{{$ticket->id}}").keyup(function (event) {
                                                              if (event.keyCode == 13) {
@@ -211,17 +229,18 @@
                                                              replay({{$ticket->id}},comment);
 
                                                          });
-                                                      var track_click = 1; //track user click on "load more" button, righ now it is 0 click
+                                                      var track_click{{$ticket->id}} = 1; //track user click on "load more" button, righ now it is 0 click
                                                      $.ajax({
                                                           type: "GET",
-                                                          url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click,
+                                                          url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click{{$ticket->id}},
                                                          data: {id: "{{$ticket->id}}" },
                                                           success: function (data) {
                                                               // Parse the returned json data
                                                               $(".load_more").show();
                                                               $("#products").html("");
                                                               $( "#page-selection" ).show();
-                                                              if (data.comments != '') {
+
+                                                              if (data.comments.length>=1) {
                                                                   $.each(data.comments, function (key, value) {
 
                                                                       r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
@@ -230,10 +249,22 @@
 
                                                                   });
 
-                                                              }                                                  //scroll page smoothly to button id
-                                                              total_pages=data.pagination.last_page;
+                                                              }
+                                                              else {
 
-                                                              $("html, body").animate({scrollTop: $("#load_more_button").offset().top}, 500);
+                                                                  $(".load_more").attr("disabled", "disabled");
+                                                                  $('.animation_image').hide();
+                                                                  $(".load_more{{$ticket->id}}").hide();
+                                                                  r = "<hr><h4>No comments yet<h4><hr>";
+
+                                                                  $("#results{{$ticket->id}}").html(r);
+
+                                                              }
+
+                                                        //scroll page smoothly to button id
+                                                              total_pages{{$ticket->id}}=data.pagination.last_page;
+                                                              track_click{{$ticket->id}}=data.pagination.current_page+1;
+
                                                               //hide loading image
                                                               $('.animation_image').hide(); //hide loading image once data is received
 
@@ -242,23 +273,25 @@
 
                                                       $(document).on('click', '.load_more{{$ticket->id}}', function () { //user clicks on button
 
-                                                          $(this).hide(); //hide load more button on click
-                                                          $('.animation_image').show(); //show loading image
+                                                          //hide load more button on click
+                                                          //show loading image
 
-                                                          track_click++;
-                                                          if (track_click <= total_pages) //user click number is still less than total pages
+                                                          id={{ $ticket->id}};
+
+                                                          if (track_click{{$ticket->id}} <= total_pages{{$ticket->id}}) //user click number is still less than total pages
                                                           {
                                                               $.ajax({
                                                                   type: "GET",
-                                                                  url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click,
-                                                                  data: {id: "{{$ticket->id}}" },
+                                                                  url: "{{{ URL::to('/profile/'.$user->username.'/comments?page=') }}}"+track_click{{$ticket->id}},
+                                                                  data: {id: id },
                                                                   success: function (data) {
                                                                       // Parse the returned json data
 
                                                                       $(".load_more").show();
                                                                       $("#products").html("");
                                                                       $( "#page-selection" ).show();
-                                                                      if (data.comments != '') {
+                                                                      if (data.comments.length>=1) {
+                                                                          $('.animation_image').show();
                                                                           $.each(data.comments, function (key, value) {
                                                                               r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
 
@@ -266,29 +299,36 @@
 
                                                                           });
 
-                                                                      }                                                  //scroll page smoothly to button id
+                                                                          $('.animation_image').hide();
+                                                                          track_click{{$ticket->id}}=data.pagination.current_page+1;
+                                                                      } else{
+                                                                          $(".load_more").attr("disabled", "disabled");
+                                                                          $('.animation_image').hide();
+                                                                          $(".load_more{{$ticket->id}}").hide();
 
-                                                                      $("html, body").animate({scrollTop: $("#load_more_button").offset().top}, 500);
-                                                                      //hide loading image
-                                                                      $('.animation_image').hide(); //hide loading image once data is received
+                                                                      }
+                                                                      if (data.pagination.current_page+1 >= data.pagination.last_page) //compare user click with page number
+                                                                      {
+                                                                           $(".load_more{{$ticket->id}}").hide();
+                                                                          $(".load_more").attr("disabled", "disabled");
+                                                                          $('.animation_image').hide();
 
-                                                                      //user click increment on load button
+                                                                      }
+
+                                                                                                                       //scroll page smoothly to button id
+
                                                                   }
                                                               });  //post page number and load returned data into result element
 
 
-                                                              if (track_click >= total_pages - 1) //compare user click with page number
-                                                              {
-                                                                  //reached end of the page yet? disable load button
-                                                                  $(".load_more").attr("disabled", "disabled");
-                                                              }
+
+
                                                           }
 
                                                       });
 
                                                      </script>
-                                        </div></span>
-                                    </div>
+
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="clearfix"></div>
@@ -296,10 +336,10 @@
                         </div>
                     </div>
 
+                @endforeach
 
                 </div>
-                @endforeach
-            </div>
+
 
 
 
@@ -349,14 +389,14 @@
                     success: function (data) {
                         // Parse the returned json data
                         $(".load_more").show();
+
                         $("#results"+id).append(data);
                         //scroll page smoothly to button id
-                        $("html, body").animate({scrollTop: $("#load_more_button").offset().top}, 500);
 
                         //hide loading image
                         $('.animation_image').hide(); //hide loading image once data is received
 
-                        track_click++; //user click increment on load button
+                        //user click increment on load button
                     }
                 });
 

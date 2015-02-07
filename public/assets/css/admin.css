@@ -19,7 +19,7 @@ background: #eeeeee;
   font-family: 'Open Sans', "Segoe UI";
 }
 body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
-  font-family: 'Open Sans', "Segoe UI",RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family:  "Segoe UI",'Open Sans',RobotoDraft,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: 300;
 }
 
@@ -3063,7 +3063,8 @@ form legend,.form-view legend {
 .form-actions {
 
   border:0px;
-  padding: 0 20px 20px;
+  padding: 10px 20px 20px;
+
 }
 .form-actions:before, .form-actions:after {
   content: "";
@@ -3273,9 +3274,18 @@ form legend,.form-view legend {
   margin-bottom: 25px;
   padding: 5px;
   box-shadow: 1px 8px 17px 0 rgba(0, 0, 0, 0.2);
-  color: #323232;
+  color: #1a1a1a;
   background: #ffffff;
 
+}
+.box p{
+  color: #1a1a1a;
+}
+.box label{
+  color: #323232;
+}
+.box span.label{
+  color: #ffffff;
 }
 
 .box h4,
@@ -3408,7 +3418,7 @@ form legend,.form-view legend {
 }
 .box-body {
   clear: both;
-  padding: 0;
+
 }
 
 .box-body.light-blue, .box.light-blue {
@@ -3511,6 +3521,7 @@ form legend,.form-view legend {
 
 .box.simple {
   padding:6px !important;
+  font-weight: 400;
 
 
 }
@@ -3541,6 +3552,12 @@ form legend,.form-view legend {
   height: 10px;
   top: -5px;
 
+}
+.form-row button {
+  margin: 0px 1px;
+}
+.comments {
+  padding: 40px;
 }
 
 .box.simple .box-title .tools > a.config,
@@ -3709,6 +3726,13 @@ form legend,.form-view legend {
 /* grid buttons */
 .box.box .box-body {
   background-color: #fff;
+  color: #000000;
+
+
+
+}
+.box.box .post{
+
   padding: 17px;
 
 }
@@ -6295,6 +6319,7 @@ nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-cont
 
 .post .info{
   display:block;
+
 
 
 }

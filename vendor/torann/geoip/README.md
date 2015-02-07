@@ -71,22 +71,13 @@ array (
     "state"        => "CT",
     "postal_code"  => "06510",
     "lat"          => 41.28,
-    "lon"          => -72.88,
-    "timezone"     => "America/New_York",
-    "continent"    => "NA",
-    "default"      => false
+    "lon"          => -72.88
 );
 ```
-
-#### Note
-
-In the case that a location is not found the fallback location will be returned with the `default` parameter set to `true`. In a future release I'll make the default location customizable. For not it is New Haven, CT.
-
 ## Services
 
 
 ### [MaxMind](http://www.maxmind.com)
 
 - **Database Service**: To use the database version of MaxMind services download the `GeoLite2-City.mmdb` from [http://dev.maxmind.com/geoip/geoip2/geolite2/](http://dev.maxmind.com/geoip/geoip2/geolite2/) and extract it to `/app/database/maxmind/`. And that's it.
-
 

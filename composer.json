@@ -16,8 +16,9 @@
 	  "webpatser/laravel-uuid": "1.*",
 	  "artistan/nexmo": "0.1.*",
 	  "r15ch13/peculiar": "*",
-	  "toin0u/geotools-laravel": "0.2.*",
-	  "torann/geoip": "dev-master"
+	  "toin0u/geocoder-laravel": "@stable",
+	  "torann/geoip": "@stable",
+	  "nesbot/carbon": "~1.13"
 
 	},
 	"autoload": {

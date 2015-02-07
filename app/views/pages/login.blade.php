@@ -28,14 +28,14 @@
                             </div>
                         @endif
                     </div>
-                    <div class="box-body col-sm-10 center-block" id="login">
+                    <div class="box-body col-sm-11 center-block" id="login">
 
                             {{ Form::open(array('url' => 'login' )) }}
                             <!-- if there are login errors, show them here -->
 
                             <div class="form-group">
 
-                                <div class="input-group col-xs-10">
+                                <div class="input-group col-xs-12">
                                     <span class="input-group-addon primary" id="basic-addon1"><span class="add-on">
                                         <i class="mdi-action-account-box"></i> </span></span>
                                     {{ Form::text('username', Input::old('email'), array('placeholder' => 'Email or username' ,'class' => 'form-control')) }}
@@ -45,7 +45,7 @@
 
 
                             <div class="form-group">
-                                <div class="input-group col-xs-10">
+                                <div class="input-group col-xs-12">
                                       <span class="input-group-addon success" id="basic-addon1"><span class="add-on">
                                         <i class="mdi-action-lock"></i> </span></span>
                                             {{ Form::password('password',array('placeholder' => 'Password', 'class' => 'form-control')) }}
