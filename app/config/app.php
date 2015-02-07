@@ -204,7 +204,7 @@ return array(
 		'SMS' 				=> 'SimpleSoftwareIO\SMS\Facades\SMS',
 		 'Datatables'      	=> 'Bllim\Datatables\Facade\Datatables',
 		'Geocoder' => 'Toin0u\Geocoder\GeocoderFacade',
-		'GeoIP' => 'Torann\GeoIP\GeoIPFacade',
+		
 
 
 
