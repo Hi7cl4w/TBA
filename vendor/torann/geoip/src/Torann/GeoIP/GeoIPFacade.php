@@ -1,5 +1,6 @@
 <?php namespace Torann\GeoIP;
 
+
 use Illuminate\Support\Facades\Facade;
 
 class GeoIPFacade extends Facade {
