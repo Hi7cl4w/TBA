@@ -30,7 +30,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('homestead','user')
+	'local' => array('homestead','user','p3plcpnl0047.prod.phx3.secureserver.net')
 
 
 ));
