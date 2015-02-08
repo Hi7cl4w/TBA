@@ -242,8 +242,12 @@
 
                                                               if (data.comments.length>=1) {
                                                                   $.each(data.comments, function (key, value) {
+                                                                      var t = value.updated_at.split(/[- :]/);
 
-                                                                      r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
+                                                                      var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+                                                                      var f= new Date(d + "UTC");
+
+                                                                      r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+f+"</p><hr> </div>";
 
                                                                       $("#results{{$ticket->id}}").append(r); // some ajax content loading...
 
@@ -293,7 +297,10 @@
                                                                       if (data.comments.length>=1) {
                                                                           $('.animation_image').show();
                                                                           $.each(data.comments, function (key, value) {
-                                                                              r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+value.updated_at+"</p><hr> </div>";
+                                                                              var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
+                                                                              var f= new Date(d + "UTC");
+
+                                                                              r = "<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" src=\"/assets/img/user.svg\" alt=\"\"> "+value.user.fname+"</div></div><div class=\"info\"> <br><br> "+value.comment+"<br><p>Posted on "+f+"</p><hr> </div>";
 
                                                                               $("#results{{$ticket->id}}").append(r); // some ajax content loading...
 
@@ -335,7 +342,6 @@
                             </div>
                         </div>
                     </div>
-
                 @endforeach
 
                 </div>
@@ -390,7 +396,7 @@
                         // Parse the returned json data
                         $(".load_more").show();
 
-                        $("#results"+id).append(data);
+                        $("#results"+id).before(data);
                         //scroll page smoothly to button id
 
                         //hide loading image
