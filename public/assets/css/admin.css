@@ -6493,7 +6493,23 @@ nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-cont
 .Closed{
   background-color: #2db3c2;
 }
+i.fa.fa-angle-down {
+  top: 5px;
+  left: 3px;
 
+}
+.box.box .box-title > .actions > .btn > i.fa-angle-down {
 
+  color: #000004 !important;
+}
+i.fa.fa-cog {
+  top: 5px;
+
+}
+.box.box .box-title > .actions > .btn > i.fa.fa-cog,
+.box.box .box-title > .actions > .btn > i.mdi-action-settings {
+
+  color: #000004 !important;
+}
 
 

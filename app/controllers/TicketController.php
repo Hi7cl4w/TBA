@@ -323,6 +323,20 @@ class TicketController extends \BaseController
 
         }
     }
+    public function status($id){
+        if(Request::ajax()) {
+
+            $user = Auth::user();
+
+            $body = "<h4>Enter your feedback for ticket" . $id . " ?</h4>";
+            $message = array(
+                'body' => $body,
+                'id'   => $id,
+            );
+
+            return View::make('pages.status')->with('message', $message);
+        }
+    }
 
 
     /**

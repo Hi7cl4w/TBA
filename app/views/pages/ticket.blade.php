@@ -110,27 +110,60 @@
 
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;
+
                              <span
                                      class="label {{$ticket->Status}}">{{$ticket->Status}}</span>
 
-                        <div class="actions"><a class="view" href="javascript:;"><i class="fa fa-angle-down"></i></a>
-                        </div>
-                            <?php $user = Auth::user();?>
+
+
+
                         <div class="actions">
-                        <div class="form-group">
+
+                            <a class="view btn btn-fab btn-fab-mini btn-raised btn-sm btn-default pull-right"  href="javascript:;"><i class="fa fa-angle-down"></i></a>
+                        </div><div class="actions">
+                            <a id="status{{$ticket->id}}" class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-default pull-right"><i class="fa fa-cog"></i></a>
+
+                        </div>
+
+
+                            <?php $user = Auth::user();?>
+
+                        <div class="actions">
+
+
+
+
+                            <div class="form-group">
+
                             @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
                                 <label >Rating</label>
-                            <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false"  >
+                            <input id="{{$ticket->id}}" type="number" class="rating" showCaption="false" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false"  >
                             @endif
+
                             @if ($ticket->Status=="Completed"&&$user->hasRole('Administrator') or $ticket->Status=="Completed"&&$user->hasRole('Staff') )
                                     <label >Rating</label>
-                                <input id="{{$ticket->id}}" type="number" class="rating" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false" readonly="true"  >
+                                <input id="{{$ticket->id}}" type="number" class="rating" showCaption="false" data-show-clear="false" min=0 max=5 step=1 data-size="xs" data-rtl="false" readonly="true"  >
                             @endif
                             </div>
                                 </div>
                             <script type="text/javascript">
+                                //STATUS CHANGE
+                                $(document).on('click', '#status{{$ticket->id}}', function() {
+
+                                    //alert(value+id);
+                                    $('#myModal .modal-body').load('{{{ URL::to('/profile/'.$user->username."/ticket/status/") }}}/{{$ticket->id}}');
+                                    $('#myModal').modal('show');
+                                });
+
+
+
+
+
+
                                 $("#{{$ticket->id}}").rating();
+                                //set current rating
                                 $('#{{$ticket->id}}').rating('update',"{{$ticket->Rating}}");
+                                //update rating
                                 @if ($ticket->Status=="Completed"&&$user->hasRole('Customer'))
                                 $("#{{$ticket->id}}").on('rating.change', function(event, value, caption) {
 
@@ -166,8 +199,7 @@
                                         }
                                     });
                                     //alert(value+id);
-                                    $('#myModal .modal-body').load(value+id);
-                                    $('#myModal').modal('show');
+
                                 });
                                 @endif
                                 </script>
@@ -175,6 +207,8 @@
 
                     </div>
                     <div class="box-body no-border" style="display:none">
+
+
                         <div class="post">
                             <div class="user-profile-pic-wrapper">
                                 <div class="user-profile-pic-normal"><img width="35" height="35"
@@ -207,7 +241,7 @@
                                 <div id="results{{$ticket->id}}"></div>
                                 <div align="center">
                                     <p>
-                                    <button class="paginate_button load_more{{$ticket->id}}" id="load_more_button">load More</button>
+                                    <button class="paginate_button load_more{{$ticket->id}} btn btn-default" id="load_more_button">load More</button>
                                     <div class="animation_image" style="display:none;"><img src="/assets/img/load.gif"> Loading...</div>
                                     </p>
 
@@ -218,6 +252,7 @@
 
 
                                                      <script>
+
                                                         $("#replaybox{{$ticket->id}}").keyup(function (event) {
                                                              if (event.keyCode == 13) {
                                                                  $("#replay{{$ticket->id}}").click();
@@ -297,6 +332,7 @@
                                                                       if (data.comments.length>=1) {
                                                                           $('.animation_image').show();
                                                                           $.each(data.comments, function (key, value) {
+                                                                              var t = value.updated_at.split(/[- :]/);
                                                                               var d = new Date(t[0], t[1]-1, t[2], t[3], t[4], t[5]);
                                                                               var f= new Date(d + "UTC");
 
