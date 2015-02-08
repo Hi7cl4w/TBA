@@ -280,10 +280,8 @@ class TicketController extends \BaseController
     {
  //if(Request::ajax()) {
      $input = Input::all();
-       $id = array_get($input, 'id');
-
-            // $data="<div class=\"user-profile-pic-wrapper\"><div class=\"user-profile-pic-normal\"><img width=\"35\" height=\"35\" data-src-retina=\"\" alt=\"\"></div></div><div class=\"info\"> Hi,<br><br> Thank you for reaching us, We are looking into this issue and will updateyou.<br><br>Manu K<br><p>Posted on 10/29/13 at 07:21</p><hr> </div>";
-            $c = Comments::where('ticket_id', '=', $id)->orderBy('created_at', 'DESC')->with('user')->paginate(2);
+     $id = array_get($input, 'id');
+        $c = Comments::where('ticket_id', '=', $id)->orderBy('created_at', 'DESC')->with('user')->paginate(2);
             $data = [
                 'comments' => $c->getItems(),
                 'pagination' => [
@@ -327,15 +325,36 @@ class TicketController extends \BaseController
         if(Request::ajax()) {
 
             $user = Auth::user();
+            $status=Ticket::select('Status')->find($id);
 
             $body = "<h4>Enter your feedback for ticket" . $id . " ?</h4>";
             $message = array(
                 'body' => $body,
                 'id'   => $id,
+                'status'   => $status
             );
 
             return View::make('pages.status')->with('message', $message);
         }
+    }
+    public function statuspost($id){
+        if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $status = array_get($input, 'status');
+            $remark = array_get($input, 'remark');
+            $lat = array_get($input, 'lat');
+            $long = array_get($input, 'long');
+            $ticket = Ticket::find($id);
+            $ticket->Status = $status;
+            $ticket->Remark = $remark;
+            $ticket->Latitude = $lat;
+            $ticket->Longitude = $long;
+            $ticket->update();
+
+            return Response::json($ticket);
+        }
+        App::abort('404');
     }
 
 
