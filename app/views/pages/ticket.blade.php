@@ -115,8 +115,31 @@
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
                             Created on {{ $ticket->created_at}}&nbsp;&nbsp;
 
+
                              <span
-                                     class="label {{$ticket->Status}}">{{$ticket->Status}}</span>
+                                     class="label {{$ticket->Status}}">{{$ticket->Status}}</span></p>
+                            <p>
+                                <?php
+                                if ($ticket->Latitude && $ticket->Longitude) {
+                                    try {
+
+                                        $latitude = $ticket->Latitude;
+                                        $longitude = $ticket->Longitude;
+                                        $geocode = Geocoder::reverse($latitude, $longitude);
+                                        // The GoogleMapsProvider will return a result
+                                        //var_dump($geocode);
+                                        echo "<br>Last Updated Location : ".$geocode->getcounty().",".$geocode->getregion();
+                                    } catch (\Exception $e) {
+                                        // No exception will be thrown here
+                                        echo $e->getMessage();
+                                    }
+                                } else {
+                                    echo "Last Updated Location : Not Updated Yet";
+                                }
+
+
+                                ?>
+
 
 
                         <div class="actions">
@@ -179,8 +202,7 @@
 
                                     var status = $('#status').val();
                                     var remark = $('#remark').val();
-                                    alert(lat+" "+long +status + remark );
-                                    alert(lat+" "+long +status + remark );
+                                  
                                     $.ajax({
                                         type: "GET",
                                         url: "{{{ URL::to('/profile/'.$user->username.'/ticket/status/post') }}}/{{$ticket->id}}",
@@ -188,7 +210,7 @@
                                         cache: false,
                                         success: function (data) {
                                             $('#myModal').modal('toggle');
-                                            //location.reload();
+                                            location.reload();
                                         }
                                     });
                                     //alert(value+id);
