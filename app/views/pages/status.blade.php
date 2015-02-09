@@ -15,7 +15,7 @@
                 <select id="status" class="form-control" name="Product_id" style="width:100%">
                     <option  <?php if ($message['status']['Status'] == "Processing" ) echo 'selected'; ?> value="Processing">Processing</option>
                     <option  <?php if ($message['status']['Status'] == "Pending" ) echo 'selected'; ?>  value="Pending">Pending</option>
-                    <option  <?php if ($message['status']['Status'] == "Delayed" ) echo 'selected'; ?>  value="Delayed">Delayed</option>
+                    <option  <?php if ($message['status']['Status'] == "Onhold" ) echo 'selected'; ?>  value="Onhold">On Hold</option>
                     <option  <?php if ($message['status']['Status'] == "Completed" ) echo 'selected'; ?>  value="Completed">Completed</option>
 
                     @if ($user->hasRole('Administrator')  )

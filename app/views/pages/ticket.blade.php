@@ -118,28 +118,28 @@
 
                              <span
                                      class="label {{$ticket->Status}}">{{$ticket->Status}}</span></p>
-                            <p>
-                                <?php
-                                if ($ticket->Latitude && $ticket->Longitude) {
-                                    try {
 
-                                        $latitude = $ticket->Latitude;
-                                        $longitude = $ticket->Longitude;
-                                        $geocode = Geocoder::reverse($latitude, $longitude);
-                                        // The GoogleMapsProvider will return a result
-                                        //var_dump($geocode);
-                                        echo "<br>Last Updated Location : ".$geocode->getcounty().",".$geocode->getregion();
-                                    } catch (\Exception $e) {
-                                        // No exception will be thrown here
-                                        echo $e->getMessage();
-                                    }
-                                } else {
-                                    echo "Last Updated Location : Not Updated Yet";
+                        <p>
+                            <?php
+                            if ($ticket->Latitude && $ticket->Longitude) {
+                                try {
+
+                                    $latitude = $ticket->Latitude;
+                                    $longitude = $ticket->Longitude;
+                                    $geocode = Geocoder::reverse($latitude, $longitude);
+                                    // The GoogleMapsProvider will return a result
+                                    //var_dump($geocode);
+                                    echo "<br>Last Updated Location : " . $geocode->getcounty() . "," . $geocode->getregion();
+                                } catch (\Exception $e) {
+                                    // No exception will be thrown here
+                                    echo $e->getMessage();
                                 }
+                            } else {
+                                echo "Last Updated Location : Not Updated Yet";
+                            }
 
 
-                                ?>
-
+                            ?>
 
 
                         <div class="actions">
@@ -148,10 +148,12 @@
                                href="javascript:;"><i class="fa fa-angle-down"></i></a>
                         </div>
                         <div class="actions">
-                            <a id="status{{$ticket->id}}"
-                               class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-default pull-right"><i
-                                        class="fa fa-cog"></i></a>
+                            @if ($user->hasRole('Administrator') or $user->hasRole('Staff') )
 
+                                <a id="status{{$ticket->id}}"
+                                   class="btn btn-fab btn-fab-mini btn-raised btn-sm btn-default pull-right"><i
+                                            class="fa fa-cog"></i></a>
+                            @endif
                         </div>
 
 
@@ -202,11 +204,11 @@
 
                                     var status = $('#status').val();
                                     var remark = $('#remark').val();
-                                  
+
                                     $.ajax({
                                         type: "GET",
                                         url: "{{{ URL::to('/profile/'.$user->username.'/ticket/status/post') }}}/{{$ticket->id}}",
-                                        data: {status: status, remark: remark ,lat:lat,long:long},
+                                        data: {status: status, remark: remark, lat: lat, long: long},
                                         cache: false,
                                         success: function (data) {
                                             $('#myModal').modal('toggle');

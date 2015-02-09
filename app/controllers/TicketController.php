@@ -342,6 +342,7 @@ class TicketController extends \BaseController
             $input = Input::all();
             $user = Auth::user();
             $status = array_get($input, 'status');
+
             $remark = array_get($input, 'remark');
             $lat = array_get($input, 'lat');
             $long = array_get($input, 'long');
@@ -351,6 +352,12 @@ class TicketController extends \BaseController
             $ticket->Latitude = $lat;
             $ticket->Longitude = $long;
             $ticket->update();
+            if($ticket->Status=="Closed"){
+                $sid=$ticket->Staff_id;
+                $staff=Staff::find($id);
+                $staff->work_allocated=$staff->work_allocated-1;
+
+            }
 
             return Response::json($ticket);
         }

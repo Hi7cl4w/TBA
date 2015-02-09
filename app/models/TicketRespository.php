@@ -17,11 +17,20 @@ class TicketRespository
         $t->prefix = "TI";
         $user=Auth::user();
         $t->Customer_id = $user->id;
+        $staff=Staff::where('work_allocated','=','0')->first();
+        if($staff){
+            $t->Staff_id = $staff->id;
+            $t->Status = "Pending";
+        }
+        else{
+            $t->Staff_id = null;
+            $t->Status = "Processing";
+        }
 
-        $t->Staff_id = "2";
+
         $t->Subject = array_get($input, 'Subject');
         $t->Description = array_get($input, 'Description');
-        $t->Status = "Pending";
+
         $t->Closing_date = null;
         $t->Remark = null;
         $t->Priority = 1;
