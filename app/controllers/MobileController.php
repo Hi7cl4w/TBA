@@ -251,7 +251,8 @@ class MobileController extends \BaseController {
 		$ticket->update();
 		return Response::json(array(
 				'error' => false,
-				'message' => "Updated Ticket ID".$ticket->id),
+				'message' => "Updated Ticket ID".$ticket->id,
+				'ticket' => $ticket),
 			200
 		);
 
