@@ -356,9 +356,7 @@ class TicketController extends \BaseController
                 $sid=$ticket->Staff_id;
                 $staff=Staff::find($id);
                 $staff->work_allocated=$staff->work_allocated-1;
-
             }
-
             return Response::json($ticket);
         }
         App::abort('404');

@@ -230,6 +230,24 @@ class MobileController extends \BaseController {
 		$ticket = Ticket::find($id);
 		$ticket->Latitude = $lat;
 		$ticket->Longitude = $long;
+		if ($ticket->Latitude && $ticket->Longitude) {
+			try {
+
+				$latitude = $ticket->Latitude;
+				$longitude = $ticket->Longitude;
+				$geocode = Geocoder::reverse($latitude, $longitude);
+				// The GoogleMapsProvider will return a result
+				//var_dump($geocode);
+				echo "<br>Last Updated Location : " . $geocode->getcounty() . "," . $geocode->getregion();
+			} catch (\Exception $e) {
+				// No exception will be thrown here
+				echo $e->getMessage();
+			}
+		} else {
+			echo "Last Updated Location : Not Updated Yet";
+		}
+		$ticket->GeoLocation= $geocode->getcounty()." , ". $geocode->getregion();
+
 		$ticket->update();
 		return Response::json(array(
 				'error' => false,
