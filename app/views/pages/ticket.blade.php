@@ -129,7 +129,7 @@
                                     $geocode = Geocoder::reverse($latitude, $longitude);
                                     // The GoogleMapsProvider will return a result
                                     //var_dump($geocode);
-                                    echo "<br>Last Updated Location : " . $geocode->getcounty() . "," . $geocode->getregion();
+                                    echo "<br>Last Updated Location : ".$geocode->getstreetName().",".$geocode->getcityDistrict()." ". $geocode->getcounty() . "," . $geocode->getregion();
                                 } catch (\Exception $e) {
                                     // No exception will be thrown here
                                     echo $e->getMessage();

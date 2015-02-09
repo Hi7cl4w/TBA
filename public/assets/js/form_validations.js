@@ -1,9 +1,9 @@
-$(document).ready(function() {				
+$(document).ready(function() {
 	$(".select2").select2();
-			 
+
 	//Traditional form validation sample
 	$('#form_traditional_validation').validate({
-                focusInvalid: false, 
+                focusInvalid: false,
                 ignore: "",
                 rules: {
                     form1Amount: {
@@ -21,94 +21,44 @@ $(document).ready(function() {
                 },
 
                 invalidHandler: function (event, validator) {
-					//display error alert on form submit    
+					//display error alert on form submit
                 },
 
-                errorPlacement: function (label, element) { // render error placement for each input type   
+                errorPlacement: function (label, element) { // render error placement for each input type
 					$('<span class="error"></span>').insertAfter(element).append(label)
                     var parent = $(element).parent('.input-with-icon');
-                    parent.removeClass('success-control').addClass('error-control');  
+                    parent.removeClass('success-control').addClass('error-control');
                 },
 
                 highlight: function (element) { // hightlight error inputs
 					var parent = $(element).parent();
-                    parent.removeClass('success-control').addClass('error-control'); 
+                    parent.removeClass('success-control').addClass('error-control');
                 },
 
                 unhighlight: function (element) { // revert the change done by hightlight
-                    
+
                 },
 
                 success: function (label, element) {
 					var parent = $(element).parent('.input-with-icon');
-					parent.removeClass('error-control').addClass('success-control'); 
+					parent.removeClass('error-control').addClass('success-control');
                 },
 
                 submitHandler: function (form) {
-                
-                }
-            });	
-	
-	//Iconic form validation sample	
-	   $('#form_iconic_validation').validate({
-                errorElement: 'span', 
-                errorClass: 'error', 
-                focusInvalid: false, 
-                ignore: "",
-                rules: {
-                    form1Name: {
-                        minlength: 2,
-                        required: true
-                    },
-                    form1Email: {
-                        required: true,
-                        email: true
-                    },
-                    form1Url: {
-                        required: true,
-                        url: true
-                    }
-                },
 
-                invalidHandler: function (event, validator) {
-					//display error alert on form submit    
-                },
-
-                errorPlacement: function (error, element) { // render error placement for each input type
-                    var icon = $(element).parent('.input-with-icon').children('i');
-                    var parent = $(element).parent('.input-with-icon');
-                    icon.removeClass('fa fa-check').addClass('fa fa-exclamation');  
-                    parent.removeClass('success-control').addClass('error-control');  
-                },
-
-                highlight: function (element) { // hightlight error inputs
-					var parent = $(element).parent();
-                    parent.removeClass('success-control').addClass('error-control'); 
-                },
-
-                unhighlight: function (element) { // revert the change done by hightlight
-                    
-                },
-
-                success: function (label, element) {
-                    var icon = $(element).parent('.input-with-icon').children('i');
-					var parent = $(element).parent('.input-with-icon');
-                    icon.removeClass("fa fa-exclamation").addClass('fa fa-check');
-					parent.removeClass('error-control').addClass('success-control'); 
-                },
-
-                submitHandler: function (form) {
-                
                 }
             });
+
+	//Iconic form validation sample
+
 	//Form Condensed Validation
 	$('#form-condensed').validate({
-                errorElement: 'span', 
-                errorClass: 'error', 
-                focusInvalid: false, 
+                errorElement: 'span',
+                errorClass: 'error',
+                focusInvalid: false,
                 ignore: "",
                 rules: {
-                    form3FirstName: {
+                    username: {
                         minlength: 3,
                         required: true
                     },
@@ -163,30 +113,30 @@ $(document).ready(function() {
                 },
 
                 invalidHandler: function (event, validator) {
-					//display error alert on form submit    
+					//display error alert on form submit
                 },
 
-                errorPlacement: function (label, element) { // render error placement for each input type   
+                errorPlacement: function (label, element) { // render error placement for each input type
 					$('<span class="error"></span>').insertAfter(element).append(label)
                 },
 
                 highlight: function (element) { // hightlight error inputs
-					
+
                 },
 
                 unhighlight: function (element) { // revert the change done by hightlight
-                    
+
                 },
 
                 success: function (label, element) {
-                  
+
                 },
 
                 submitHandler: function (form) {
-                
+
                 }
-            });	
-	
+            });
+
 	//Form Wizard Validations
 	var $validator = $("#commentForm").validate({
 		  rules: {
@@ -245,10 +195,9 @@ $(document).ready(function() {
 	  			}
 				else{
 					$('#rootwizard').find('.form-wizard').children('li').eq(index-1).addClass('complete');
-					$('#rootwizard').find('.form-wizard').children('li').eq(index-1).find('.step').html('<i class="fa fa-check"></i>');	
+					$('#rootwizard').find('.form-wizard').children('li').eq(index-1).find('.step').html('<i class="fa fa-check"></i>');
 				}
 	  		}
-	 });	 
+	 });
 
-});	
-	 
+});

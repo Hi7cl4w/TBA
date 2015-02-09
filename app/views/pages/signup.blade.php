@@ -6,10 +6,10 @@
     {{HTML::style('assets/css/login.css')}}
 @stop
 @section('body')
-    <div class="wrapper row-offcanvas  row-offcanvas-left"  >
-        <div class="col-md-10 col-xs-11 col-sm-10 center-block" id="login" >
+    <div class="wrapper row-offcanvas  row-offcanvas-left">
+        <div class="col-md-10 col-xs-11 col-sm-10 center-block" id="login">
             <div class="row">
-                <div class="panel col-xs-12 animated fadeInUp" >
+                <div class="panel col-xs-12 animated fadeInUp">
                     <div class="box-title no-border">
                         <h4>SIGN <span class="semi-bold">UP</span></h4>
 
@@ -32,7 +32,7 @@
                         @endif
 
                         <form method="POST" action="{{{ URL::to('/') }}}" accept-charset="UTF-8"
-                              class="form-no-horizontal-spacing" id="form-condensed"
+                              class="form-no-horizontal-spacing" id="form"
                               novalidate="novalidate">
                             <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
 
@@ -113,21 +113,23 @@
 
                                         <div class="col-md-8">
                                             <div class="radio radio-success">
-                                                    <label>
-                                                <input id="male" type="radio" name="Gender" value="male"
-                                                       checked="checked"><span class="circle"></span><span class="check"></span>
-                                              Male</label>
-                                                </div>
+                                                <label>
+                                                    <input id="male" type="radio" name="Gender" value="male"
+                                                           checked="checked"><span class="circle"></span><span
+                                                            class="check"></span>
+                                                    Male</label>
+                                            </div>
                                             <div class="radio radio-success">
                                                 <label>
-                                                <input id="female" type="radio" name="Gender"
-                                                       value="female"><span class="circle"></span><span class="check"></span>
-                                              Female</label>
+                                                    <input id="female" type="radio" name="Gender"
+                                                           value="female"><span class="circle"></span><span
+                                                            class="check"></span>
+                                                    Female</label>
                                             </div>
-                                            </div>
-
                                         </div>
+
                                     </div>
+                                </div>
 
                                 <div class="col-md-6">
 
@@ -198,19 +200,18 @@
                                     <div class="row form-row">
                                         <div class="checkbox checkbox check-success col-md-12">
                                             <label for="chkTerms"> <input type="checkbox" value="1" id="chkTerms">
-                                                <span class="ripple"></span><span class="check"></span>I Here by agree on the Term and
+                                                <span class="ripple"></span><span class="check"></span>I Here by agree
+                                                on the Term and
                                                 condition. </label>
                                         </div>
 
-                                        </div>
-
+                                    </div>
 
 
                                 </div>
                             </div>
                             <div class="form-actions">
                                 <div class="pull-left">
-
 
 
                                 </div>
@@ -236,8 +237,203 @@
 @stop
 @section('javascript')
     {{HTML::script('assets\plugins\boostrap-form-wizard\js\jquery.bootstrap.wizard.min.js')}}
-    {{HTML::script('assets/js/form_elements.js')}}
-    {{HTML::script('assets/js/form_validations.js')}}
+    {{HTML::script('assets/js/bootstrap-datetimepicker.min.js')}}
+
+
+    <script>
+        $(function () {
+            $('#DOB').datetimepicker();
+        });
+        $('#form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: '*Must be Alphanumeric'
+                        }
+                    }
+                },
+                fname: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                adyear: {
+                    feedbackIcons: 'false',
+                    trigger: 'blur',
+                    validators: {
+                        notEmpty: {
+                            message: 'Date is required '
+                        },
+                        regexp: {
+                            regexp: /^\d{4}$/i,
+                            message: 'Format is not correct  '
+                        }
+                    }
+                },
+                designation: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+
+                        regexp: {
+                            regexp: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/i,
+                            message: 'Email address not valid'
+                        },
+                        notEmpty: {
+                            message: '*Required'
+                        }
+
+                    }
+                },
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: '*Must be Character'
+                        }
+                    }
+                },
+                Occupation: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+
+                    }
+                },
+
+                DOB: {
+                    feedbackIcons: 'false',
+
+                    validators: {
+                        date: {
+                            format: 'DD/MM/YYYY',
+                            message: 'The value is not a valid date, format is DD/MM/YYYY'
+                        },
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                State: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Country: {
+                    validators: {
+
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Pin: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^([0-9]{6,6})/i,
+                            message: 'Must be a pin code'
+                        }
+                    }
+
+                },
+                TeleNo: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^([0-9]{10,10})$/i,
+                            message: 'Must be a phone number'
+                        }
+                    }
+
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        stringLength: {
+                            min: 1,
+                            message: 'Password contain min. 1 characters. '
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            message: 'Password contain min. 6 characters. '
+                        },
+                        identical: {
+                            field: 'password_confirmation',
+                            message: ' Passwords does not match. '
+                        }
+
+                    }
+                },
+                password_confirmation: {
+                    enabled: true,
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'Passwords does not match'
+                        }
+                    }
+                }
+            }
+        })
+
+    </script>
 @stop
 
 

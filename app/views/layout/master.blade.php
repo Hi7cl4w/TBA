@@ -14,12 +14,14 @@
     {{HTML::style('assets/css/material.min.css')}}
     {{HTML::style('assets/css/ripples.min.css')}}
     {{HTML::style('assets/css/admin.css')}}
+    {{HTML::style('assets/css/bootstrap-datetimepicker.min.css')}}
     @yield('headlogin')
 
     {{HTML::style('assets/css/table.css')}}
 
 
     {{HTML::style('assets/css/component.css')}}
+    {{HTML::style('assets/plugins/validator/bootstrapValidator.min.css')}}
 
 
     {{HTML::script('assets/js/jquery-2.1.3.min.js')}}
@@ -162,6 +164,8 @@
 {{HTML::script('assets/js/validator.min.js')}}
 {{HTML::script('assets/js/classie.js')}}
 
+{{HTML::script('assets/plugins/validator/bootstrapValidator.min.js')}}
+
 
 
 <script type="text/javascript">
@@ -181,8 +185,7 @@
 
 
 @yield('javascript')
-{{HTML::script('assets/js/form_elements.js')}}
-{{HTML::script('assets/js/form_validations.js')}}
+
 <script type="text/javascript">
 
     (function() {

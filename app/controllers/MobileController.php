@@ -243,7 +243,7 @@ class MobileController extends \BaseController {
 				// No exception will be thrown here
 				// $e->getMessage();
 			}
-		
+
 		$ticket->GeoLocation= $geocode->getcounty()." , ". $geocode->getregion();
 
 		$ticket->update();

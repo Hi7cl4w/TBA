@@ -36,7 +36,7 @@
 
 
                         <form method="POST" action="{{{ URL::to('/profile/'.$user->username."/staff/create") }}}" accept-charset="UTF-8"
-                              class="form-no-horizontal-spacing" id="form-condensed"
+                              class="form-no-horizontal-spacing" id="form"
                               novalidate="novalidate">
                             <input type="hidden" name="_token" value="{{{ Session::getToken() }}}">
 
@@ -213,8 +213,199 @@
 @section('javascript')
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js')}}
     {{HTML::script('assets/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js')}}
-    {{HTML::script('assets/js/form_elements.js')}}
+
     <script>
+        $(function () {
+            $('#DOB').datetimepicker();
+        });
+        $('#form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: '*Must be Alphanumeric'
+                        }
+                    }
+                },
+                fname: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                adyear: {
+                    feedbackIcons: 'false',
+                    trigger: 'blur',
+                    validators: {
+                        notEmpty: {
+                            message: 'Date is required '
+                        },
+                        regexp: {
+                            regexp: /^\d{4}$/i,
+                            message: 'Format is not correct  '
+                        }
+                    }
+                },
+                designation: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                email: {
+                    validators: {
+
+                        regexp: {
+                            regexp: /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/i,
+                            message: 'Email address not valid'
+                        },
+                        notEmpty: {
+                            message: '*Required'
+                        }
+
+                    }
+                },
+                FirstName: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^[a-z\s]+$/i,
+                            message: '*Must be Character'
+                        }
+                    }
+                },
+                Designation: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+
+                    }
+                },
+
+                DOB: {
+                    feedbackIcons: 'false',
+
+                    validators: {
+                        date: {
+                            format: 'DD/MM/YYYY',
+                            message: 'The value is not a valid date, format is DD/MM/YYYY'
+                        },
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Address: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                City: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                State: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Country: {
+                    validators: {
+
+                        notEmpty: {
+                            message: '*Required'
+                        }
+                    }
+                },
+                Pin: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^([0-9]{6,6})/i,
+                            message: 'Must be a pin code'
+                        }
+                    }
+
+                },
+                TeleNo: {
+
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        regexp: {
+                            regexp: /^([0-9]{10,10})$/i,
+                            message: 'Must be a phone number'
+                        }
+                    }
+
+                },
+                LastName: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        stringLength: {
+                            min: 1,
+                            message: 'Password contain min. 1 characters. '
+                        }
+                    }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            message: 'Password contain min. 6 characters. '
+                        },
+                        identical: {
+                            field: 'password_confirmation',
+                            message: ' Passwords does not match. '
+                        }
+
+                    }
+                },
+                password_confirmation: {
+                    enabled: true,
+                    validators: {
+                        notEmpty: {
+                            message: '*Required'
+                        },
+                        identical: {
+                            field: 'password',
+                            message: 'Passwords does not match'
+                        }
+                    }
+                }
+            }
+        })
 
     </script>
 
