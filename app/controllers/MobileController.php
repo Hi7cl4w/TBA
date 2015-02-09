@@ -230,7 +230,7 @@ class MobileController extends \BaseController {
 		$ticket = Ticket::find($id);
 		$ticket->Latitude = $lat;
 		$ticket->Longitude = $long;
-		if ($ticket->Latitude && $ticket->Longitude) {
+
 			try {
 
 				$latitude = $ticket->Latitude;
@@ -241,11 +241,9 @@ class MobileController extends \BaseController {
 				echo "<br>Last Updated Location : " . $geocode->getcounty() . "," . $geocode->getregion();
 			} catch (\Exception $e) {
 				// No exception will be thrown here
-				echo $e->getMessage();
+				// $e->getMessage();
 			}
-		} else {
-			echo "Last Updated Location : Not Updated Yet";
-		}
+		
 		$ticket->GeoLocation= $geocode->getcounty()." , ". $geocode->getregion();
 
 		$ticket->update();
