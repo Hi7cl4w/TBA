@@ -99,7 +99,7 @@ class MobileController extends \BaseController {
 			if ($ticket->id) {
 
 
-				/*	Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
+					Mail::laterOn('ticket', 5, 'emails.ticket.admin', array('key' => 'value'), function ($message) use ($ticket) {
                         $customer = User::find($ticket->Customer_id);
                         $e = $customer->email;
                         if ($ticket->Staff_id)
@@ -113,8 +113,7 @@ class MobileController extends \BaseController {
                         $staff = User::find($ticket->Staff_id);
                         $e = $staff->email;
                         $message->to($e, 'no-replay2')->subject('Welcome!');
-                    });//http://mainproject.manuknarayanan.in/api/v1/ticket/new?Subject=sjdakbsjbc&Description=desdesdesd&Purchase_id=4870940a-df7b-446c-8b0b-9063a83a5bf2&Product_id=pr1135
-    */
+                    });
 				return Response::json(array(
 						'error' => false,
 						'message' => 'Ticket Successfully Created TICKET ID: '.$ticket->id,
@@ -225,9 +224,13 @@ class MobileController extends \BaseController {
 	}
 	public function location($id){
 		$input = Input::all();
+		$status = array_get($input, 'status');
+		$remark = array_get($input, 'remark');
 		$long = array_get($input, 'long');
 		$lat = array_get($input, 'lat');
 		$ticket = Ticket::find($id);
+		$ticket->Status = $status;
+		$ticket->Remark = $remark;
 		$ticket->Latitude = $lat;
 		$ticket->Longitude = $long;
 
@@ -275,8 +278,10 @@ class MobileController extends \BaseController {
 		$input = Input::all();
 		$user = Auth::user();
 		$status = array_get($input, 'status');
+			$remark = array_get($input, 'remark');
 		$ticket = Ticket::find($id);
 		$ticket->Status = $status;
+			$ticket->Remark = $remark;
 		$ticket->update();
 
 		return Response::json(array(
