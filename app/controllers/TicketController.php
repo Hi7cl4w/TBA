@@ -13,17 +13,17 @@ class TicketController extends \BaseController
     {
         $user = Auth::user();
         if ($user->hasRole('Customer')) {
-            $tickets = Ticket::where('Customer_id','=',$user->id)->paginate(10);
+            $tickets = Ticket::where('Customer_id','=',$user->id)->with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
         else if ($user->hasRole('Staff')) {
-            $tickets = Ticket::where('Staff_id','=',$user->id)->paginate(10);
+            $tickets = Ticket::where('Staff_id','=',$user->id)->with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
         else if ($user->hasRole('Administrator')) {
-            $tickets = Ticket::paginate(10);
+            $tickets = Ticket::with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
@@ -326,12 +326,19 @@ class TicketController extends \BaseController
 
             $user = Auth::user();
             $status=Ticket::select('Status')->find($id);
+            $staff = User::whereHas(
+                'roles', function($q){
+                    $q->where('name', 'Staff');
+                }
+            )->get();
 
             $body = "<h4>Enter your feedback for ticket" . $id . " ?</h4>";
             $message = array(
                 'body' => $body,
                 'id'   => $id,
-                'status'   => $status
+                'status'   => $status,
+                'staff'   => $staff
+
             );
 
             return View::make('pages.status')->with('message', $message);
@@ -351,6 +358,21 @@ class TicketController extends \BaseController
             $ticket->Remark = $remark;
             $ticket->Latitude = $lat;
             $ticket->Longitude = $long;
+
+            try {
+
+                $latitude = $ticket->Latitude;
+                $longitude = $ticket->Longitude;
+                $geocode = Geocoder::reverse($latitude, $longitude);
+                // The GoogleMapsProvider will return a result
+
+            } catch (\Exception $e) {
+                // No exception will be thrown here
+                // $e->getMessage();
+            }
+
+            $ticket->GeoLocation= $geocode->getstreetName().",".$geocode->getcityDistrict()." ". $geocode->getcounty() . "," . $geocode->getregion();;
+
             $ticket->update();
             if($ticket->Status=="Closed"){
                 $sid=$ticket->Staff_id;
@@ -358,6 +380,32 @@ class TicketController extends \BaseController
                 $staff->work_allocated=$staff->work_allocated-1;
             }
             return Response::json($ticket);
+        }
+        App::abort('404');
+    }
+public function staffpost($id){
+        if(Request::ajax()) {
+            $input = Input::all();
+            $user = Auth::user();
+            $staffold = array_get($input, 'staffold');
+
+            $staff = array_get($input, 'staff');
+
+            $ticket = Ticket::find($id);
+            $ticket->Staff_id = $staff;
+            $ticket->update();
+                $sid=$ticket->Staff_id;
+                $staff=Staff::find($sid);
+                $staff->work_allocated=$staff->work_allocated+1;
+            $staff->update();
+                $staff2=Staff::find($staffold);
+            $staff2->work_allocated=$staff->work_allocated-1;
+            $staff2->update();
+
+
+            //$staff2->update();
+
+            return Response::json($staff2);
         }
         App::abort('404');
     }

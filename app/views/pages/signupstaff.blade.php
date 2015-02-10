@@ -196,6 +196,18 @@
                                         </div>
 
                                     </div>
+                                    <div class="form-actions">
+                                        <div class="pull-left">
+
+
+                                        </div>
+                                        <div class="pull-right">
+                                            <button class="btn btn-danger btn-cons" type="submit"><i
+                                                        class="icon-ok"></i> Sign Up
+                                            </button>
+
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>

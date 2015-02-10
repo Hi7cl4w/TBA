@@ -34,7 +34,7 @@ class UserRepository
         $this->save($user);
         if ($user->id) {
             $c = new Customer;
-            $c->customer_id = $user->id;
+            $c->id = $user->id;
             $c->DOB = array_get($input, 'DOB');
             $c->Occupation = array_get($input, 'Occupation');
             $c->Gender = array_get($input, 'Gender');
@@ -74,7 +74,7 @@ class UserRepository
         $this->save($user);
         if ($user->id) {
             $c = new Staff;
-            $c->staff_id = $user->id;
+            $c->id = $user->id;
             $c->Designation = array_get($input, 'Designation');
             $c->Gender = array_get($input, 'Gender');
             $c->Address = array_get($input, 'Address');
@@ -114,7 +114,7 @@ class UserRepository
         $this->save($user);
         if ($user->id) {
             $c = new Admin;
-            $c->admin_id = $user->id;
+            $c->id = $user->id;
             $c->DOB = array_get($input, 'DOB');
             $c->Occupation = array_get($input, 'Occupation');
             $c->Gender = array_get($input, 'Gender');

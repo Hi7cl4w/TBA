@@ -109,7 +109,7 @@
             @foreach($tickets as $ticket)
                 <div class="box simple no-border">
                     <div class="box-title no-border descriptive clickable">
-                        <h4 class="semi-bold"><b>Subject: </b> {{ $ticket->Subject }}</h4>
+                        <a href="{{{ URL::to('/profile/'.$user->username.'/ticket') }}}/{{ $ticket->id }}" > <h4 class="semi-bold"><b>Subject: </b> {{ $ticket->Subject }}</h4></a>
 
 
                         <p><span class="text-success bold">Ticket #{{ $ticket->prefix }}{{ $ticket->id }}</span> -
@@ -121,26 +121,8 @@
 
                         <p>
                             <?php
-                            if ($ticket->Latitude && $ticket->Longitude) {
-                                try {
-
-                                    $latitude = $ticket->Latitude;
-                                    $longitude = $ticket->Longitude;
-                                    $geocode = Geocoder::reverse($latitude, $longitude);
-                                    // The GoogleMapsProvider will return a result
-                                    //var_dump($geocode);
-                                    echo "<br>Last Updated Location : ".$geocode->getstreetName().",".$geocode->getcityDistrict()." ". $geocode->getcounty() . "," . $geocode->getregion();
-                                } catch (\Exception $e) {
-                                    // No exception will be thrown here
-                                    echo $e->getMessage();
-                                }
-                            } else {
-                                echo "Last Updated Location : Not Updated Yet";
-                            }
-
-
-                            ?>
-
+                                    echo "<br>Last Updated Location : ".$ticket->GeoLocation;
+                                ?>
 
                         <div class="actions">
 
@@ -188,6 +170,7 @@
 
                                 $('#myModal .modal-body').load('{{{ URL::to('/profile/'.$user->username."/ticket/status/") }}}/{{$ticket->id}}');
                                 $('#myModal').modal('show');
+
                             });
                             //change status post
                             $(document).on('click', '#submitstatus{{$ticket->id}}', function () {
@@ -217,6 +200,25 @@
                                     });
                                     //alert(value+id);
                                 }
+
+                            });
+                            $(document).on('click', '#submitstaff{{$ticket->id}}', function () {
+
+                                var staffold="{{$ticket->Staff_id}}";
+                                var staff=$( "#staff" ).val();
+
+                                    $.ajax({
+                                        type: "GET",
+                                        url: "{{{ URL::to('/profile/'.$user->username.'/ticket/staff/post') }}}/{{$ticket->id}}",
+                                        data: {staffold: staffold, staff: staff},
+                                        cache: false,
+                                        success: function (data) {
+                                            $('#myModal').modal('toggle');
+                                            //location.reload();
+                                        }
+                                    });
+                                    //alert(value+id);
+
 
                             });
 

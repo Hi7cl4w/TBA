@@ -67,10 +67,17 @@
                     <p>{{ Form::button('Login',array('type' => 'submit' , 'class'=>'btn btn-danger btn-cons')) }}</p>
                 </div>
                 {{ Form::close() }}
-                            <div class="form-actions">
+                            <div class="form-actions pull-left">
                                 <div class="pull-left">
                                     <a href="/forgot">Trouble login in ?</a>
                                     </div>
+
+
+                            </div> <div class="form-actions">
+                            <div class="pull-left">
+                                <a href="/signup">Signup</a>
+                            </div>
+
 
                             </div>
 
