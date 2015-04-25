@@ -8,7 +8,7 @@ class Ticket extends Eloquent {
     public function userstaff(){
         return $this->belongsTo('User','Staff_id','id');
     }public function usercustomerd(){
-        return $this->belongsTo('Customer','Customer_id','id');
+        return $this->belongsTo('Customer','Customer_id','customer_id');
     }public function userstaffd(){
         return $this->belongsTo('Staff','Staff_id','id');
     }
