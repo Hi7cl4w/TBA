@@ -18,7 +18,7 @@ class TicketController extends \BaseController
 
         }
         else if ($user->hasRole('Staff')) {
-            $tickets = Ticket::where('Staff_id','=',$user->id)->with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
+            $tickets = Ticket::where('Staff_id','=',$user->id)->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
