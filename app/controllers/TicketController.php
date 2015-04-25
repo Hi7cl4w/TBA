@@ -67,7 +67,7 @@ class TicketController extends \BaseController
             if ($tickets!=null) {
                 return View::make('pages.ticketview')
                     ->with(array(
-                            'user' => $user,
+                            
                             'ticket' => $tickets
                         )
                     );
