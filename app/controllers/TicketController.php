@@ -13,7 +13,7 @@ class TicketController extends \BaseController
     {
         $user = Auth::user();
         if ($user->hasRole('Customer')) {
-            $tickets = Ticket::where('Customer_id','=',$user->id)->with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
+            $tickets = Ticket::where('Customer_id','=',$user->id)->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
