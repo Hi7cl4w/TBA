@@ -6,7 +6,7 @@ class Ticket extends Eloquent {
         return $this->belongsTo('User','Customer_id','id');
     }
     public function userstaff(){
-        return $this->belongsTo('User','Staff_id','id');
+        return $this->belongsTo('User','Staff_id','staff_id');
     }public function usercustomerd(){
         return $this->belongsTo('Customer','Customer_id','customer_id');
     }public function userstaffd(){
