@@ -23,7 +23,7 @@ class TicketController extends \BaseController
 
         }
         else if ($user->hasRole('Administrator')) {
-            $tickets = Ticket::all()->with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
+            $tickets = Ticket::with('usercustomer')->with('usercustomerd')->with('userstaffd')->orderBy('created_at', 'DESC')->paginate(10);
 
 
         }
